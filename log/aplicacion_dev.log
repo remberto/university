@@ -1,0 +1,112 @@
+Sep 18 07:31:55 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Sep 18 07:31:55 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 18 07:31:55 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 18 07:31:55 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Sep 18 07:31:55 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib/controller/default/templates/indexSuccess.php"
+Sep 18 07:31:55 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:31:55 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:31:55 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 18 07:31:55 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 18 07:31:55 symfony [info] {sfWebDebugLogger} Configuration 141.02 ms (9)
+Sep 18 07:31:55 symfony [info] {sfWebDebugLogger} Factories 344.04 ms (1)
+Sep 18 07:31:55 symfony [info] {sfWebDebugLogger} Action "default/index" 0.50 ms (1)
+Sep 18 07:31:55 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 158.52 ms (1)
+Sep 18 07:31:55 symfony [info] {sfWebResponse} Send content (30034 o)
+Sep 18 07:31:57 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Sep 18 07:31:57 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 18 07:31:57 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 18 07:31:57 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Sep 18 07:31:57 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib/controller/default/templates/indexSuccess.php"
+Sep 18 07:31:57 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:31:57 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:31:57 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 18 07:31:57 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 18 07:31:57 symfony [info] {sfWebDebugLogger} Configuration 51.01 ms (9)
+Sep 18 07:31:57 symfony [info] {sfWebDebugLogger} Factories 36.50 ms (1)
+Sep 18 07:31:57 symfony [info] {sfWebDebugLogger} Action "default/index" 0.50 ms (1)
+Sep 18 07:31:57 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 12.00 ms (1)
+Sep 18 07:31:57 symfony [info] {sfWebResponse} Send content (30302 o)
+Sep 18 07:32:04 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Sep 18 07:32:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 18 07:32:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 18 07:32:04 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Sep 18 07:32:04 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib/controller/default/templates/indexSuccess.php"
+Sep 18 07:32:04 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:32:04 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:32:04 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 18 07:32:04 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 18 07:32:04 symfony [info] {sfWebDebugLogger} Configuration 53.01 ms (9)
+Sep 18 07:32:04 symfony [info] {sfWebDebugLogger} Factories 37.00 ms (1)
+Sep 18 07:32:04 symfony [info] {sfWebDebugLogger} Action "default/index" 0.00 ms (1)
+Sep 18 07:32:04 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 12.50 ms (1)
+Sep 18 07:32:04 symfony [info] {sfWebResponse} Send content (30270 o)
+Sep 18 07:32:06 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Sep 18 07:32:06 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 18 07:32:06 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 18 07:32:06 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Sep 18 07:32:06 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib/controller/default/templates/indexSuccess.php"
+Sep 18 07:32:06 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:32:06 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:32:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 18 07:32:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 18 07:32:06 symfony [info] {sfWebDebugLogger} Configuration 53.01 ms (9)
+Sep 18 07:32:06 symfony [info] {sfWebDebugLogger} Factories 36.01 ms (1)
+Sep 18 07:32:06 symfony [info] {sfWebDebugLogger} Action "default/index" 0.00 ms (1)
+Sep 18 07:32:06 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 13.00 ms (1)
+Sep 18 07:32:06 symfony [info] {sfWebResponse} Send content (30302 o)
+Sep 18 07:33:21 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Sep 18 07:33:21 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 18 07:33:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 18 07:33:21 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Sep 18 07:33:21 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib/controller/default/templates/indexSuccess.php"
+Sep 18 07:33:21 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:33:21 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:33:21 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 18 07:33:21 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 18 07:33:21 symfony [info] {sfWebDebugLogger} Configuration 54.51 ms (9)
+Sep 18 07:33:21 symfony [info] {sfWebDebugLogger} Factories 36.00 ms (1)
+Sep 18 07:33:21 symfony [info] {sfWebDebugLogger} Action "default/index" 0.00 ms (1)
+Sep 18 07:33:21 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 13.00 ms (1)
+Sep 18 07:33:21 symfony [info] {sfWebResponse} Send content (30302 o)
+Sep 18 07:33:24 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Sep 18 07:33:24 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 18 07:33:24 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 18 07:33:24 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Sep 18 07:33:24 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib/controller/default/templates/indexSuccess.php"
+Sep 18 07:33:24 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:33:24 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:33:24 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 18 07:33:24 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 18 07:33:24 symfony [info] {sfWebDebugLogger} Configuration 52.01 ms (9)
+Sep 18 07:33:24 symfony [info] {sfWebDebugLogger} Factories 36.50 ms (1)
+Sep 18 07:33:24 symfony [info] {sfWebDebugLogger} Action "default/index" 0.00 ms (1)
+Sep 18 07:33:24 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 12.50 ms (1)
+Sep 18 07:33:24 symfony [info] {sfWebResponse} Send content (30302 o)
+Sep 18 07:33:40 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Sep 18 07:33:40 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 18 07:33:40 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 18 07:33:40 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Sep 18 07:33:40 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib/controller/default/templates/indexSuccess.php"
+Sep 18 07:33:40 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:33:40 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:33:40 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 18 07:33:40 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 18 07:33:40 symfony [info] {sfWebDebugLogger} Configuration 53.51 ms (9)
+Sep 18 07:33:40 symfony [info] {sfWebDebugLogger} Factories 36.00 ms (1)
+Sep 18 07:33:40 symfony [info] {sfWebDebugLogger} Action "default/index" 0.50 ms (1)
+Sep 18 07:33:40 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 12.50 ms (1)
+Sep 18 07:33:40 symfony [info] {sfWebResponse} Send content (30270 o)
+Sep 18 07:33:53 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Sep 18 07:33:53 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 18 07:33:53 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 18 07:33:53 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Sep 18 07:33:53 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib/controller/default/templates/indexSuccess.php"
+Sep 18 07:33:53 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:33:53 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Sep 18 07:33:53 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 18 07:33:53 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 18 07:33:53 symfony [info] {sfWebDebugLogger} Configuration 59.51 ms (9)
+Sep 18 07:33:53 symfony [info] {sfWebDebugLogger} Factories 40.50 ms (1)
+Sep 18 07:33:53 symfony [info] {sfWebDebugLogger} Action "default/index" 0.00 ms (1)
+Sep 18 07:33:53 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 12.50 ms (1)
+Sep 18 07:33:53 symfony [info] {sfWebResponse} Send content (30270 o)
