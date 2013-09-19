@@ -1,0 +1,28 @@
+AdmUsuarios:
+  connection: doctrine
+  tableName: adm_usuarios
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: adm_usuarios_id
+    username:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    password:
+      type: string(32)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    correo_electronico:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
