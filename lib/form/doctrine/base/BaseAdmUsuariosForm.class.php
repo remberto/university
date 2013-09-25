@@ -25,7 +25,6 @@ abstract class BaseAdmUsuariosForm extends BaseFormDoctrine
       'id'                 => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'username'           => new sfValidatorString(),
       'password'           => new sfValidatorString(),
-      'correo_electronico' => new sfValidatorString(),
     ));
 
     $this->widgetSchema->setNameFormat('adm_usuarios[%s]');
