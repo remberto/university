@@ -1,3 +1,145 @@
+AdmMenus:
+  connection: doctrine
+  tableName: adm_menus
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: adm_menus_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    abreviatura:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    estado:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    link:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    tipo_menu:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    orden:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    adm_menu_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    icon:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    AdmMenus:
+      local: id
+      foreign: adm_menu_id
+      type: many
+    AdmRolesMenus:
+      local: id
+      foreign: adm_menu_id
+      type: many
+AdmRoles:
+  connection: doctrine
+  tableName: adm_roles
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: adm_roles_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    AdmRolesMenus:
+      local: id
+      foreign: adm_rol_id
+      type: many
+    AdmRolesUsuarios:
+      local: id
+      foreign: adm_rol_id
+      type: many
+    RelRolesTramite:
+      local: id
+      foreign: adm_rol_id
+      type: many
+AdmRolesMenus:
+  connection: doctrine
+  tableName: adm_roles_menus
+  columns:
+    adm_rol_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    adm_menu_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+  relations:
+    AdmMenus:
+      local: adm_menu_id
+      foreign: id
+      type: one
+    AdmRoles:
+      local: adm_rol_id
+      foreign: id
+      type: one
+AdmRolesUsuarios:
+  connection: doctrine
+  tableName: adm_roles_usuarios
+  columns:
+    adm_usuario_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    adm_rol_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+  relations:
+    AdmRoles:
+      local: adm_rol_id
+      foreign: id
+      type: one
+    AdmUsuarios:
+      local: adm_usuario_id
+      foreign: id
+      type: one
 AdmUsuarios:
   connection: doctrine
   tableName: adm_usuarios
@@ -9,20 +151,283 @@ AdmUsuarios:
       primary: true
       sequence: adm_usuarios_id
     username:
-      type: string(25)
+      type: string()
       fixed: false
       unsigned: false
       notnull: true
       primary: false
     password:
-      type: string(32)
+      type: string()
       fixed: false
       unsigned: false
       notnull: true
       primary: false
     correo_electronico:
-      type: string(50)
+      type: string()
       fixed: false
       unsigned: false
       notnull: true
       primary: false
+    estado:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    AdmRolesUsuarios:
+      local: id
+      foreign: adm_usuario_id
+      type: many
+ClaFormulario:
+  connection: doctrine
+  tableName: cla_formulario
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: cla_formulario_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    url:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+ClaProceso:
+  connection: doctrine
+  tableName: cla_proceso
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: cla_proceso_id
+    nro_proceso:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cla_tramite_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    tiempo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    cla_tipo_proceso_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    ClaTipoProceso:
+      local: cla_tipo_proceso_id
+      foreign: id
+      type: one
+    ClaTramite:
+      local: cla_tramite_id
+      foreign: id
+      type: one
+ClaProcesoFormularios:
+  connection: doctrine
+  tableName: cla_proceso_formularios
+  columns:
+    cla_proceso_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    cla_tramite_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    cla_formulario_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    orden:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+ClaTipoProceso:
+  connection: doctrine
+  tableName: cla_tipo_proceso
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: cla_tipo_proceso_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    ClaProceso:
+      local: id
+      foreign: cla_tipo_proceso_id
+      type: many
+ClaTramite:
+  connection: doctrine
+  tableName: cla_tramite
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: cla_tramite_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    nro_resolucion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    fecha_resolucion:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    ClaProceso:
+      local: id
+      foreign: cla_tramite_id
+      type: many
+    RelRolesTramite:
+      local: id
+      foreign: tramite_id
+      type: many
+DatPersonas:
+  connection: doctrine
+  tableName: dat_personas
+  columns:
+    ci:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: true
+    paterno:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    materno:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    nombre1:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    nombre2:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    fecha_nacimiento:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    genero:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+RelRolesProceso:
+  connection: doctrine
+  tableName: rel_roles_proceso
+  columns:
+    adm_rol_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    tramite_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    proceso_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    habilitado:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+RelRolesTramite:
+  connection: doctrine
+  tableName: rel_roles_tramite
+  columns:
+    adm_rol_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    tramite_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    habilitado:
+      type: boolean(1)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    AdmRoles:
+      local: adm_rol_id
+      foreign: id
+      type: one
+    ClaTramite:
+      local: tramite_id
+      foreign: id
+      type: one

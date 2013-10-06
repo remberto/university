@@ -55,11 +55,10 @@ class loginActions extends sfActions
 //                  $parametros->setSistemaId('3');
 //                  $parametros->save();
 
-//                 $rol = Doctrine::getTable('DatUsuGrupo')->getGrupoRol($dat_usu_usuario->getId());
-//                 if($rol)
-//                      $this->getUser()->setAttribute('ROL',$rol->getRolId());
-                  //Buscar el Grupo y el rol
-                    $this->redirect('main/index');
+                 $rol = Doctrine::getTable('AdmRolesUsuarios')->getRol($adm_usuario->getId());
+                 if(!empty($rol))
+                      $this->getUser()->setAttribute('ROL',$rol->getAdmRolId());
+                 $this->redirect('main/index');
               }
               else
                   //die("Error");

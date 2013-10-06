@@ -11,19 +11,25 @@ Doctrine_Manager::getInstance()->bindComponent('AdmUsuarios', 'doctrine');
  * @property string $username
  * @property string $password
  * @property string $correo_electronico
+ * @property boolean $estado
+ * @property Doctrine_Collection $AdmRolesUsuarios
  * 
- * @method integer     getId()                 Returns the current record's "id" value
- * @method string      getUsername()           Returns the current record's "username" value
- * @method string      getPassword()           Returns the current record's "password" value
- * @method string      getCorreoElectronico()  Returns the current record's "correo_electronico" value
- * @method AdmUsuarios setId()                 Sets the current record's "id" value
- * @method AdmUsuarios setUsername()           Sets the current record's "username" value
- * @method AdmUsuarios setPassword()           Sets the current record's "password" value
- * @method AdmUsuarios setCorreoElectronico()  Sets the current record's "correo_electronico" value
+ * @method integer             getId()                 Returns the current record's "id" value
+ * @method string              getUsername()           Returns the current record's "username" value
+ * @method string              getPassword()           Returns the current record's "password" value
+ * @method string              getCorreoElectronico()  Returns the current record's "correo_electronico" value
+ * @method boolean             getEstado()             Returns the current record's "estado" value
+ * @method Doctrine_Collection getAdmRolesUsuarios()   Returns the current record's "AdmRolesUsuarios" collection
+ * @method AdmUsuarios         setId()                 Sets the current record's "id" value
+ * @method AdmUsuarios         setUsername()           Sets the current record's "username" value
+ * @method AdmUsuarios         setPassword()           Sets the current record's "password" value
+ * @method AdmUsuarios         setCorreoElectronico()  Sets the current record's "correo_electronico" value
+ * @method AdmUsuarios         setEstado()             Sets the current record's "estado" value
+ * @method AdmUsuarios         setAdmRolesUsuarios()   Sets the current record's "AdmRolesUsuarios" collection
  * 
  * @package    universidad
  * @subpackage model
- * @author     Remberto Quispe Gutierrez
+ * @author     Remberto Quispe <rembertoy2k3@gmail.com>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseAdmUsuarios extends sfDoctrineRecord
@@ -63,11 +69,21 @@ abstract class BaseAdmUsuarios extends sfDoctrineRecord
              'primary' => false,
              'length' => '',
              ));
+        $this->hasColumn('estado', 'boolean', 1, array(
+             'type' => 'boolean',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 1,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasMany('AdmRolesUsuarios', array(
+             'local' => 'id',
+             'foreign' => 'adm_usuario_id'));
     }
 }
