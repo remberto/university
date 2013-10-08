@@ -19,15 +19,21 @@ abstract class BaseAdmUsuariosForm extends BaseFormDoctrine
       'username'           => new sfWidgetFormTextarea(),
       'password'           => new sfWidgetFormTextarea(),
       'correo_electronico' => new sfWidgetFormTextarea(),
-      'estado'             => new sfWidgetFormInputCheckbox(),
+      'habilitado'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'add_empty' => false)),
+      'telefono_fijo'      => new sfWidgetFormTextarea(),
+      'telefono_movil'     => new sfWidgetFormTextarea(),
+      'ci_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
       'id'                 => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'username'           => new sfValidatorString(),
       'password'           => new sfValidatorString(),
-      'correo_electronico' => new sfValidatorString(),
-      'estado'             => new sfValidatorBoolean(array('required' => false)),
+//      'correo_electronico' => new sfValidatorString(),
+//      'habilitado'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'required' => false)),
+//      'telefono_fijo'      => new sfValidatorString(array('required' => false)),
+//      'telefono_movil'     => new sfValidatorString(array('required' => false)),
+//      'ci_id'              => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'))),
     ));
 
     $this->widgetSchema->setNameFormat('adm_usuarios[%s]');

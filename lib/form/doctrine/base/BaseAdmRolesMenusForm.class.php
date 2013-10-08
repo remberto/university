@@ -17,11 +17,13 @@ abstract class BaseAdmRolesMenusForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'adm_rol_id'  => new sfWidgetFormInputHidden(),
       'adm_menu_id' => new sfWidgetFormInputHidden(),
+      'habilitado'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'adm_rol_id'  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('adm_rol_id')), 'empty_value' => $this->getObject()->get('adm_rol_id'), 'required' => false)),
       'adm_menu_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('adm_menu_id')), 'empty_value' => $this->getObject()->get('adm_menu_id'), 'required' => false)),
+      'habilitado'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('adm_roles_menus[%s]');

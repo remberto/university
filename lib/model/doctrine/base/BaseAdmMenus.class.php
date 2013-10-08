@@ -10,36 +10,39 @@ Doctrine_Manager::getInstance()->bindComponent('AdmMenus', 'doctrine');
  * @property integer $id
  * @property string $descripcion
  * @property string $abreviatura
- * @property boolean $estado
  * @property string $link
  * @property integer $tipo_menu
  * @property integer $orden
  * @property integer $adm_menu_id
  * @property string $icon
+ * @property integer $habilitado
  * @property Doctrine_Collection $AdmMenus
+ * @property ClaHabilitado $ClaHabilitado
  * @property Doctrine_Collection $AdmRolesMenus
  * 
  * @method integer             getId()            Returns the current record's "id" value
  * @method string              getDescripcion()   Returns the current record's "descripcion" value
  * @method string              getAbreviatura()   Returns the current record's "abreviatura" value
- * @method boolean             getEstado()        Returns the current record's "estado" value
  * @method string              getLink()          Returns the current record's "link" value
  * @method integer             getTipoMenu()      Returns the current record's "tipo_menu" value
  * @method integer             getOrden()         Returns the current record's "orden" value
  * @method integer             getAdmMenuId()     Returns the current record's "adm_menu_id" value
  * @method string              getIcon()          Returns the current record's "icon" value
+ * @method integer             getHabilitado()    Returns the current record's "habilitado" value
  * @method Doctrine_Collection getAdmMenus()      Returns the current record's "AdmMenus" collection
+ * @method ClaHabilitado       getClaHabilitado() Returns the current record's "ClaHabilitado" value
  * @method Doctrine_Collection getAdmRolesMenus() Returns the current record's "AdmRolesMenus" collection
  * @method AdmMenus            setId()            Sets the current record's "id" value
  * @method AdmMenus            setDescripcion()   Sets the current record's "descripcion" value
  * @method AdmMenus            setAbreviatura()   Sets the current record's "abreviatura" value
- * @method AdmMenus            setEstado()        Sets the current record's "estado" value
  * @method AdmMenus            setLink()          Sets the current record's "link" value
  * @method AdmMenus            setTipoMenu()      Sets the current record's "tipo_menu" value
  * @method AdmMenus            setOrden()         Sets the current record's "orden" value
  * @method AdmMenus            setAdmMenuId()     Sets the current record's "adm_menu_id" value
  * @method AdmMenus            setIcon()          Sets the current record's "icon" value
+ * @method AdmMenus            setHabilitado()    Sets the current record's "habilitado" value
  * @method AdmMenus            setAdmMenus()      Sets the current record's "AdmMenus" collection
+ * @method AdmMenus            setClaHabilitado() Sets the current record's "ClaHabilitado" value
  * @method AdmMenus            setAdmRolesMenus() Sets the current record's "AdmRolesMenus" collection
  * 
  * @package    universidad
@@ -75,14 +78,6 @@ abstract class BaseAdmMenus extends sfDoctrineRecord
              'notnull' => true,
              'primary' => false,
              'length' => '',
-             ));
-        $this->hasColumn('estado', 'boolean', 1, array(
-             'type' => 'boolean',
-             'fixed' => 0,
-             'unsigned' => false,
-             'notnull' => true,
-             'primary' => false,
-             'length' => 1,
              ));
         $this->hasColumn('link', 'string', null, array(
              'type' => 'string',
@@ -124,6 +119,15 @@ abstract class BaseAdmMenus extends sfDoctrineRecord
              'primary' => false,
              'length' => '',
              ));
+        $this->hasColumn('habilitado', 'integer', 2, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => true,
+             'default' => '1',
+             'primary' => false,
+             'length' => 2,
+             ));
     }
 
     public function setUp()
@@ -132,6 +136,10 @@ abstract class BaseAdmMenus extends sfDoctrineRecord
         $this->hasMany('AdmMenus', array(
              'local' => 'id',
              'foreign' => 'adm_menu_id'));
+
+        $this->hasOne('ClaHabilitado', array(
+             'local' => 'habilitado',
+             'foreign' => 'id'));
 
         $this->hasMany('AdmRolesMenus', array(
              'local' => 'id',

@@ -23,7 +23,7 @@ class AdmMenusTable extends Doctrine_Table
         ->InnerJoin('c.AdmRolesMenus d')
         ->where('d.adm_rol_id = ?',$rol_id)
         ->andWhere('c.tipo_menu = ?',$tipo)
-        ->andWhere('c.estado = ?','t')
+        ->andWhere('c.habilitado = ?',1)
         ->orderBy('c.orden ASC');
         return $q->execute();
     }
@@ -35,7 +35,7 @@ class AdmMenusTable extends Doctrine_Table
         ->where('d.adm_rol_id = ?',$rol_id)
         ->andWhere('c.tipo_menu = ?','1')
         ->andWhere('c.adm_menu_id = ?', $menu)
-        ->andWhere('c.estado = ?','t')
+        ->andWhere('c.habilitado = ?',1)
         ->orderBy('c.orden ASC');
         return $q->execute();
     }

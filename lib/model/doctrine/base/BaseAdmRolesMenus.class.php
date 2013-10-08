@@ -9,17 +9,23 @@ Doctrine_Manager::getInstance()->bindComponent('AdmRolesMenus', 'doctrine');
  * 
  * @property integer $adm_rol_id
  * @property integer $adm_menu_id
+ * @property integer $habilitado
  * @property AdmMenus $AdmMenus
  * @property AdmRoles $AdmRoles
+ * @property ClaHabilitado $ClaHabilitado
  * 
- * @method integer       getAdmRolId()    Returns the current record's "adm_rol_id" value
- * @method integer       getAdmMenuId()   Returns the current record's "adm_menu_id" value
- * @method AdmMenus      getAdmMenus()    Returns the current record's "AdmMenus" value
- * @method AdmRoles      getAdmRoles()    Returns the current record's "AdmRoles" value
- * @method AdmRolesMenus setAdmRolId()    Sets the current record's "adm_rol_id" value
- * @method AdmRolesMenus setAdmMenuId()   Sets the current record's "adm_menu_id" value
- * @method AdmRolesMenus setAdmMenus()    Sets the current record's "AdmMenus" value
- * @method AdmRolesMenus setAdmRoles()    Sets the current record's "AdmRoles" value
+ * @method integer       getAdmRolId()      Returns the current record's "adm_rol_id" value
+ * @method integer       getAdmMenuId()     Returns the current record's "adm_menu_id" value
+ * @method integer       getHabilitado()    Returns the current record's "habilitado" value
+ * @method AdmMenus      getAdmMenus()      Returns the current record's "AdmMenus" value
+ * @method AdmRoles      getAdmRoles()      Returns the current record's "AdmRoles" value
+ * @method ClaHabilitado getClaHabilitado() Returns the current record's "ClaHabilitado" value
+ * @method AdmRolesMenus setAdmRolId()      Sets the current record's "adm_rol_id" value
+ * @method AdmRolesMenus setAdmMenuId()     Sets the current record's "adm_menu_id" value
+ * @method AdmRolesMenus setHabilitado()    Sets the current record's "habilitado" value
+ * @method AdmRolesMenus setAdmMenus()      Sets the current record's "AdmMenus" value
+ * @method AdmRolesMenus setAdmRoles()      Sets the current record's "AdmRoles" value
+ * @method AdmRolesMenus setClaHabilitado() Sets the current record's "ClaHabilitado" value
  * 
  * @package    universidad
  * @subpackage model
@@ -45,6 +51,14 @@ abstract class BaseAdmRolesMenus extends sfDoctrineRecord
              'primary' => true,
              'length' => 4,
              ));
+        $this->hasColumn('habilitado', 'integer', 2, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 2,
+             ));
     }
 
     public function setUp()
@@ -56,6 +70,10 @@ abstract class BaseAdmRolesMenus extends sfDoctrineRecord
 
         $this->hasOne('AdmRoles', array(
              'local' => 'adm_rol_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('ClaHabilitado', array(
+             'local' => 'habilitado',
              'foreign' => 'id'));
     }
 }

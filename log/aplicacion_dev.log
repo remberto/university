@@ -17678,3 +17678,491 @@ Oct 05 14:39:06 symfony [info] {sfWebDebugLogger} Partial "inicio/_submenu" 1.00
 Oct 05 14:39:06 symfony [info] {sfWebDebugLogger} Component "inicio/menulateral" 2.00 ms (1)
 Oct 05 14:39:06 symfony [info] {sfWebDebugLogger} Partial "inicio/_menulateral" 1.00 ms (1)
 Oct 05 14:39:06 symfony [info] {sfWebResponse} Send content (62318 o)
+Oct 08 05:07:04 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'login',  'action' => 'index',)
+Oct 08 05:07:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:07:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:07:04 symfony [info] {loginActions} Call "loginActions->executeIndex()"
+Oct 08 05:07:04 symfony [info] {loginActions} Change layout to "layout_login"
+Oct 08 05:08:05 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'login',  'action' => 'index',)
+Oct 08 05:08:05 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:08:05 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:08:05 symfony [info] {loginActions} Call "loginActions->executeIndex()"
+Oct 08 05:08:05 symfony [info] {loginActions} Change layout to "layout_login"
+Oct 08 05:08:05 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/login/templates/indexSuccess.php"
+Oct 08 05:08:05 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout_login.php"
+Oct 08 05:08:05 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout_login.php"
+Oct 08 05:08:05 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 08 05:08:05 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:08:05 symfony [info] {sfWebDebugLogger} Configuration 8.00 ms (9)
+Oct 08 05:08:05 symfony [info] {sfWebDebugLogger} Factories 26.00 ms (1)
+Oct 08 05:08:05 symfony [info] {sfWebDebugLogger} Action "login/index" 19.00 ms (1)
+Oct 08 05:08:05 symfony [info] {sfWebDebugLogger} View "Success" for "login/index" 11.00 ms (1)
+Oct 08 05:08:05 symfony [info] {sfWebResponse} Send content (37174 o)
+Oct 08 05:08:06 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /assets/img/bg/3.jpg with parameters array (  'module' => 'assets',  'action' => 'img',  'bg' => '3.jpg',)
+Oct 08 05:08:06 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /assets/img/bg/1.jpg with parameters array (  'module' => 'assets',  'action' => 'img',  'bg' => '1.jpg',)
+Oct 08 05:08:06 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /assets/img/bg/4.jpg with parameters array (  'module' => 'assets',  'action' => 'img',  'bg' => '4.jpg',)
+Oct 08 05:08:06 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /assets/img/bg/2.jpg with parameters array (  'module' => 'assets',  'action' => 'img',  'bg' => '2.jpg',)
+Oct 08 05:08:06 symfony [info] {sfFrontWebController} Action "assets/img" does not exist
+Oct 08 05:08:06 symfony [err] {sfError404Exception} Action "assets/img" does not exist.
+Oct 08 05:08:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Oct 08 05:08:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:08:06 symfony [info] {sfWebDebugLogger} Configuration 4.00 ms (5)
+Oct 08 05:08:06 symfony [info] {sfWebDebugLogger} Factories 27.00 ms (1)
+Oct 08 05:08:06 symfony [info] {sfFrontWebController} Action "assets/img" does not exist
+Oct 08 05:08:06 symfony [err] {sfError404Exception} Action "assets/img" does not exist.
+Oct 08 05:08:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Oct 08 05:08:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:08:06 symfony [info] {sfWebDebugLogger} Configuration 3.00 ms (5)
+Oct 08 05:08:06 symfony [info] {sfWebDebugLogger} Factories 61.00 ms (1)
+Oct 08 05:08:06 symfony [info] {sfFrontWebController} Action "assets/img" does not exist
+Oct 08 05:08:06 symfony [err] {sfError404Exception} Action "assets/img" does not exist.
+Oct 08 05:08:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Oct 08 05:08:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:08:06 symfony [info] {sfWebDebugLogger} Configuration 3.00 ms (5)
+Oct 08 05:08:06 symfony [info] {sfWebDebugLogger} Factories 94.00 ms (1)
+Oct 08 05:08:06 symfony [info] {sfFrontWebController} Action "assets/img" does not exist
+Oct 08 05:08:06 symfony [err] {sfError404Exception} Action "assets/img" does not exist.
+Oct 08 05:08:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Oct 08 05:08:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:08:06 symfony [info] {sfWebDebugLogger} Configuration 5.00 ms (5)
+Oct 08 05:08:06 symfony [info] {sfWebDebugLogger} Factories 124.01 ms (1)
+Oct 08 05:08:11 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'login',  'action' => 'index',)
+Oct 08 05:08:11 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:08:11 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:08:11 symfony [info] {loginActions} Call "loginActions->executeIndex()"
+Oct 08 05:08:11 symfony [info] {loginActions} Change layout to "layout_login"
+Oct 08 05:08:11 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:08:11 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.username AS a__username, a.password AS a__password, a.correo_electronico AS a__correo_electronico, a.habilitado AS a__habilitado, a.telefono_fijo AS a__telefono_fijo, a.telefono_movil AS a__telefono_movil, a.ci_id AS a__ci_id FROM adm_usuarios a WHERE (a.username = ? AND a.password = ?) LIMIT 1 - (prueba, c893bad68927b457dbed39460e6afd62)
+Oct 08 05:08:11 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.adm_usuario_id AS a__adm_usuario_id, a.adm_rol_id AS a__adm_rol_id FROM adm_roles_usuarios a WHERE (a.adm_usuario_id = ?) - (2)
+Oct 08 05:08:11 symfony [info] {sfFrontWebController} Redirect to "http://universidad.bo.org/aplicacion_dev.php/main"
+Oct 08 05:08:11 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Oct 08 05:08:11 symfony [info] {sfWebResponse} Send header "Location: http://universidad.bo.org/aplicacion_dev.php/main"
+Oct 08 05:08:11 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:08:11 symfony [info] {sfWebDebugLogger} Configuration 4.00 ms (8)
+Oct 08 05:08:11 symfony [info] {sfWebDebugLogger} Factories 40.00 ms (1)
+Oct 08 05:08:11 symfony [info] {sfWebDebugLogger} Action "login/index" 101.01 ms (1)
+Oct 08 05:08:11 symfony [info] {sfWebDebugLogger} Database (Doctrine) 10.00 ms (3)
+Oct 08 05:08:11 symfony [info] {sfWebResponse} Send content (120 o)
+Oct 08 05:08:11 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /main with parameters array (  'module' => 'main',  'action' => 'index',)
+Oct 08 05:08:11 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:08:11 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:08:11 symfony [info] {mainActions} Call "mainActions->executeIndex()"
+Oct 08 05:08:11 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/main/templates/indexSuccess.php"
+Oct 08 05:08:11 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 05:08:11 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 05:08:11 symfony [info] {main} Call "inicio->executeMenu()"
+Oct 08 05:08:11 symfony [err] {Doctrine_Query_Exception} Unknown column estado
+Oct 08 05:08:11 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Oct 08 05:08:11 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:08:11 symfony [info] {sfWebDebugLogger} Configuration 4.00 ms (11)
+Oct 08 05:08:11 symfony [info] {sfWebDebugLogger} Factories 24.00 ms (1)
+Oct 08 05:08:11 symfony [info] {sfWebDebugLogger} Action "main/index" 0.00 ms (1)
+Oct 08 05:08:11 symfony [info] {sfWebDebugLogger} View "Success" for "main/index" 117.01 ms (1)
+Oct 08 05:08:11 symfony [info] {sfWebDebugLogger} Component "inicio/menu" 104.01 ms (1)
+Oct 08 05:09:25 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /main with parameters array (  'module' => 'main',  'action' => 'index',)
+Oct 08 05:09:25 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:09:25 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:09:25 symfony [info] {mainActions} Call "mainActions->executeIndex()"
+Oct 08 05:09:25 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/main/templates/indexSuccess.php"
+Oct 08 05:09:25 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 05:09:25 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 05:09:25 symfony [info] {main} Call "inicio->executeMenu()"
+Oct 08 05:09:25 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:09:25 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 0, 1)
+Oct 08 05:09:25 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menu.php"
+Oct 08 05:09:26 symfony [info] {main} Call "inicio->executeSubmenu()"
+Oct 08 05:09:26 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.adm_menu_id = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 1, 2, 1)
+Oct 08 05:09:26 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_submenu.php"
+Oct 08 05:09:26 symfony [info] {main} Call "inicio->executeMenulateral()"
+Oct 08 05:09:26 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 2, 1)
+Oct 08 05:09:26 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menulateral.php"
+Oct 08 05:09:26 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 08 05:09:26 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} Configuration 7.00 ms (15)
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} Factories 24.00 ms (1)
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} Action "main/index" 0.00 ms (1)
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} View "Success" for "main/index" 71.00 ms (1)
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} Component "inicio/menu" 45.00 ms (1)
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} Database (Doctrine) 4.00 ms (4)
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} Partial "inicio/_menu" 8.00 ms (1)
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} Component "inicio/submenu" 2.00 ms (1)
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} Partial "inicio/_submenu" 2.00 ms (1)
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} Component "inicio/menulateral" 3.00 ms (1)
+Oct 08 05:09:26 symfony [info] {sfWebDebugLogger} Partial "inicio/_menulateral" 1.00 ms (1)
+Oct 08 05:09:26 symfony [info] {sfWebResponse} Send content (52927 o)
+Oct 08 05:09:28 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /main/iniciarTramite with parameters array (  'module' => 'main',  'action' => 'iniciarTramite',)
+Oct 08 05:09:28 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:09:28 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:09:28 symfony [info] {mainActions} Call "mainActions->executeIniciarTramite()"
+Oct 08 05:09:28 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:09:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.descripcion AS c__descripcion, c.nro_resolucion AS c__nro_resolucion, c.fecha_resolucion AS c__fecha_resolucion, r.adm_rol_id AS r__adm_rol_id, r.tramite_id AS r__tramite_id, r.habilitado AS r__habilitado FROM cla_tramite c INNER JOIN rel_roles_tramite r ON c.id = r.tramite_id WHERE (r.adm_rol_id = ? AND r.habilitado = ?) - (2, t)
+Oct 08 05:09:28 symfony [info] {sfFrontWebController} Redirect to "http://universidad.bo.org/aplicacion_dev.php/main/proceso/id/1"
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send header "Location: http://universidad.bo.org/aplicacion_dev.php/main/proceso/id/1"
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Configuration 4.00 ms (8)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Factories 27.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Action "main/iniciarTramite" 45.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Database (Doctrine) 1.00 ms (2)
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send content (133 o)
+Oct 08 05:09:28 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /main/proceso/id/1 with parameters array (  'module' => 'main',  'action' => 'proceso',  'id' => '1',)
+Oct 08 05:09:28 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:09:28 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:09:28 symfony [info] {mainActions} Call "mainActions->executeProceso()"
+Oct 08 05:09:28 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:09:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.nro_proceso AS c__nro_proceso, c.cla_tramite_id AS c__cla_tramite_id, c.descripcion AS c__descripcion, c.tiempo AS c__tiempo, c.cla_tipo_proceso_id AS c__cla_tipo_proceso_id, r.adm_rol_id AS r__adm_rol_id, r.tramite_id AS r__tramite_id, r.proceso_id AS r__proceso_id, r.habilitado AS r__habilitado, c2.id AS c2__id, c2.descripcion AS c2__descripcion FROM cla_proceso c LEFT JOIN rel_roles_proceso r ON c.cla_tramite_id = r.tramite_id INNER JOIN cla_tipo_proceso c2 ON c.cla_tipo_proceso_id = c2.id WHERE (r.adm_rol_id = ? AND r.tramite_id = ? AND c2.descripcion = ? AND r.habilitado = ?) - (2, 1, Init, t)
+Oct 08 05:09:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.descripcion AS c__descripcion, c.url AS c__url FROM cla_formulario c WHERE (c.id = ?) LIMIT 1 - (1)
+Oct 08 05:09:28 symfony [info] {sfFrontWebController} Redirect to "http://universidad.bo.org/aplicacion_dev.php/registro"
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send header "Location: http://universidad.bo.org/aplicacion_dev.php/registro"
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Configuration 4.00 ms (8)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Factories 25.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Action "main/proceso" 51.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Database (Doctrine) 3.00 ms (3)
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send content (124 o)
+Oct 08 05:09:28 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /registro with parameters array (  'module' => 'registro',  'action' => 'index',)
+Oct 08 05:09:28 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:09:28 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:09:28 symfony [info] {registroActions} Call "registroActions->executeIndex()"
+Oct 08 05:09:28 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/registro/templates/indexSuccess.php"
+Oct 08 05:09:28 symfony [info] {main} Call "registro->executeRegistroPersona()"
+Oct 08 05:09:28 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/registro/templates/_registroPersona.php"
+Oct 08 05:09:28 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 05:09:28 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 05:09:28 symfony [info] {main} Call "inicio->executeMenu()"
+Oct 08 05:09:28 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:09:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 0, 1)
+Oct 08 05:09:28 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menu.php"
+Oct 08 05:09:28 symfony [info] {main} Call "inicio->executeSubmenu()"
+Oct 08 05:09:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.adm_menu_id = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 1, 2, 1)
+Oct 08 05:09:28 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_submenu.php"
+Oct 08 05:09:28 symfony [info] {main} Call "inicio->executeMenulateral()"
+Oct 08 05:09:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 2, 1)
+Oct 08 05:09:28 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menulateral.php"
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Configuration 10.00 ms (17)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Factories 24.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Action "registro/index" 17.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} View "Success" for "registro/index" 75.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Component "registro/registroPersona" 0.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Partial "registro/_registroPersona" 5.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Component "inicio/menu" 40.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Database (Doctrine) 5.00 ms (4)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Partial "inicio/_menu" 8.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Component "inicio/submenu" 2.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Partial "inicio/_submenu" 2.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Component "inicio/menulateral" 3.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebDebugLogger} Partial "inicio/_menulateral" 1.00 ms (1)
+Oct 08 05:09:28 symfony [info] {sfWebResponse} Send content (62819 o)
+Oct 08 05:27:23 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'login',  'action' => 'index',)
+Oct 08 05:27:23 symfony [info] {myUser} Flag old flash messages ("notice")
+Oct 08 05:27:23 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:27:23 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:27:23 symfony [info] {loginActions} Call "loginActions->executeIndex()"
+Oct 08 05:27:23 symfony [info] {loginActions} Change layout to "layout_login"
+Oct 08 05:27:23 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/login/templates/indexSuccess.php"
+Oct 08 05:27:23 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout_login.php"
+Oct 08 05:27:23 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout_login.php"
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Configuration 7.00 ms (9)
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Factories 31.00 ms (1)
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Action "login/index" 23.00 ms (1)
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} View "Success" for "login/index" 13.00 ms (1)
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send content (37669 o)
+Oct 08 05:27:23 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /assets/img/bg/1.jpg with parameters array (  'module' => 'assets',  'action' => 'img',  'bg' => '1.jpg',)
+Oct 08 05:27:23 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /assets/img/bg/4.jpg with parameters array (  'module' => 'assets',  'action' => 'img',  'bg' => '4.jpg',)
+Oct 08 05:27:23 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /assets/img/bg/3.jpg with parameters array (  'module' => 'assets',  'action' => 'img',  'bg' => '3.jpg',)
+Oct 08 05:27:23 symfony [info] {sfFrontWebController} Action "assets/img" does not exist
+Oct 08 05:27:23 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /assets/img/bg/2.jpg with parameters array (  'module' => 'assets',  'action' => 'img',  'bg' => '2.jpg',)
+Oct 08 05:27:23 symfony [err] {sfError404Exception} Action "assets/img" does not exist.
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Configuration 3.00 ms (5)
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Factories 28.00 ms (1)
+Oct 08 05:27:23 symfony [info] {sfFrontWebController} Action "assets/img" does not exist
+Oct 08 05:27:23 symfony [err] {sfError404Exception} Action "assets/img" does not exist.
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Configuration 4.00 ms (5)
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Factories 54.00 ms (1)
+Oct 08 05:27:23 symfony [info] {sfFrontWebController} Action "assets/img" does not exist
+Oct 08 05:27:23 symfony [err] {sfError404Exception} Action "assets/img" does not exist.
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Configuration 0.00 ms (5)
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Factories 91.00 ms (1)
+Oct 08 05:27:23 symfony [info] {sfFrontWebController} Action "assets/img" does not exist
+Oct 08 05:27:23 symfony [err] {sfError404Exception} Action "assets/img" does not exist.
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Oct 08 05:27:23 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Configuration 3.00 ms (5)
+Oct 08 05:27:23 symfony [info] {sfWebDebugLogger} Factories 123.01 ms (1)
+Oct 08 05:27:32 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'login',  'action' => 'index',)
+Oct 08 05:27:32 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:27:32 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:27:32 symfony [info] {loginActions} Call "loginActions->executeIndex()"
+Oct 08 05:27:32 symfony [info] {loginActions} Change layout to "layout_login"
+Oct 08 05:27:32 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:27:32 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.username AS a__username, a.password AS a__password, a.correo_electronico AS a__correo_electronico, a.habilitado AS a__habilitado, a.telefono_fijo AS a__telefono_fijo, a.telefono_movil AS a__telefono_movil, a.ci_id AS a__ci_id FROM adm_usuarios a WHERE (a.username = ? AND a.password = ?) LIMIT 1 - (prueba, c893bad68927b457dbed39460e6afd62)
+Oct 08 05:27:32 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.adm_usuario_id AS a__adm_usuario_id, a.adm_rol_id AS a__adm_rol_id FROM adm_roles_usuarios a WHERE (a.adm_usuario_id = ?) - (2)
+Oct 08 05:27:32 symfony [info] {sfFrontWebController} Redirect to "http://universidad.bo.org/aplicacion_dev.php/main"
+Oct 08 05:27:32 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Oct 08 05:27:32 symfony [info] {sfWebResponse} Send header "Location: http://universidad.bo.org/aplicacion_dev.php/main"
+Oct 08 05:27:32 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Configuration 4.00 ms (8)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Factories 24.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Action "login/index" 52.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Database (Doctrine) 3.00 ms (3)
+Oct 08 05:27:32 symfony [info] {sfWebResponse} Send content (120 o)
+Oct 08 05:27:32 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /main with parameters array (  'module' => 'main',  'action' => 'index',)
+Oct 08 05:27:32 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:27:32 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:27:32 symfony [info] {mainActions} Call "mainActions->executeIndex()"
+Oct 08 05:27:32 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/main/templates/indexSuccess.php"
+Oct 08 05:27:32 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 05:27:32 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 05:27:32 symfony [info] {main} Call "inicio->executeMenu()"
+Oct 08 05:27:32 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:27:32 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 0, 1)
+Oct 08 05:27:32 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menu.php"
+Oct 08 05:27:32 symfony [info] {main} Call "inicio->executeSubmenu()"
+Oct 08 05:27:32 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.adm_menu_id = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 1, 2, 1)
+Oct 08 05:27:32 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_submenu.php"
+Oct 08 05:27:32 symfony [info] {main} Call "inicio->executeMenulateral()"
+Oct 08 05:27:32 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 2, 1)
+Oct 08 05:27:32 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menulateral.php"
+Oct 08 05:27:32 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 08 05:27:32 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Configuration 8.00 ms (15)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Factories 25.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Action "main/index" 0.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} View "Success" for "main/index" 69.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Component "inicio/menu" 43.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Database (Doctrine) 4.00 ms (4)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Partial "inicio/_menu" 8.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Component "inicio/submenu" 3.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Partial "inicio/_submenu" 1.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Component "inicio/menulateral" 2.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebDebugLogger} Partial "inicio/_menulateral" 1.00 ms (1)
+Oct 08 05:27:32 symfony [info] {sfWebResponse} Send content (52927 o)
+Oct 08 05:27:35 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /main/iniciarTramite with parameters array (  'module' => 'main',  'action' => 'iniciarTramite',)
+Oct 08 05:27:35 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:27:35 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:27:35 symfony [info] {mainActions} Call "mainActions->executeIniciarTramite()"
+Oct 08 05:27:35 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:27:35 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.descripcion AS c__descripcion, c.nro_resolucion AS c__nro_resolucion, c.fecha_resolucion AS c__fecha_resolucion, r.adm_rol_id AS r__adm_rol_id, r.tramite_id AS r__tramite_id, r.habilitado AS r__habilitado FROM cla_tramite c INNER JOIN rel_roles_tramite r ON c.id = r.tramite_id WHERE (r.adm_rol_id = ? AND r.habilitado = ?) - (2, t)
+Oct 08 05:27:35 symfony [info] {sfFrontWebController} Redirect to "http://universidad.bo.org/aplicacion_dev.php/main/proceso/id/1"
+Oct 08 05:27:35 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Oct 08 05:27:35 symfony [info] {sfWebResponse} Send header "Location: http://universidad.bo.org/aplicacion_dev.php/main/proceso/id/1"
+Oct 08 05:27:35 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:27:35 symfony [info] {sfWebDebugLogger} Configuration 7.00 ms (8)
+Oct 08 05:27:35 symfony [info] {sfWebDebugLogger} Factories 22.00 ms (1)
+Oct 08 05:27:35 symfony [info] {sfWebDebugLogger} Action "main/iniciarTramite" 42.00 ms (1)
+Oct 08 05:27:35 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.00 ms (2)
+Oct 08 05:27:35 symfony [info] {sfWebResponse} Send content (133 o)
+Oct 08 05:27:35 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /main/proceso/id/1 with parameters array (  'module' => 'main',  'action' => 'proceso',  'id' => '1',)
+Oct 08 05:27:35 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:27:35 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:27:35 symfony [info] {mainActions} Call "mainActions->executeProceso()"
+Oct 08 05:27:35 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:27:35 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.nro_proceso AS c__nro_proceso, c.cla_tramite_id AS c__cla_tramite_id, c.descripcion AS c__descripcion, c.tiempo AS c__tiempo, c.cla_tipo_proceso_id AS c__cla_tipo_proceso_id, r.adm_rol_id AS r__adm_rol_id, r.tramite_id AS r__tramite_id, r.proceso_id AS r__proceso_id, r.habilitado AS r__habilitado, c2.id AS c2__id, c2.descripcion AS c2__descripcion FROM cla_proceso c LEFT JOIN rel_roles_proceso r ON c.cla_tramite_id = r.tramite_id INNER JOIN cla_tipo_proceso c2 ON c.cla_tipo_proceso_id = c2.id WHERE (r.adm_rol_id = ? AND r.tramite_id = ? AND c2.descripcion = ? AND r.habilitado = ?) - (2, 1, Init, t)
+Oct 08 05:27:35 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.descripcion AS c__descripcion, c.url AS c__url FROM cla_formulario c WHERE (c.id = ?) LIMIT 1 - (1)
+Oct 08 05:27:35 symfony [info] {sfFrontWebController} Redirect to "http://universidad.bo.org/aplicacion_dev.php/registro"
+Oct 08 05:27:35 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Oct 08 05:27:35 symfony [info] {sfWebResponse} Send header "Location: http://universidad.bo.org/aplicacion_dev.php/registro"
+Oct 08 05:27:35 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:27:35 symfony [info] {sfWebDebugLogger} Configuration 5.00 ms (8)
+Oct 08 05:27:35 symfony [info] {sfWebDebugLogger} Factories 22.00 ms (1)
+Oct 08 05:27:35 symfony [info] {sfWebDebugLogger} Action "main/proceso" 47.00 ms (1)
+Oct 08 05:27:35 symfony [info] {sfWebDebugLogger} Database (Doctrine) 4.00 ms (3)
+Oct 08 05:27:35 symfony [info] {sfWebResponse} Send content (124 o)
+Oct 08 05:27:35 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /registro with parameters array (  'module' => 'registro',  'action' => 'index',)
+Oct 08 05:27:36 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:27:36 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:27:36 symfony [info] {registroActions} Call "registroActions->executeIndex()"
+Oct 08 05:27:36 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/registro/templates/indexSuccess.php"
+Oct 08 05:27:36 symfony [info] {main} Call "registro->executeRegistroPersona()"
+Oct 08 05:27:36 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/registro/templates/_registroPersona.php"
+Oct 08 05:27:36 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 05:27:36 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 05:27:36 symfony [info] {main} Call "inicio->executeMenu()"
+Oct 08 05:27:36 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:27:36 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 0, 1)
+Oct 08 05:27:36 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menu.php"
+Oct 08 05:27:36 symfony [info] {main} Call "inicio->executeSubmenu()"
+Oct 08 05:27:36 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.adm_menu_id = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 1, 2, 1)
+Oct 08 05:27:36 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_submenu.php"
+Oct 08 05:27:36 symfony [info] {main} Call "inicio->executeMenulateral()"
+Oct 08 05:27:36 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 2, 1)
+Oct 08 05:27:36 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menulateral.php"
+Oct 08 05:27:36 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 08 05:27:36 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Configuration 13.00 ms (17)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Factories 23.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Action "registro/index" 18.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} View "Success" for "registro/index" 73.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Component "registro/registroPersona" 2.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Partial "registro/_registroPersona" 4.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Component "inicio/menu" 36.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Database (Doctrine) 3.00 ms (4)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Partial "inicio/_menu" 8.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Component "inicio/submenu" 3.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Partial "inicio/_submenu" 1.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Component "inicio/menulateral" 3.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebDebugLogger} Partial "inicio/_menulateral" 1.00 ms (1)
+Oct 08 05:27:36 symfony [info] {sfWebResponse} Send content (63673 o)
+Oct 08 05:48:55 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /main/iniciarTramite with parameters array (  'module' => 'main',  'action' => 'iniciarTramite',)
+Oct 08 05:48:55 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:48:55 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:48:55 symfony [info] {mainActions} Call "mainActions->executeIniciarTramite()"
+Oct 08 05:48:55 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:48:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.descripcion AS c__descripcion, c.nro_resolucion AS c__nro_resolucion, c.fecha_resolucion AS c__fecha_resolucion, r.adm_rol_id AS r__adm_rol_id, r.tramite_id AS r__tramite_id, r.habilitado AS r__habilitado FROM cla_tramite c INNER JOIN rel_roles_tramite r ON c.id = r.tramite_id WHERE (r.adm_rol_id = ? AND r.habilitado = ?) - (2, t)
+Oct 08 05:48:55 symfony [info] {sfFrontWebController} Redirect to "http://universidad.bo.org/aplicacion_dev.php/main/proceso/id/1"
+Oct 08 05:48:55 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Oct 08 05:48:55 symfony [info] {sfWebResponse} Send header "Location: http://universidad.bo.org/aplicacion_dev.php/main/proceso/id/1"
+Oct 08 05:48:55 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Configuration 7.00 ms (8)
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Factories 24.00 ms (1)
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Action "main/iniciarTramite" 44.00 ms (1)
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.00 ms (2)
+Oct 08 05:48:55 symfony [info] {sfWebResponse} Send content (133 o)
+Oct 08 05:48:55 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /main/proceso/id/1 with parameters array (  'module' => 'main',  'action' => 'proceso',  'id' => '1',)
+Oct 08 05:48:55 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:48:55 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:48:55 symfony [info] {mainActions} Call "mainActions->executeProceso()"
+Oct 08 05:48:55 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 05:48:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.nro_proceso AS c__nro_proceso, c.cla_tramite_id AS c__cla_tramite_id, c.descripcion AS c__descripcion, c.tiempo AS c__tiempo, c.cla_tipo_proceso_id AS c__cla_tipo_proceso_id, r.adm_rol_id AS r__adm_rol_id, r.tramite_id AS r__tramite_id, r.proceso_id AS r__proceso_id, r.habilitado AS r__habilitado, c2.id AS c2__id, c2.descripcion AS c2__descripcion FROM cla_proceso c LEFT JOIN rel_roles_proceso r ON c.cla_tramite_id = r.tramite_id INNER JOIN cla_tipo_proceso c2 ON c.cla_tipo_proceso_id = c2.id WHERE (r.adm_rol_id = ? AND r.tramite_id = ? AND c2.descripcion = ? AND r.habilitado = ?) - (2, 1, Init, t)
+Oct 08 05:48:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.descripcion AS c__descripcion, c.url AS c__url FROM cla_formulario c WHERE (c.id = ?) LIMIT 1 - (1)
+Oct 08 05:48:55 symfony [info] {sfFrontWebController} Redirect to "http://universidad.bo.org/aplicacion_dev.php/registro"
+Oct 08 05:48:55 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Oct 08 05:48:55 symfony [info] {sfWebResponse} Send header "Location: http://universidad.bo.org/aplicacion_dev.php/registro"
+Oct 08 05:48:55 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Configuration 7.00 ms (8)
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Factories 45.00 ms (1)
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Action "main/proceso" 48.00 ms (1)
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Database (Doctrine) 4.00 ms (3)
+Oct 08 05:48:55 symfony [info] {sfWebResponse} Send content (124 o)
+Oct 08 05:48:55 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /registro with parameters array (  'module' => 'registro',  'action' => 'index',)
+Oct 08 05:48:55 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:48:55 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:48:55 symfony [info] {registroActions} Call "registroActions->executeIndex()"
+Oct 08 05:48:55 symfony [err] {sfException} The "DatPersonasForm" form only accepts a "DatPersonas" object.
+Oct 08 05:48:55 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Oct 08 05:48:55 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Configuration 3.00 ms (8)
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Factories 23.00 ms (1)
+Oct 08 05:48:55 symfony [info] {sfWebDebugLogger} Action "registro/index" 18.00 ms (1)
+Oct 08 05:54:38 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /registro with parameters array (  'module' => 'registro',  'action' => 'index',)
+Oct 08 05:54:38 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 05:54:38 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 05:54:38 symfony [info] {registroActions} Call "registroActions->executeIndex()"
+Oct 08 05:54:38 symfony [err] {sfException} Call to undefined method DatPersonasForm::getUser.
+Oct 08 05:54:38 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Oct 08 05:54:38 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 05:54:38 symfony [info] {sfWebDebugLogger} Configuration 7.00 ms (8)
+Oct 08 05:54:38 symfony [info] {sfWebDebugLogger} Factories 25.00 ms (1)
+Oct 08 05:54:38 symfony [info] {sfWebDebugLogger} Action "registro/index" 40.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /registro with parameters array (  'module' => 'registro',  'action' => 'index',)
+Oct 08 06:00:43 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 06:00:43 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 06:00:43 symfony [info] {registroActions} Call "registroActions->executeIndex()"
+Oct 08 06:00:43 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/registro/templates/indexSuccess.php"
+Oct 08 06:00:43 symfony [info] {main} Call "registro->executeRegistroPersona()"
+Oct 08 06:00:43 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/registro/templates/_registroPersona.php"
+Oct 08 06:00:43 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 06:00:43 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 06:00:43 symfony [info] {main} Call "inicio->executeMenu()"
+Oct 08 06:00:43 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 06:00:43 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 0, 1)
+Oct 08 06:00:43 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menu.php"
+Oct 08 06:00:43 symfony [info] {main} Call "inicio->executeSubmenu()"
+Oct 08 06:00:43 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.adm_menu_id = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 1, 2, 1)
+Oct 08 06:00:43 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_submenu.php"
+Oct 08 06:00:43 symfony [info] {main} Call "inicio->executeMenulateral()"
+Oct 08 06:00:43 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 2, 1)
+Oct 08 06:00:43 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menulateral.php"
+Oct 08 06:00:43 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 08 06:00:43 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Configuration 11.00 ms (17)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Factories 25.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Action "registro/index" 17.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} View "Success" for "registro/index" 91.01 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Component "registro/registroPersona" 1.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Partial "registro/_registroPersona" 4.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Component "inicio/menu" 37.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Database (Doctrine) 4.00 ms (4)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Partial "inicio/_menu" 26.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Component "inicio/submenu" 21.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Partial "inicio/_submenu" 1.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Component "inicio/menulateral" 2.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebDebugLogger} Partial "inicio/_menulateral" 2.00 ms (1)
+Oct 08 06:00:43 symfony [info] {sfWebResponse} Send content (64130 o)
+Oct 08 06:07:02 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /main/iniciarTramite with parameters array (  'module' => 'main',  'action' => 'iniciarTramite',)
+Oct 08 06:07:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 06:07:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 06:07:02 symfony [info] {mainActions} Call "mainActions->executeIniciarTramite()"
+Oct 08 06:07:02 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 06:07:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.descripcion AS c__descripcion, c.nro_resolucion AS c__nro_resolucion, c.fecha_resolucion AS c__fecha_resolucion, r.adm_rol_id AS r__adm_rol_id, r.tramite_id AS r__tramite_id, r.habilitado AS r__habilitado FROM cla_tramite c INNER JOIN rel_roles_tramite r ON c.id = r.tramite_id WHERE (r.adm_rol_id = ? AND r.habilitado = ?) - (2, t)
+Oct 08 06:07:02 symfony [info] {sfFrontWebController} Redirect to "http://universidad.bo.org/aplicacion_dev.php/main/proceso/id/1"
+Oct 08 06:07:02 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Oct 08 06:07:02 symfony [info] {sfWebResponse} Send header "Location: http://universidad.bo.org/aplicacion_dev.php/main/proceso/id/1"
+Oct 08 06:07:02 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 06:07:02 symfony [info] {sfWebDebugLogger} Configuration 5.00 ms (8)
+Oct 08 06:07:02 symfony [info] {sfWebDebugLogger} Factories 24.00 ms (1)
+Oct 08 06:07:02 symfony [info] {sfWebDebugLogger} Action "main/iniciarTramite" 44.00 ms (1)
+Oct 08 06:07:02 symfony [info] {sfWebDebugLogger} Database (Doctrine) 2.00 ms (2)
+Oct 08 06:07:02 symfony [info] {sfWebResponse} Send content (133 o)
+Oct 08 06:07:02 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /main/proceso/id/1 with parameters array (  'module' => 'main',  'action' => 'proceso',  'id' => '1',)
+Oct 08 06:07:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 06:07:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 06:07:02 symfony [info] {mainActions} Call "mainActions->executeProceso()"
+Oct 08 06:07:02 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 06:07:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.nro_proceso AS c__nro_proceso, c.cla_tramite_id AS c__cla_tramite_id, c.descripcion AS c__descripcion, c.tiempo AS c__tiempo, c.cla_tipo_proceso_id AS c__cla_tipo_proceso_id, r.adm_rol_id AS r__adm_rol_id, r.tramite_id AS r__tramite_id, r.proceso_id AS r__proceso_id, r.habilitado AS r__habilitado, c2.id AS c2__id, c2.descripcion AS c2__descripcion FROM cla_proceso c LEFT JOIN rel_roles_proceso r ON c.cla_tramite_id = r.tramite_id INNER JOIN cla_tipo_proceso c2 ON c.cla_tipo_proceso_id = c2.id WHERE (r.adm_rol_id = ? AND r.tramite_id = ? AND c2.descripcion = ? AND r.habilitado = ?) - (2, 1, Init, t)
+Oct 08 06:07:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.descripcion AS c__descripcion, c.url AS c__url FROM cla_formulario c WHERE (c.id = ?) LIMIT 1 - (1)
+Oct 08 06:07:02 symfony [info] {sfFrontWebController} Redirect to "http://universidad.bo.org/aplicacion_dev.php/registro"
+Oct 08 06:07:02 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Oct 08 06:07:02 symfony [info] {sfWebResponse} Send header "Location: http://universidad.bo.org/aplicacion_dev.php/registro"
+Oct 08 06:07:02 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 06:07:02 symfony [info] {sfWebDebugLogger} Configuration 4.00 ms (8)
+Oct 08 06:07:02 symfony [info] {sfWebDebugLogger} Factories 22.00 ms (1)
+Oct 08 06:07:02 symfony [info] {sfWebDebugLogger} Action "main/proceso" 54.00 ms (1)
+Oct 08 06:07:02 symfony [info] {sfWebDebugLogger} Database (Doctrine) 4.00 ms (3)
+Oct 08 06:07:02 symfony [info] {sfWebResponse} Send content (124 o)
+Oct 08 06:07:03 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /registro with parameters array (  'module' => 'registro',  'action' => 'index',)
+Oct 08 06:07:03 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 08 06:07:03 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 08 06:07:03 symfony [info] {registroActions} Call "registroActions->executeIndex()"
+Oct 08 06:07:03 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/registro/templates/indexSuccess.php"
+Oct 08 06:07:03 symfony [info] {main} Call "registro->executeRegistroPersona()"
+Oct 08 06:07:03 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/registro/templates/_registroPersona.php"
+Oct 08 06:07:03 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 06:07:03 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 08 06:07:03 symfony [info] {main} Call "inicio->executeMenu()"
+Oct 08 06:07:03 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 08 06:07:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 0, 1)
+Oct 08 06:07:03 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menu.php"
+Oct 08 06:07:03 symfony [info] {main} Call "inicio->executeSubmenu()"
+Oct 08 06:07:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.adm_menu_id = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 1, 2, 1)
+Oct 08 06:07:03 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_submenu.php"
+Oct 08 06:07:03 symfony [info] {main} Call "inicio->executeMenulateral()"
+Oct 08 06:07:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 2, 1)
+Oct 08 06:07:03 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menulateral.php"
+Oct 08 06:07:03 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 08 06:07:03 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Configuration 9.00 ms (17)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Factories 22.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Action "registro/index" 17.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} View "Success" for "registro/index" 87.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Component "registro/registroPersona" 1.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Partial "registro/_registroPersona" 4.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Component "inicio/menu" 53.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Database (Doctrine) 4.00 ms (4)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Partial "inicio/_menu" 8.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Component "inicio/submenu" 3.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Partial "inicio/_submenu" 1.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Component "inicio/menulateral" 2.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebDebugLogger} Partial "inicio/_menulateral" 1.00 ms (1)
+Oct 08 06:07:03 symfony [info] {sfWebResponse} Send content (64104 o)

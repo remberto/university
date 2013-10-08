@@ -15,19 +15,17 @@ abstract class BaseRelRolesProcesoForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'         => new sfWidgetFormInputHidden(),
-      'adm_rol_id' => new sfWidgetFormInputText(),
-      'tramite_id' => new sfWidgetFormInputText(),
-      'proceso_id' => new sfWidgetFormInputText(),
-      'habilitado' => new sfWidgetFormInputText(),
+      'adm_rol_id' => new sfWidgetFormInputHidden(),
+      'tramite_id' => new sfWidgetFormInputHidden(),
+      'proceso_id' => new sfWidgetFormInputHidden(),
+      'habilitado' => new sfWidgetFormInputCheckbox(),
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'adm_rol_id' => new sfValidatorInteger(array('required' => false)),
-      'tramite_id' => new sfValidatorInteger(array('required' => false)),
-      'proceso_id' => new sfValidatorInteger(array('required' => false)),
-      'habilitado' => new sfValidatorInteger(array('required' => false)),
+      'adm_rol_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('adm_rol_id')), 'empty_value' => $this->getObject()->get('adm_rol_id'), 'required' => false)),
+      'tramite_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('tramite_id')), 'empty_value' => $this->getObject()->get('tramite_id'), 'required' => false)),
+      'proceso_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('proceso_id')), 'empty_value' => $this->getObject()->get('proceso_id'), 'required' => false)),
+      'habilitado' => new sfValidatorBoolean(),
     ));
 
     $this->widgetSchema->setNameFormat('rel_roles_proceso[%s]');

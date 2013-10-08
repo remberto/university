@@ -14,21 +14,30 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @property string $nombre2
  * @property timestamp $fecha_nacimiento
  * @property integer $genero
+ * @property integer $adm_usuario_id
+ * @property timestamp $fecha_registro
+ * @property Doctrine_Collection $AdmUsuarios
  * 
- * @method string      getCi()               Returns the current record's "ci" value
- * @method string      getPaterno()          Returns the current record's "paterno" value
- * @method string      getMaterno()          Returns the current record's "materno" value
- * @method string      getNombre1()          Returns the current record's "nombre1" value
- * @method string      getNombre2()          Returns the current record's "nombre2" value
- * @method timestamp   getFechaNacimiento()  Returns the current record's "fecha_nacimiento" value
- * @method integer     getGenero()           Returns the current record's "genero" value
- * @method DatPersonas setCi()               Sets the current record's "ci" value
- * @method DatPersonas setPaterno()          Sets the current record's "paterno" value
- * @method DatPersonas setMaterno()          Sets the current record's "materno" value
- * @method DatPersonas setNombre1()          Sets the current record's "nombre1" value
- * @method DatPersonas setNombre2()          Sets the current record's "nombre2" value
- * @method DatPersonas setFechaNacimiento()  Sets the current record's "fecha_nacimiento" value
- * @method DatPersonas setGenero()           Sets the current record's "genero" value
+ * @method string              getCi()               Returns the current record's "ci" value
+ * @method string              getPaterno()          Returns the current record's "paterno" value
+ * @method string              getMaterno()          Returns the current record's "materno" value
+ * @method string              getNombre1()          Returns the current record's "nombre1" value
+ * @method string              getNombre2()          Returns the current record's "nombre2" value
+ * @method timestamp           getFechaNacimiento()  Returns the current record's "fecha_nacimiento" value
+ * @method integer             getGenero()           Returns the current record's "genero" value
+ * @method integer             getAdmUsuarioId()     Returns the current record's "adm_usuario_id" value
+ * @method timestamp           getFechaRegistro()    Returns the current record's "fecha_registro" value
+ * @method Doctrine_Collection getAdmUsuarios()      Returns the current record's "AdmUsuarios" collection
+ * @method DatPersonas         setCi()               Sets the current record's "ci" value
+ * @method DatPersonas         setPaterno()          Sets the current record's "paterno" value
+ * @method DatPersonas         setMaterno()          Sets the current record's "materno" value
+ * @method DatPersonas         setNombre1()          Sets the current record's "nombre1" value
+ * @method DatPersonas         setNombre2()          Sets the current record's "nombre2" value
+ * @method DatPersonas         setFechaNacimiento()  Sets the current record's "fecha_nacimiento" value
+ * @method DatPersonas         setGenero()           Sets the current record's "genero" value
+ * @method DatPersonas         setAdmUsuarioId()     Sets the current record's "adm_usuario_id" value
+ * @method DatPersonas         setFechaRegistro()    Sets the current record's "fecha_registro" value
+ * @method DatPersonas         setAdmUsuarios()      Sets the current record's "AdmUsuarios" collection
  * 
  * @package    universidad
  * @subpackage model
@@ -95,11 +104,29 @@ abstract class BaseDatPersonas extends sfDoctrineRecord
              'primary' => false,
              'length' => 2,
              ));
+        $this->hasColumn('adm_usuario_id', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('fecha_registro', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => 25,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasMany('AdmUsuarios', array(
+             'local' => 'ci',
+             'foreign' => 'ci_id'));
     }
 }

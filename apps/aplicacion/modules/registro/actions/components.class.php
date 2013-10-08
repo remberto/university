@@ -18,6 +18,7 @@ class registroComponents extends sfComponents
   public function executeRegistroPersona()
   {
     $this->formPersona = new DatPersonasForm();
+    $this->formPersona->setWidget('adm_usuario_id', new sfWidgetFormInputHidden(array('default'=>$this->getUser()->getAttribute('USUARIO_ID'))));
   }
   
 }

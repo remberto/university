@@ -20,12 +20,6 @@ AdmMenus:
       unsigned: false
       notnull: true
       primary: false
-    estado:
-      type: boolean(1)
-      fixed: false
-      unsigned: false
-      notnull: true
-      primary: false
     link:
       type: string()
       fixed: false
@@ -56,11 +50,22 @@ AdmMenus:
       unsigned: false
       notnull: false
       primary: false
+    habilitado:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      notnull: true
+      default: '1'
+      primary: false
   relations:
     AdmMenus:
       local: id
       foreign: adm_menu_id
       type: many
+    ClaHabilitado:
+      local: habilitado
+      foreign: id
+      type: one
     AdmRolesMenus:
       local: id
       foreign: adm_menu_id
@@ -108,6 +113,12 @@ AdmRolesMenus:
       fixed: false
       unsigned: false
       primary: true
+    habilitado:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
   relations:
     AdmMenus:
       local: adm_menu_id
@@ -115,6 +126,10 @@ AdmRolesMenus:
       type: one
     AdmRoles:
       local: adm_rol_id
+      foreign: id
+      type: one
+    ClaHabilitado:
+      local: habilitado
       foreign: id
       type: one
 AdmRolesUsuarios:
@@ -168,13 +183,40 @@ AdmUsuarios:
       unsigned: false
       notnull: true
       primary: false
-    estado:
-      type: boolean(1)
+    habilitado:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      notnull: true
+      default: '1'
+      primary: false
+    telefono_fijo:
+      type: string()
       fixed: false
       unsigned: false
       notnull: false
       primary: false
+    telefono_movil:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    ci_id:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
   relations:
+    ClaHabilitado:
+      local: habilitado
+      foreign: id
+      type: one
+    DatPersonas:
+      local: ci_id
+      foreign: ci
+      type: one
     AdmRolesUsuarios:
       local: id
       foreign: adm_usuario_id
@@ -201,6 +243,34 @@ ClaFormulario:
       unsigned: false
       notnull: true
       primary: false
+ClaHabilitado:
+  connection: doctrine
+  tableName: cla_habilitado
+  columns:
+    id:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      primary: true
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    AdmRolesMenus:
+      local: id
+      foreign: habilitado
+      type: many
+    AdmUsuarios:
+      local: id
+      foreign: habilitado
+      type: many
+    AdmMenus:
+      local: id
+      foreign: habilitado
+      type: many
 ClaProceso:
   connection: doctrine
   tableName: cla_proceso
@@ -377,6 +447,23 @@ DatPersonas:
       unsigned: false
       notnull: true
       primary: false
+    adm_usuario_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    fecha_registro:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+  relations:
+    AdmUsuarios:
+      local: ci
+      foreign: ci_id
+      type: many
 RelRolesProceso:
   connection: doctrine
   tableName: rel_roles_proceso
