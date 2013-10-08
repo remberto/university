@@ -1,0 +1,944 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.2.4
+-- Dumped by pg_dump version 9.2.4
+-- Started on 2013-10-05 23:08:10
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 188 (class 3079 OID 11727)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 2054 (class 0 OID 0)
+-- Dependencies: 188
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 171 (class 1259 OID 36190)
+-- Name: adm_menus; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE adm_menus (
+    id integer NOT NULL,
+    descripcion character varying(50) NOT NULL,
+    abreviatura character varying(7) NOT NULL,
+    estado boolean NOT NULL,
+    link character varying(50),
+    tipo_menu smallint NOT NULL,
+    orden smallint NOT NULL,
+    adm_menu_id integer,
+    icon character varying(30)
+);
+
+
+ALTER TABLE public.adm_menus OWNER TO postgres;
+
+--
+-- TOC entry 170 (class 1259 OID 36188)
+-- Name: adm_menus_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE adm_menus_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.adm_menus_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2055 (class 0 OID 0)
+-- Dependencies: 170
+-- Name: adm_menus_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE adm_menus_id_seq OWNED BY adm_menus.id;
+
+
+--
+-- TOC entry 173 (class 1259 OID 36319)
+-- Name: adm_roles; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE adm_roles (
+    id integer NOT NULL,
+    descripcion character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.adm_roles OWNER TO postgres;
+
+--
+-- TOC entry 172 (class 1259 OID 36317)
+-- Name: adm_roles_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE adm_roles_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.adm_roles_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2056 (class 0 OID 0)
+-- Dependencies: 172
+-- Name: adm_roles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE adm_roles_id_seq OWNED BY adm_roles.id;
+
+
+--
+-- TOC entry 174 (class 1259 OID 36325)
+-- Name: adm_roles_menus; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE adm_roles_menus (
+    adm_rol_id integer NOT NULL,
+    adm_menu_id integer NOT NULL
+);
+
+
+ALTER TABLE public.adm_roles_menus OWNER TO postgres;
+
+--
+-- TOC entry 175 (class 1259 OID 36340)
+-- Name: adm_roles_usuarios; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE adm_roles_usuarios (
+    adm_usuario_id integer NOT NULL,
+    adm_rol_id integer NOT NULL
+);
+
+
+ALTER TABLE public.adm_roles_usuarios OWNER TO postgres;
+
+--
+-- TOC entry 169 (class 1259 OID 27974)
+-- Name: adm_usuarios; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE adm_usuarios (
+    id integer NOT NULL,
+    username character varying(25) NOT NULL,
+    password character varying(32) NOT NULL,
+    correo_electronico character varying(50) NOT NULL,
+    estado boolean
+);
+
+
+ALTER TABLE public.adm_usuarios OWNER TO postgres;
+
+--
+-- TOC entry 168 (class 1259 OID 27972)
+-- Name: adm_usuarios_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE adm_usuarios_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.adm_usuarios_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2057 (class 0 OID 0)
+-- Dependencies: 168
+-- Name: adm_usuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE adm_usuarios_id_seq OWNED BY adm_usuarios.id;
+
+
+--
+-- TOC entry 177 (class 1259 OID 36363)
+-- Name: cla_formulario; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cla_formulario (
+    id integer NOT NULL,
+    descripcion character varying(50) NOT NULL,
+    url character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.cla_formulario OWNER TO postgres;
+
+--
+-- TOC entry 176 (class 1259 OID 36361)
+-- Name: cla_formulario_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE cla_formulario_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.cla_formulario_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2058 (class 0 OID 0)
+-- Dependencies: 176
+-- Name: cla_formulario_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE cla_formulario_id_seq OWNED BY cla_formulario.id;
+
+
+--
+-- TOC entry 185 (class 1259 OID 36461)
+-- Name: cla_proceso; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cla_proceso (
+    id integer NOT NULL,
+    nro_proceso integer,
+    cla_tramite_id integer NOT NULL,
+    descripcion character varying(50),
+    tiempo integer,
+    cla_tipo_proceso_id integer
+);
+
+
+ALTER TABLE public.cla_proceso OWNER TO postgres;
+
+--
+-- TOC entry 186 (class 1259 OID 36480)
+-- Name: cla_proceso_formularios; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cla_proceso_formularios (
+    cla_proceso_id integer NOT NULL,
+    cla_tramite_id integer NOT NULL,
+    cla_formulario_id integer NOT NULL,
+    orden integer NOT NULL
+);
+
+
+ALTER TABLE public.cla_proceso_formularios OWNER TO postgres;
+
+--
+-- TOC entry 184 (class 1259 OID 36459)
+-- Name: cla_proceso_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE cla_proceso_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.cla_proceso_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2059 (class 0 OID 0)
+-- Dependencies: 184
+-- Name: cla_proceso_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE cla_proceso_id_seq OWNED BY cla_proceso.id;
+
+
+--
+-- TOC entry 182 (class 1259 OID 36408)
+-- Name: cla_tipo_proceso; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cla_tipo_proceso (
+    id integer NOT NULL,
+    descripcion character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.cla_tipo_proceso OWNER TO postgres;
+
+--
+-- TOC entry 181 (class 1259 OID 36406)
+-- Name: cla_tipo_proceso_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE cla_tipo_proceso_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.cla_tipo_proceso_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2060 (class 0 OID 0)
+-- Dependencies: 181
+-- Name: cla_tipo_proceso_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE cla_tipo_proceso_id_seq OWNED BY cla_tipo_proceso.id;
+
+
+--
+-- TOC entry 180 (class 1259 OID 36386)
+-- Name: cla_tramite; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cla_tramite (
+    id integer NOT NULL,
+    descripcion character varying(50),
+    nro_resolucion character varying(10),
+    fecha_resolucion timestamp without time zone
+);
+
+
+ALTER TABLE public.cla_tramite OWNER TO postgres;
+
+--
+-- TOC entry 179 (class 1259 OID 36384)
+-- Name: cla_tramite_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE cla_tramite_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.cla_tramite_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2061 (class 0 OID 0)
+-- Dependencies: 179
+-- Name: cla_tramite_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE cla_tramite_id_seq OWNED BY cla_tramite.id;
+
+
+--
+-- TOC entry 178 (class 1259 OID 36369)
+-- Name: dat_personas; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE dat_personas (
+    ci character varying(12) NOT NULL,
+    paterno character varying(50),
+    materno character varying(50),
+    nombre1 character varying(50) NOT NULL,
+    nombre2 character varying(50),
+    fecha_nacimiento timestamp without time zone NOT NULL,
+    genero smallint NOT NULL
+);
+
+
+ALTER TABLE public.dat_personas OWNER TO postgres;
+
+--
+-- TOC entry 187 (class 1259 OID 36518)
+-- Name: rel_roles_proceso; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE rel_roles_proceso (
+    adm_rol_id integer NOT NULL,
+    tramite_id integer NOT NULL,
+    proceso_id integer NOT NULL,
+    habilitado boolean NOT NULL
+);
+
+
+ALTER TABLE public.rel_roles_proceso OWNER TO postgres;
+
+--
+-- TOC entry 183 (class 1259 OID 36444)
+-- Name: rel_roles_tramite; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE rel_roles_tramite (
+    adm_rol_id integer NOT NULL,
+    tramite_id integer NOT NULL,
+    habilitado boolean NOT NULL
+);
+
+
+ALTER TABLE public.rel_roles_tramite OWNER TO postgres;
+
+--
+-- TOC entry 1977 (class 2604 OID 36193)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY adm_menus ALTER COLUMN id SET DEFAULT nextval('adm_menus_id_seq'::regclass);
+
+
+--
+-- TOC entry 1978 (class 2604 OID 36322)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY adm_roles ALTER COLUMN id SET DEFAULT nextval('adm_roles_id_seq'::regclass);
+
+
+--
+-- TOC entry 1976 (class 2604 OID 27977)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY adm_usuarios ALTER COLUMN id SET DEFAULT nextval('adm_usuarios_id_seq'::regclass);
+
+
+--
+-- TOC entry 1979 (class 2604 OID 36366)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cla_formulario ALTER COLUMN id SET DEFAULT nextval('cla_formulario_id_seq'::regclass);
+
+
+--
+-- TOC entry 1982 (class 2604 OID 36464)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cla_proceso ALTER COLUMN id SET DEFAULT nextval('cla_proceso_id_seq'::regclass);
+
+
+--
+-- TOC entry 1981 (class 2604 OID 36411)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cla_tipo_proceso ALTER COLUMN id SET DEFAULT nextval('cla_tipo_proceso_id_seq'::regclass);
+
+
+--
+-- TOC entry 1980 (class 2604 OID 36389)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cla_tramite ALTER COLUMN id SET DEFAULT nextval('cla_tramite_id_seq'::regclass);
+
+
+--
+-- TOC entry 2030 (class 0 OID 36190)
+-- Dependencies: 171
+-- Data for Name: adm_menus; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY adm_menus (id, descripcion, abreviatura, estado, link, tipo_menu, orden, adm_menu_id, icon) FROM stdin;
+1	main	MAIN	f		0	0	1	\N
+2	Registro	REG	t		0	1	1	\N
+4	Administracion	ADM	t		0	0	1	\N
+3	Formulario Habilitacion	REG	t	main/proceso	1	1	2	\N
+6	Bandeja de Entrada	INBOX	t	main/inbox	2	2	1	\N
+5	Iniciar Tramite	INI	t	main/iniciarTramite	2	1	1	\N
+\.
+
+
+--
+-- TOC entry 2062 (class 0 OID 0)
+-- Dependencies: 170
+-- Name: adm_menus_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('adm_menus_id_seq', 4, true);
+
+
+--
+-- TOC entry 2032 (class 0 OID 36319)
+-- Dependencies: 173
+-- Data for Name: adm_roles; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY adm_roles (id, descripcion) FROM stdin;
+1	ADMINISTRADOR
+2	TRANSCRIPTOR
+\.
+
+
+--
+-- TOC entry 2063 (class 0 OID 0)
+-- Dependencies: 172
+-- Name: adm_roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('adm_roles_id_seq', 2, true);
+
+
+--
+-- TOC entry 2033 (class 0 OID 36325)
+-- Dependencies: 174
+-- Data for Name: adm_roles_menus; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY adm_roles_menus (adm_rol_id, adm_menu_id) FROM stdin;
+2	3
+2	2
+2	5
+2	6
+\.
+
+
+--
+-- TOC entry 2034 (class 0 OID 36340)
+-- Dependencies: 175
+-- Data for Name: adm_roles_usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY adm_roles_usuarios (adm_usuario_id, adm_rol_id) FROM stdin;
+2	2
+\.
+
+
+--
+-- TOC entry 2028 (class 0 OID 27974)
+-- Dependencies: 169
+-- Data for Name: adm_usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY adm_usuarios (id, username, password, correo_electronico, estado) FROM stdin;
+1	rquispeg	5020de8ddf062a2f4305b8cb58b69f47	rembertoy2k3@gmail.com	t
+2	prueba	c893bad68927b457dbed39460e6afd62		t
+\.
+
+
+--
+-- TOC entry 2064 (class 0 OID 0)
+-- Dependencies: 168
+-- Name: adm_usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('adm_usuarios_id_seq', 2, true);
+
+
+--
+-- TOC entry 2036 (class 0 OID 36363)
+-- Dependencies: 177
+-- Data for Name: cla_formulario; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cla_formulario (id, descripcion, url) FROM stdin;
+1	Registro	registro/index
+\.
+
+
+--
+-- TOC entry 2065 (class 0 OID 0)
+-- Dependencies: 176
+-- Name: cla_formulario_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('cla_formulario_id_seq', 1, true);
+
+
+--
+-- TOC entry 2044 (class 0 OID 36461)
+-- Dependencies: 185
+-- Data for Name: cla_proceso; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cla_proceso (id, nro_proceso, cla_tramite_id, descripcion, tiempo, cla_tipo_proceso_id) FROM stdin;
+1	1	1	Iniciar	1	1
+\.
+
+
+--
+-- TOC entry 2045 (class 0 OID 36480)
+-- Dependencies: 186
+-- Data for Name: cla_proceso_formularios; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cla_proceso_formularios (cla_proceso_id, cla_tramite_id, cla_formulario_id, orden) FROM stdin;
+1	1	1	1
+\.
+
+
+--
+-- TOC entry 2066 (class 0 OID 0)
+-- Dependencies: 184
+-- Name: cla_proceso_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('cla_proceso_id_seq', 1, false);
+
+
+--
+-- TOC entry 2041 (class 0 OID 36408)
+-- Dependencies: 182
+-- Data for Name: cla_tipo_proceso; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cla_tipo_proceso (id, descripcion) FROM stdin;
+1	Init
+2	End
+\.
+
+
+--
+-- TOC entry 2067 (class 0 OID 0)
+-- Dependencies: 181
+-- Name: cla_tipo_proceso_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('cla_tipo_proceso_id_seq', 1, false);
+
+
+--
+-- TOC entry 2039 (class 0 OID 36386)
+-- Dependencies: 180
+-- Data for Name: cla_tramite; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cla_tramite (id, descripcion, nro_resolucion, fecha_resolucion) FROM stdin;
+1	Habilitacion	\N	\N
+\.
+
+
+--
+-- TOC entry 2068 (class 0 OID 0)
+-- Dependencies: 179
+-- Name: cla_tramite_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('cla_tramite_id_seq', 1, true);
+
+
+--
+-- TOC entry 2037 (class 0 OID 36369)
+-- Dependencies: 178
+-- Data for Name: dat_personas; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY dat_personas (ci, paterno, materno, nombre1, nombre2, fecha_nacimiento, genero) FROM stdin;
+4810621	Quispe	Gutierrez	Remberto		1979-02-08 00:00:00	1
+\.
+
+
+--
+-- TOC entry 2046 (class 0 OID 36518)
+-- Dependencies: 187
+-- Data for Name: rel_roles_proceso; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY rel_roles_proceso (adm_rol_id, tramite_id, proceso_id, habilitado) FROM stdin;
+2	1	1	t
+\.
+
+
+--
+-- TOC entry 2042 (class 0 OID 36444)
+-- Dependencies: 183
+-- Data for Name: rel_roles_tramite; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY rel_roles_tramite (adm_rol_id, tramite_id, habilitado) FROM stdin;
+2	1	t
+\.
+
+
+--
+-- TOC entry 1990 (class 2606 OID 36195)
+-- Name: pk_adm_menus; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY adm_menus
+    ADD CONSTRAINT pk_adm_menus PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1992 (class 2606 OID 36324)
+-- Name: pk_adm_roles; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY adm_roles
+    ADD CONSTRAINT pk_adm_roles PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1994 (class 2606 OID 36329)
+-- Name: pk_adm_roles_menus; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY adm_roles_menus
+    ADD CONSTRAINT pk_adm_roles_menus PRIMARY KEY (adm_rol_id, adm_menu_id);
+
+
+--
+-- TOC entry 1996 (class 2606 OID 36344)
+-- Name: pk_adm_roles_usuarios; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY adm_roles_usuarios
+    ADD CONSTRAINT pk_adm_roles_usuarios PRIMARY KEY (adm_usuario_id, adm_rol_id);
+
+
+--
+-- TOC entry 1984 (class 2606 OID 27983)
+-- Name: pk_adm_usuarios; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY adm_usuarios
+    ADD CONSTRAINT pk_adm_usuarios PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1998 (class 2606 OID 36368)
+-- Name: pk_cla_formularios; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cla_formulario
+    ADD CONSTRAINT pk_cla_formularios PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2008 (class 2606 OID 36468)
+-- Name: pk_cla_proceso; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cla_proceso
+    ADD CONSTRAINT pk_cla_proceso PRIMARY KEY (id, cla_tramite_id);
+
+
+--
+-- TOC entry 2012 (class 2606 OID 36484)
+-- Name: pk_cla_proceso_formularios; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cla_proceso_formularios
+    ADD CONSTRAINT pk_cla_proceso_formularios PRIMARY KEY (cla_proceso_id, cla_tramite_id, cla_formulario_id);
+
+
+--
+-- TOC entry 2004 (class 2606 OID 36413)
+-- Name: pk_cla_tipo_proceso; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cla_tipo_proceso
+    ADD CONSTRAINT pk_cla_tipo_proceso PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2002 (class 2606 OID 36391)
+-- Name: pk_cla_tramite; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cla_tramite
+    ADD CONSTRAINT pk_cla_tramite PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2000 (class 2606 OID 36373)
+-- Name: pk_dat_personas; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY dat_personas
+    ADD CONSTRAINT pk_dat_personas PRIMARY KEY (ci);
+
+
+--
+-- TOC entry 2014 (class 2606 OID 36522)
+-- Name: pk_rel_roles_proceso; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY rel_roles_proceso
+    ADD CONSTRAINT pk_rel_roles_proceso PRIMARY KEY (adm_rol_id, tramite_id, proceso_id);
+
+
+--
+-- TOC entry 2006 (class 2606 OID 36448)
+-- Name: pk_rel_roles_tramite; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY rel_roles_tramite
+    ADD CONSTRAINT pk_rel_roles_tramite PRIMARY KEY (adm_rol_id, tramite_id);
+
+
+--
+-- TOC entry 2010 (class 2606 OID 36466)
+-- Name: uk_cla_proceso; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cla_proceso
+    ADD CONSTRAINT uk_cla_proceso UNIQUE (nro_proceso, cla_tramite_id);
+
+
+--
+-- TOC entry 1986 (class 2606 OID 27979)
+-- Name: uq_adm_usuarios_correo_electronico; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY adm_usuarios
+    ADD CONSTRAINT uq_adm_usuarios_correo_electronico UNIQUE (correo_electronico);
+
+
+--
+-- TOC entry 1988 (class 2606 OID 27981)
+-- Name: uq_adm_usuarios_username; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY adm_usuarios
+    ADD CONSTRAINT uq_adm_usuarios_username UNIQUE (username);
+
+
+--
+-- TOC entry 2015 (class 2606 OID 36374)
+-- Name: fk_adm_menus_adm_menus; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY adm_menus
+    ADD CONSTRAINT fk_adm_menus_adm_menus FOREIGN KEY (adm_menu_id) REFERENCES adm_menus(id);
+
+
+--
+-- TOC entry 2016 (class 2606 OID 36330)
+-- Name: fk_adm_roles_menus_adm_menus; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY adm_roles_menus
+    ADD CONSTRAINT fk_adm_roles_menus_adm_menus FOREIGN KEY (adm_menu_id) REFERENCES adm_menus(id);
+
+
+--
+-- TOC entry 2017 (class 2606 OID 36335)
+-- Name: fk_adm_roles_menus_adm_roles; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY adm_roles_menus
+    ADD CONSTRAINT fk_adm_roles_menus_adm_roles FOREIGN KEY (adm_rol_id) REFERENCES adm_roles(id);
+
+
+--
+-- TOC entry 2018 (class 2606 OID 36345)
+-- Name: fk_adm_roles_usuarios_adm_roles; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY adm_roles_usuarios
+    ADD CONSTRAINT fk_adm_roles_usuarios_adm_roles FOREIGN KEY (adm_rol_id) REFERENCES adm_roles(id);
+
+
+--
+-- TOC entry 2019 (class 2606 OID 36350)
+-- Name: fk_adm_roles_usuarios_adm_usuarios; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY adm_roles_usuarios
+    ADD CONSTRAINT fk_adm_roles_usuarios_adm_usuarios FOREIGN KEY (adm_usuario_id) REFERENCES adm_usuarios(id);
+
+
+--
+-- TOC entry 2022 (class 2606 OID 36469)
+-- Name: fk_cla_proceso_cla_tipo_proceso_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cla_proceso
+    ADD CONSTRAINT fk_cla_proceso_cla_tipo_proceso_id FOREIGN KEY (cla_tipo_proceso_id) REFERENCES cla_tipo_proceso(id);
+
+
+--
+-- TOC entry 2023 (class 2606 OID 36474)
+-- Name: fk_cla_proceso_cla_tramite; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cla_proceso
+    ADD CONSTRAINT fk_cla_proceso_cla_tramite FOREIGN KEY (cla_tramite_id) REFERENCES cla_tramite(id);
+
+
+--
+-- TOC entry 2024 (class 2606 OID 36485)
+-- Name: fk_cla_proceso_formularios_cla_proceso; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cla_proceso_formularios
+    ADD CONSTRAINT fk_cla_proceso_formularios_cla_proceso FOREIGN KEY (cla_proceso_id, cla_tramite_id) REFERENCES cla_proceso(id, cla_tramite_id);
+
+
+--
+-- TOC entry 2025 (class 2606 OID 36523)
+-- Name: fk_rel_roles_proceso_cla_proceso; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY rel_roles_proceso
+    ADD CONSTRAINT fk_rel_roles_proceso_cla_proceso FOREIGN KEY (tramite_id, proceso_id) REFERENCES cla_proceso(id, cla_tramite_id);
+
+
+--
+-- TOC entry 2026 (class 2606 OID 36528)
+-- Name: fk_rel_roles_proceso_rel_roles_tramite; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY rel_roles_proceso
+    ADD CONSTRAINT fk_rel_roles_proceso_rel_roles_tramite FOREIGN KEY (adm_rol_id, tramite_id) REFERENCES rel_roles_tramite(adm_rol_id, tramite_id);
+
+
+--
+-- TOC entry 2020 (class 2606 OID 36449)
+-- Name: fk_rel_roles_tramite_adm_roles; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY rel_roles_tramite
+    ADD CONSTRAINT fk_rel_roles_tramite_adm_roles FOREIGN KEY (adm_rol_id) REFERENCES adm_roles(id);
+
+
+--
+-- TOC entry 2021 (class 2606 OID 36454)
+-- Name: fk_rel_roles_tramite_cla_tramite; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY rel_roles_tramite
+    ADD CONSTRAINT fk_rel_roles_tramite_cla_tramite FOREIGN KEY (tramite_id) REFERENCES cla_tramite(id);
+
+
+--
+-- TOC entry 2053 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2013-10-05 23:08:11
+
+--
+-- PostgreSQL database dump complete
+--
+

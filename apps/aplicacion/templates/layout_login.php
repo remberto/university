@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es  ">
 <head>
   <?php include_http_metas() ?>
   <?php include_metas() ?>
@@ -56,7 +56,7 @@
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="/assets/scripts/app.js" type="text/javascript"></script>
-    <script src="/assets/scripts/login-soft.js" type="text/javascript"></script>      
+    <script src="/assets/scripts/login-soft.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL SCRIPTS --> 
     <script>
             jQuery(document).ready(function() {     
