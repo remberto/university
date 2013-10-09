@@ -24,6 +24,7 @@ abstract class BaseDatPersonasForm extends BaseFormDoctrine
       'genero'           => new sfWidgetFormInputText(),
       'adm_usuario_id'   => new sfWidgetFormInputText(),
       'fecha_registro'   => new sfWidgetFormDateTime(),
+      'foto'             => new sfWidgetFormTextarea(),
     ));
 
     $this->setValidators(array(
@@ -36,6 +37,7 @@ abstract class BaseDatPersonasForm extends BaseFormDoctrine
       'genero'           => new sfValidatorInteger(),
       'adm_usuario_id'   => new sfValidatorInteger(array('required' => false)),
       'fecha_registro'   => new sfValidatorDateTime(array('required' => false)),
+      'foto'             => new sfValidatorString(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('dat_personas[%s]');

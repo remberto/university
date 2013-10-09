@@ -16,6 +16,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdmMenus', 'doctrine');
  * @property integer $adm_menu_id
  * @property string $icon
  * @property integer $habilitado
+ * @property string $titulo
  * @property Doctrine_Collection $AdmMenus
  * @property ClaHabilitado $ClaHabilitado
  * @property Doctrine_Collection $AdmRolesMenus
@@ -29,6 +30,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdmMenus', 'doctrine');
  * @method integer             getAdmMenuId()     Returns the current record's "adm_menu_id" value
  * @method string              getIcon()          Returns the current record's "icon" value
  * @method integer             getHabilitado()    Returns the current record's "habilitado" value
+ * @method string              getTitulo()        Returns the current record's "titulo" value
  * @method Doctrine_Collection getAdmMenus()      Returns the current record's "AdmMenus" collection
  * @method ClaHabilitado       getClaHabilitado() Returns the current record's "ClaHabilitado" value
  * @method Doctrine_Collection getAdmRolesMenus() Returns the current record's "AdmRolesMenus" collection
@@ -41,6 +43,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdmMenus', 'doctrine');
  * @method AdmMenus            setAdmMenuId()     Sets the current record's "adm_menu_id" value
  * @method AdmMenus            setIcon()          Sets the current record's "icon" value
  * @method AdmMenus            setHabilitado()    Sets the current record's "habilitado" value
+ * @method AdmMenus            setTitulo()        Sets the current record's "titulo" value
  * @method AdmMenus            setAdmMenus()      Sets the current record's "AdmMenus" collection
  * @method AdmMenus            setClaHabilitado() Sets the current record's "ClaHabilitado" value
  * @method AdmMenus            setAdmRolesMenus() Sets the current record's "AdmRolesMenus" collection
@@ -127,6 +130,14 @@ abstract class BaseAdmMenus extends sfDoctrineRecord
              'default' => '1',
              'primary' => false,
              'length' => 2,
+             ));
+        $this->hasColumn('titulo', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => '',
              ));
     }
 

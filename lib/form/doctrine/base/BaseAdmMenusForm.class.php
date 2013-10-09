@@ -24,6 +24,7 @@ abstract class BaseAdmMenusForm extends BaseFormDoctrine
       'adm_menu_id' => new sfWidgetFormInputText(),
       'icon'        => new sfWidgetFormTextarea(),
       'habilitado'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'add_empty' => false)),
+      'titulo'      => new sfWidgetFormTextarea(),
     ));
 
     $this->setValidators(array(
@@ -36,6 +37,7 @@ abstract class BaseAdmMenusForm extends BaseFormDoctrine
       'adm_menu_id' => new sfValidatorInteger(array('required' => false)),
       'icon'        => new sfValidatorString(array('required' => false)),
       'habilitado'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'required' => false)),
+      'titulo'      => new sfValidatorString(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('adm_menus[%s]');

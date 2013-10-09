@@ -33,6 +33,7 @@ abstract class BaseClaGradoAcademico extends sfDoctrineRecord
              'fixed' => 0,
              'unsigned' => false,
              'primary' => true,
+             'sequence' => 'cla_grado_academico_id',
              'length' => 4,
              ));
         $this->hasColumn('descripcion', 'string', null, array(

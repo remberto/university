@@ -16,6 +16,7 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @property integer $genero
  * @property integer $adm_usuario_id
  * @property timestamp $fecha_registro
+ * @property string $foto
  * @property Doctrine_Collection $AdmUsuarios
  * @property Doctrine_Collection $RegInscripcion
  * 
@@ -28,6 +29,7 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @method integer             getGenero()           Returns the current record's "genero" value
  * @method integer             getAdmUsuarioId()     Returns the current record's "adm_usuario_id" value
  * @method timestamp           getFechaRegistro()    Returns the current record's "fecha_registro" value
+ * @method string              getFoto()             Returns the current record's "foto" value
  * @method Doctrine_Collection getAdmUsuarios()      Returns the current record's "AdmUsuarios" collection
  * @method Doctrine_Collection getRegInscripcion()   Returns the current record's "RegInscripcion" collection
  * @method DatPersonas         setCi()               Sets the current record's "ci" value
@@ -39,6 +41,7 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @method DatPersonas         setGenero()           Sets the current record's "genero" value
  * @method DatPersonas         setAdmUsuarioId()     Sets the current record's "adm_usuario_id" value
  * @method DatPersonas         setFechaRegistro()    Sets the current record's "fecha_registro" value
+ * @method DatPersonas         setFoto()             Sets the current record's "foto" value
  * @method DatPersonas         setAdmUsuarios()      Sets the current record's "AdmUsuarios" collection
  * @method DatPersonas         setRegInscripcion()   Sets the current record's "RegInscripcion" collection
  * 
@@ -122,6 +125,14 @@ abstract class BaseDatPersonas extends sfDoctrineRecord
              'notnull' => false,
              'primary' => false,
              'length' => 25,
+             ));
+        $this->hasColumn('foto', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => '',
              ));
     }
 

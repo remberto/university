@@ -23,17 +23,19 @@ abstract class BaseAdmUsuariosForm extends BaseFormDoctrine
       'telefono_fijo'      => new sfWidgetFormTextarea(),
       'telefono_movil'     => new sfWidgetFormTextarea(),
       'ci_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'), 'add_empty' => false)),
+      'adm_roles_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('AdmRoles'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'id'                 => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'username'           => new sfValidatorString(),
       'password'           => new sfValidatorString(),
-//      'correo_electronico' => new sfValidatorString(),
-//      'habilitado'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'required' => false)),
-//      'telefono_fijo'      => new sfValidatorString(array('required' => false)),
-//      'telefono_movil'     => new sfValidatorString(array('required' => false)),
-//      'ci_id'              => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'))),
+      'correo_electronico' => new sfValidatorString(),
+      'habilitado'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'required' => false)),
+      'telefono_fijo'      => new sfValidatorString(array('required' => false)),
+      'telefono_movil'     => new sfValidatorString(array('required' => false)),
+      'ci_id'              => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'))),
+      'adm_roles_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('AdmRoles'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('adm_usuarios[%s]');

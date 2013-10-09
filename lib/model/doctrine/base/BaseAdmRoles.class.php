@@ -10,19 +10,19 @@ Doctrine_Manager::getInstance()->bindComponent('AdmRoles', 'doctrine');
  * @property integer $id
  * @property string $descripcion
  * @property Doctrine_Collection $AdmRolesMenus
+ * @property Doctrine_Collection $AdmUsuarios
  * @property Doctrine_Collection $RelRolesTramite
- * @property Doctrine_Collection $AdmRolesUsuarios
  * 
- * @method integer             getId()               Returns the current record's "id" value
- * @method string              getDescripcion()      Returns the current record's "descripcion" value
- * @method Doctrine_Collection getAdmRolesMenus()    Returns the current record's "AdmRolesMenus" collection
- * @method Doctrine_Collection getRelRolesTramite()  Returns the current record's "RelRolesTramite" collection
- * @method Doctrine_Collection getAdmRolesUsuarios() Returns the current record's "AdmRolesUsuarios" collection
- * @method AdmRoles            setId()               Sets the current record's "id" value
- * @method AdmRoles            setDescripcion()      Sets the current record's "descripcion" value
- * @method AdmRoles            setAdmRolesMenus()    Sets the current record's "AdmRolesMenus" collection
- * @method AdmRoles            setRelRolesTramite()  Sets the current record's "RelRolesTramite" collection
- * @method AdmRoles            setAdmRolesUsuarios() Sets the current record's "AdmRolesUsuarios" collection
+ * @method integer             getId()              Returns the current record's "id" value
+ * @method string              getDescripcion()     Returns the current record's "descripcion" value
+ * @method Doctrine_Collection getAdmRolesMenus()   Returns the current record's "AdmRolesMenus" collection
+ * @method Doctrine_Collection getAdmUsuarios()     Returns the current record's "AdmUsuarios" collection
+ * @method Doctrine_Collection getRelRolesTramite() Returns the current record's "RelRolesTramite" collection
+ * @method AdmRoles            setId()              Sets the current record's "id" value
+ * @method AdmRoles            setDescripcion()     Sets the current record's "descripcion" value
+ * @method AdmRoles            setAdmRolesMenus()   Sets the current record's "AdmRolesMenus" collection
+ * @method AdmRoles            setAdmUsuarios()     Sets the current record's "AdmUsuarios" collection
+ * @method AdmRoles            setRelRolesTramite() Sets the current record's "RelRolesTramite" collection
  * 
  * @package    universidad
  * @subpackage model
@@ -59,11 +59,11 @@ abstract class BaseAdmRoles extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'adm_rol_id'));
 
-        $this->hasMany('RelRolesTramite', array(
+        $this->hasMany('AdmUsuarios', array(
              'local' => 'id',
-             'foreign' => 'adm_rol_id'));
+             'foreign' => 'adm_roles_id'));
 
-        $this->hasMany('AdmRolesUsuarios', array(
+        $this->hasMany('RelRolesTramite', array(
              'local' => 'id',
              'foreign' => 'adm_rol_id'));
     }
