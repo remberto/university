@@ -20,9 +20,7 @@ class registroActions extends sfActions
       $this->formPersonas = new DatPersonasForm(); 
       if ($request->isMethod('post'))
       {          
-          //print_r($request->getParameter('dat_personas'));
           $this->formPersonas->bind($request->getParameter('dat_personas'));
-          //print_r($this->formPersonas->getValues());
           if ($this->formPersonas->isValid())
           {               
               $this->formPersonas->save();

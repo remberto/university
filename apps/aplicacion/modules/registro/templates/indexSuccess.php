@@ -17,8 +17,11 @@
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
                 <form action="<?php echo url_for('registro/index'); ?>" class="form-horizontal" method="post">
-                        <h3 class="form-section">Informacion del Estudiante</h3>
+                        <h3 class="form-section">Información del Estudiante</h3>
                            <?php include_component('registro', 'registroPersona'); ?>
+                        <!--/row-->
+                        <h3 class="form-section">Conclusión de Estudios</h3>
+                           <?php include_component('registro', 'registroInscripcion'); ?>
                         <!--/row-->
                         <div class="form-actions">
                                 <button type="submit" class="btn blue"><i class="icon-ok"></i> Save</button>

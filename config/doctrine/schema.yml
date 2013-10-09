@@ -91,11 +91,11 @@ AdmRoles:
       local: id
       foreign: adm_rol_id
       type: many
-    AdmRolesUsuarios:
+    RelRolesTramite:
       local: id
       foreign: adm_rol_id
       type: many
-    RelRolesTramite:
+    AdmRolesUsuarios:
       local: id
       foreign: adm_rol_id
       type: many
@@ -153,6 +153,39 @@ AdmRolesUsuarios:
       type: one
     AdmUsuarios:
       local: adm_usuario_id
+      foreign: id
+      type: one
+AdmUsuarioAdministra:
+  connection: doctrine
+  tableName: adm_usuario_administra
+  columns:
+    adm_usuario_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    uni_sede_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    habilitado:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    AdmUsuarios:
+      local: adm_usuario_id
+      foreign: id
+      type: one
+    ClaHabilitado:
+      local: habilitado
+      foreign: id
+      type: one
+    UniSede:
+      local: uni_sede_id
       foreign: id
       type: one
 AdmUsuarios:
@@ -221,6 +254,10 @@ AdmUsuarios:
       local: id
       foreign: adm_usuario_id
       type: many
+    AdmUsuarioAdministra:
+      local: id
+      foreign: adm_usuario_id
+      type: many
 ClaFormulario:
   connection: doctrine
   tableName: cla_formulario
@@ -243,6 +280,58 @@ ClaFormulario:
       unsigned: false
       notnull: true
       primary: false
+ClaGestionSemestre:
+  connection: doctrine
+  tableName: cla_gestion_semestre
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    codigo:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    semestre:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    anio:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    UniSedeCarreraGestion:
+      local: id
+      foreign: gestion_id
+      type: many
+ClaGradoAcademico:
+  connection: doctrine
+  tableName: cla_grado_academico
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    UniSedeCarreras:
+      local: id
+      foreign: cla_grado_academico_id
+      type: many
 ClaHabilitado:
   connection: doctrine
   tableName: cla_habilitado
@@ -264,6 +353,10 @@ ClaHabilitado:
       foreign: habilitado
       type: many
     AdmUsuarios:
+      local: id
+      foreign: habilitado
+      type: many
+    AdmUsuarioAdministra:
       local: id
       foreign: habilitado
       type: many
@@ -402,6 +495,22 @@ ClaTramite:
       local: id
       foreign: tramite_id
       type: many
+DatInstitucion:
+  connection: doctrine
+  tableName: dat_institucion
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: dat_institucion_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
 DatPersonas:
   connection: doctrine
   tableName: dat_personas
@@ -464,6 +573,51 @@ DatPersonas:
       local: ci
       foreign: ci_id
       type: many
+    RegInscripcion:
+      local: ci
+      foreign: ci
+      type: many
+RegInscripcion:
+  connection: doctrine
+  tableName: reg_inscripcion
+  columns:
+    ci:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: true
+    uni_sede_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    uni_carrera_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    gestion_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    adm_usuario_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    fecha_registro:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    DatPersonas:
+      local: ci
+      foreign: ci
+      type: one
 RelRolesProceso:
   connection: doctrine
   tableName: rel_roles_proceso
@@ -518,3 +672,153 @@ RelRolesTramite:
       local: tramite_id
       foreign: id
       type: one
+UniCarreras:
+  connection: doctrine
+  tableName: uni_carreras
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    UniSedeCarreras:
+      local: id
+      foreign: uni_carrera_id
+      type: many
+UniSede:
+  connection: doctrine
+  tableName: uni_sede
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: uni_sede_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    uni_universidad_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    UniUniversidad:
+      local: uni_universidad_id
+      foreign: codigo
+      type: one
+    UniSedeCarreras:
+      local: id
+      foreign: uni_sede_id
+      type: many
+    AdmUsuarioAdministra:
+      local: id
+      foreign: uni_sede_id
+      type: many
+UniSedeCarreraGestion:
+  connection: doctrine
+  tableName: uni_sede_carrera_gestion
+  columns:
+    uni_sede_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    uni_carrera_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    gestion_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+  relations:
+    ClaGestionSemestre:
+      local: gestion_id
+      foreign: id
+      type: one
+UniSedeCarreras:
+  connection: doctrine
+  tableName: uni_sede_carreras
+  columns:
+    uni_sede_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    uni_carrera_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    resolucion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    fecha_inicio:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    duracion:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    cla_grado_academico_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    ClaGradoAcademico:
+      local: cla_grado_academico_id
+      foreign: id
+      type: one
+    UniCarreras:
+      local: uni_carrera_id
+      foreign: id
+      type: one
+    UniSede:
+      local: uni_sede_id
+      foreign: id
+      type: one
+UniUniversidad:
+  connection: doctrine
+  tableName: uni_universidad
+  columns:
+    codigo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    UniSede:
+      local: codigo
+      foreign: uni_universidad_id
+      type: many

@@ -18,29 +18,32 @@ Doctrine_Manager::getInstance()->bindComponent('AdmUsuarios', 'doctrine');
  * @property ClaHabilitado $ClaHabilitado
  * @property DatPersonas $DatPersonas
  * @property Doctrine_Collection $AdmRolesUsuarios
+ * @property Doctrine_Collection $AdmUsuarioAdministra
  * 
- * @method integer             getId()                 Returns the current record's "id" value
- * @method string              getUsername()           Returns the current record's "username" value
- * @method string              getPassword()           Returns the current record's "password" value
- * @method string              getCorreoElectronico()  Returns the current record's "correo_electronico" value
- * @method integer             getHabilitado()         Returns the current record's "habilitado" value
- * @method string              getTelefonoFijo()       Returns the current record's "telefono_fijo" value
- * @method string              getTelefonoMovil()      Returns the current record's "telefono_movil" value
- * @method string              getCiId()               Returns the current record's "ci_id" value
- * @method ClaHabilitado       getClaHabilitado()      Returns the current record's "ClaHabilitado" value
- * @method DatPersonas         getDatPersonas()        Returns the current record's "DatPersonas" value
- * @method Doctrine_Collection getAdmRolesUsuarios()   Returns the current record's "AdmRolesUsuarios" collection
- * @method AdmUsuarios         setId()                 Sets the current record's "id" value
- * @method AdmUsuarios         setUsername()           Sets the current record's "username" value
- * @method AdmUsuarios         setPassword()           Sets the current record's "password" value
- * @method AdmUsuarios         setCorreoElectronico()  Sets the current record's "correo_electronico" value
- * @method AdmUsuarios         setHabilitado()         Sets the current record's "habilitado" value
- * @method AdmUsuarios         setTelefonoFijo()       Sets the current record's "telefono_fijo" value
- * @method AdmUsuarios         setTelefonoMovil()      Sets the current record's "telefono_movil" value
- * @method AdmUsuarios         setCiId()               Sets the current record's "ci_id" value
- * @method AdmUsuarios         setClaHabilitado()      Sets the current record's "ClaHabilitado" value
- * @method AdmUsuarios         setDatPersonas()        Sets the current record's "DatPersonas" value
- * @method AdmUsuarios         setAdmRolesUsuarios()   Sets the current record's "AdmRolesUsuarios" collection
+ * @method integer             getId()                   Returns the current record's "id" value
+ * @method string              getUsername()             Returns the current record's "username" value
+ * @method string              getPassword()             Returns the current record's "password" value
+ * @method string              getCorreoElectronico()    Returns the current record's "correo_electronico" value
+ * @method integer             getHabilitado()           Returns the current record's "habilitado" value
+ * @method string              getTelefonoFijo()         Returns the current record's "telefono_fijo" value
+ * @method string              getTelefonoMovil()        Returns the current record's "telefono_movil" value
+ * @method string              getCiId()                 Returns the current record's "ci_id" value
+ * @method ClaHabilitado       getClaHabilitado()        Returns the current record's "ClaHabilitado" value
+ * @method DatPersonas         getDatPersonas()          Returns the current record's "DatPersonas" value
+ * @method Doctrine_Collection getAdmRolesUsuarios()     Returns the current record's "AdmRolesUsuarios" collection
+ * @method Doctrine_Collection getAdmUsuarioAdministra() Returns the current record's "AdmUsuarioAdministra" collection
+ * @method AdmUsuarios         setId()                   Sets the current record's "id" value
+ * @method AdmUsuarios         setUsername()             Sets the current record's "username" value
+ * @method AdmUsuarios         setPassword()             Sets the current record's "password" value
+ * @method AdmUsuarios         setCorreoElectronico()    Sets the current record's "correo_electronico" value
+ * @method AdmUsuarios         setHabilitado()           Sets the current record's "habilitado" value
+ * @method AdmUsuarios         setTelefonoFijo()         Sets the current record's "telefono_fijo" value
+ * @method AdmUsuarios         setTelefonoMovil()        Sets the current record's "telefono_movil" value
+ * @method AdmUsuarios         setCiId()                 Sets the current record's "ci_id" value
+ * @method AdmUsuarios         setClaHabilitado()        Sets the current record's "ClaHabilitado" value
+ * @method AdmUsuarios         setDatPersonas()          Sets the current record's "DatPersonas" value
+ * @method AdmUsuarios         setAdmRolesUsuarios()     Sets the current record's "AdmRolesUsuarios" collection
+ * @method AdmUsuarios         setAdmUsuarioAdministra() Sets the current record's "AdmUsuarioAdministra" collection
  * 
  * @package    universidad
  * @subpackage model
@@ -131,6 +134,10 @@ abstract class BaseAdmUsuarios extends sfDoctrineRecord
              'foreign' => 'ci'));
 
         $this->hasMany('AdmRolesUsuarios', array(
+             'local' => 'id',
+             'foreign' => 'adm_usuario_id'));
+
+        $this->hasMany('AdmUsuarioAdministra', array(
              'local' => 'id',
              'foreign' => 'adm_usuario_id'));
     }

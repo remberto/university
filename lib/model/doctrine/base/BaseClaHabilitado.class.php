@@ -11,18 +11,21 @@ Doctrine_Manager::getInstance()->bindComponent('ClaHabilitado', 'doctrine');
  * @property string $descripcion
  * @property Doctrine_Collection $AdmRolesMenus
  * @property Doctrine_Collection $AdmUsuarios
+ * @property Doctrine_Collection $AdmUsuarioAdministra
  * @property Doctrine_Collection $AdmMenus
  * 
- * @method integer             getId()            Returns the current record's "id" value
- * @method string              getDescripcion()   Returns the current record's "descripcion" value
- * @method Doctrine_Collection getAdmRolesMenus() Returns the current record's "AdmRolesMenus" collection
- * @method Doctrine_Collection getAdmUsuarios()   Returns the current record's "AdmUsuarios" collection
- * @method Doctrine_Collection getAdmMenus()      Returns the current record's "AdmMenus" collection
- * @method ClaHabilitado       setId()            Sets the current record's "id" value
- * @method ClaHabilitado       setDescripcion()   Sets the current record's "descripcion" value
- * @method ClaHabilitado       setAdmRolesMenus() Sets the current record's "AdmRolesMenus" collection
- * @method ClaHabilitado       setAdmUsuarios()   Sets the current record's "AdmUsuarios" collection
- * @method ClaHabilitado       setAdmMenus()      Sets the current record's "AdmMenus" collection
+ * @method integer             getId()                   Returns the current record's "id" value
+ * @method string              getDescripcion()          Returns the current record's "descripcion" value
+ * @method Doctrine_Collection getAdmRolesMenus()        Returns the current record's "AdmRolesMenus" collection
+ * @method Doctrine_Collection getAdmUsuarios()          Returns the current record's "AdmUsuarios" collection
+ * @method Doctrine_Collection getAdmUsuarioAdministra() Returns the current record's "AdmUsuarioAdministra" collection
+ * @method Doctrine_Collection getAdmMenus()             Returns the current record's "AdmMenus" collection
+ * @method ClaHabilitado       setId()                   Sets the current record's "id" value
+ * @method ClaHabilitado       setDescripcion()          Sets the current record's "descripcion" value
+ * @method ClaHabilitado       setAdmRolesMenus()        Sets the current record's "AdmRolesMenus" collection
+ * @method ClaHabilitado       setAdmUsuarios()          Sets the current record's "AdmUsuarios" collection
+ * @method ClaHabilitado       setAdmUsuarioAdministra() Sets the current record's "AdmUsuarioAdministra" collection
+ * @method ClaHabilitado       setAdmMenus()             Sets the current record's "AdmMenus" collection
  * 
  * @package    universidad
  * @subpackage model
@@ -59,6 +62,10 @@ abstract class BaseClaHabilitado extends sfDoctrineRecord
              'foreign' => 'habilitado'));
 
         $this->hasMany('AdmUsuarios', array(
+             'local' => 'id',
+             'foreign' => 'habilitado'));
+
+        $this->hasMany('AdmUsuarioAdministra', array(
              'local' => 'id',
              'foreign' => 'habilitado'));
 

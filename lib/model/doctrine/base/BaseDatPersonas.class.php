@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @property integer $adm_usuario_id
  * @property timestamp $fecha_registro
  * @property Doctrine_Collection $AdmUsuarios
+ * @property Doctrine_Collection $RegInscripcion
  * 
  * @method string              getCi()               Returns the current record's "ci" value
  * @method string              getPaterno()          Returns the current record's "paterno" value
@@ -28,6 +29,7 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @method integer             getAdmUsuarioId()     Returns the current record's "adm_usuario_id" value
  * @method timestamp           getFechaRegistro()    Returns the current record's "fecha_registro" value
  * @method Doctrine_Collection getAdmUsuarios()      Returns the current record's "AdmUsuarios" collection
+ * @method Doctrine_Collection getRegInscripcion()   Returns the current record's "RegInscripcion" collection
  * @method DatPersonas         setCi()               Sets the current record's "ci" value
  * @method DatPersonas         setPaterno()          Sets the current record's "paterno" value
  * @method DatPersonas         setMaterno()          Sets the current record's "materno" value
@@ -38,6 +40,7 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @method DatPersonas         setAdmUsuarioId()     Sets the current record's "adm_usuario_id" value
  * @method DatPersonas         setFechaRegistro()    Sets the current record's "fecha_registro" value
  * @method DatPersonas         setAdmUsuarios()      Sets the current record's "AdmUsuarios" collection
+ * @method DatPersonas         setRegInscripcion()   Sets the current record's "RegInscripcion" collection
  * 
  * @package    universidad
  * @subpackage model
@@ -128,5 +131,9 @@ abstract class BaseDatPersonas extends sfDoctrineRecord
         $this->hasMany('AdmUsuarios', array(
              'local' => 'ci',
              'foreign' => 'ci_id'));
+
+        $this->hasMany('RegInscripcion', array(
+             'local' => 'ci',
+             'foreign' => 'ci'));
     }
 }

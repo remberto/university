@@ -21,4 +21,11 @@ class registroComponents extends sfComponents
     $this->formPersona->setWidget('adm_usuario_id', new sfWidgetFormInputHidden(array('default'=>$this->getUser()->getAttribute('USUARIO_ID'))));
   }
   
+  public function executeRegistroInscripcion()
+  {
+    $this->formInscripcion = new RegInscripcionForm();
+    $this->formInscripcion->setWidget('uni_sede_id', new sfWidgetFormChoice(array('choices' => array('Asunto A', 'Asunto B', 'Asunto C'))));
+    $this->formInscripcion->setWidget('adm_usuario_id', new sfWidgetFormInputHidden(array('default'=>$this->getUser()->getAttribute('USUARIO_ID'))));
+  }
+  
 }
