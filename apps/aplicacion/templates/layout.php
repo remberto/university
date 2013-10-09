@@ -1,5 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
     <head>
         <?php include_http_metas() ?>
         <?php include_metas() ?>
@@ -21,44 +23,57 @@
         <?php include_stylesheets() ?>
         <?php include_javascripts() ?>
     </head>
-    <body  class="page-header-fixed">
-    <div class="header navbar navbar-inverse navbar-fixed-top">
-        <?php if ($sf_user->hasAttribute('USUARIO_USERNAME')): ?>
-            <?php include_component('inicio', 'menu'); ?>
-        <?php endif; ?>        
-    </div>
+    <body class="">
+        <!-- BEGIN HEADER -->
+        <div class="header navbar navbar-inverse navbar-fixed-top">
+        <!-- BEGIN TOP NAVIGATION BAR -->
         
-    <div class="page-container">
+            <div class="navbar-inner">
+                <div class="header-inner">
+                <?php //if ($sf_user->hasAttribute('USERNAME')): ?>
+                   <?php include_component('inicio','menu');  ?>
+                <?php //endif; ?>
+                </div>
+                <div class="container-fluid">
+                <!-- HEADER CONTENT GOES HERE -->
+                
+                </div>
+            </div>
+            <!-- END TOP NAVIGATION BAR -->
+        </div>
+        <!-- END HEADER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container row-fluid">
         <!-- BEGIN SIDEBAR -->
-        <?php if ($sf_user->hasAttribute('USUARIO_USERNAME')): ?>
-            <?php include_component('inicio', 'menulateral'); ?>
-        <?php endif; ?>            
+        <div class="page-sidebar nav-collapse collapse">
+        <!-- PAGE SIDEBAR CONTENT GOES HERE -->
+        
+        
+            <?php //if ($sf_user->hasAttribute('USERNAME')): ?>
+                   <?php include_component('inicio','menulateral');  ?>
+            <?php //endif; ?>
+        
+        
+        </div>
         <!-- END SIDEBAR -->
         <!-- BEGIN PAGE -->
-        <div class="page-content">
-            <!-- BEGIN PAGE CONTAINER-->
-            <div class="container-fluid">
-                <!-- BEGIN PAGE HEADER-->
-                <?php echo $sf_content ?>    
-            </div>
-            <!-- END PAGE CONTAINER-->    
+        <div class="page-content" style="padding-top: 30px;padding-left: 30px;">
+            <!-- PAGE CONTENT GOES HERE -->
+            <?php include_component('inicio','cabecera'); ?>
+            <?php echo $sf_content ?>
         </div>
         <!-- END PAGE -->
-        </div>        
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="footer">
+        <!-- PAGE FOOTER GOES HERE -->
+        
+        </div>
+        <!-- END FOOTER -->
 
-    <!-- BEGIN FOOTER -->
-	<div class="footer">
-		<div class="footer-inner">
-			2013 &copy; Ministerio de Educacion
-		</div>
-		<div class="footer-tools">
-			<span class="go-top">
-			<i class="icon-angle-up"></i>
-			</span>
-		</div>
-	</div>
-	<!-- END FOOTER -->
-
+        
+        
         <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 	<!-- BEGIN CORE PLUGINS -->
 	<script src="/assets/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
