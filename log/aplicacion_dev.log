@@ -18234,3 +18234,38 @@ Oct 09 03:45:19 symfony [info] {sfWebDebugLogger} Partial "inicio/_submenu" 1.00
 Oct 09 03:45:19 symfony [info] {sfWebDebugLogger} Component "inicio/menulateral" 2.00 ms (1)
 Oct 09 03:45:19 symfony [info] {sfWebDebugLogger} Partial "inicio/_menulateral" 1.00 ms (1)
 Oct 09 03:45:19 symfony [info] {sfWebResponse} Send content (64105 o)
+Oct 09 04:06:23 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /registro with parameters array (  'module' => 'registro',  'action' => 'index',)
+Oct 09 04:06:23 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 09 04:06:23 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 09 04:06:23 symfony [info] {registroActions} Call "registroActions->executeIndex()"
+Oct 09 04:06:23 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/registro/templates/indexSuccess.php"
+Oct 09 04:06:23 symfony [info] {main} Call "registro->executeRegistroPersona()"
+Oct 09 04:06:23 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/registro/templates/_registroPersona.php"
+Oct 09 04:06:23 symfony [info] {sfPHPView} Decorate content with "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 09 04:06:23 symfony [info] {sfPHPView} Render "C:\Users\Intel\Universidad\apps\aplicacion\templates/layout.php"
+Oct 09 04:06:23 symfony [info] {main} Call "inicio->executeMenu()"
+Oct 09 04:06:23 symfony [info] {Doctrine_Connection_Pgsql} exec : SET NAMES 'UTF8' - ()
+Oct 09 04:06:23 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 0, 1)
+Oct 09 04:06:23 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menu.php"
+Oct 09 04:06:23 symfony [info] {main} Call "inicio->executeSubmenu()"
+Oct 09 04:06:23 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.adm_menu_id = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 1, 2, 1)
+Oct 09 04:06:23 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_submenu.php"
+Oct 09 04:06:23 symfony [info] {main} Call "inicio->executeMenulateral()"
+Oct 09 04:06:23 symfony [info] {Doctrine_Connection_Statement} execute : SELECT a.id AS a__id, a.descripcion AS a__descripcion, a.abreviatura AS a__abreviatura, a.link AS a__link, a.tipo_menu AS a__tipo_menu, a.orden AS a__orden, a.adm_menu_id AS a__adm_menu_id, a.icon AS a__icon, a.habilitado AS a__habilitado, a2.adm_rol_id AS a2__adm_rol_id, a2.adm_menu_id AS a2__adm_menu_id, a2.habilitado AS a2__habilitado FROM adm_menus a INNER JOIN adm_roles_menus a2 ON a.id = a2.adm_menu_id WHERE (a2.adm_rol_id = ? AND a.tipo_menu = ? AND a.habilitado = ?) ORDER BY a.orden ASC - (2, 2, 1)
+Oct 09 04:06:23 symfony [info] {sfPartialView} Render "C:\Users\Intel\Universidad\apps\aplicacion\modules/inicio/templates/_menulateral.php"
+Oct 09 04:06:23 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 09 04:06:23 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Configuration 7.00 ms (17)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Factories 24.00 ms (1)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Action "registro/index" 17.00 ms (1)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} View "Success" for "registro/index" 72.00 ms (1)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Component "registro/registroPersona" 1.00 ms (1)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Partial "registro/_registroPersona" 4.00 ms (1)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Component "inicio/menu" 37.00 ms (1)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Database (Doctrine) 3.00 ms (4)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Partial "inicio/_menu" 7.00 ms (1)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Component "inicio/submenu" 2.00 ms (1)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Partial "inicio/_submenu" 1.00 ms (1)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Component "inicio/menulateral" 3.00 ms (1)
+Oct 09 04:06:23 symfony [info] {sfWebDebugLogger} Partial "inicio/_menulateral" 1.00 ms (1)
+Oct 09 04:06:24 symfony [info] {sfWebResponse} Send content (64218 o)
