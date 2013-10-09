@@ -5,7 +5,7 @@
  *
  * @package    sieweb
  * @subpackage Componente para generar el menu
- * @author     Ing. Ivan Callapa Quiroz
+ * @author     Remberto Quispe Gutierrez <rembertoy2k3@gmail.com>
  * @version    SVN: $Id: actions.class.php 12479 2008-10-31 10:54:40Z fabien $
  */
 class registroComponents extends sfComponents
