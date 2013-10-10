@@ -12,5 +12,7 @@
  */
 class ClaGradoAcademico extends BaseClaGradoAcademico
 {
-
+    function __toString() {
+        return $this->getDescripcion();
+    }
 }

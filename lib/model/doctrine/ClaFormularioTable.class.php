@@ -16,4 +16,14 @@ class ClaFormularioTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('ClaFormulario');
     }
+    
+    public function getFormularios($tramite_id, $proceso_id)
+    {
+        $q = $this->createQuery('c')
+        ->InnerJoin('c.ClaProcesoFormularios d')
+        ->where('d.cla_proceso_id = ?',$proceso_id)
+        ->andWhere('d.cla_tramite_id = ?', $tramite_id)
+        ->orderBy('d.orden DESC');
+        return $q->execute();
+    }
 }

@@ -9,14 +9,17 @@ Doctrine_Manager::getInstance()->bindComponent('ClaFormulario', 'doctrine');
  * 
  * @property integer $id
  * @property string $descripcion
- * @property string $url
+ * @property string $modulo
+ * @property string $componente
  * 
  * @method integer       getId()          Returns the current record's "id" value
  * @method string        getDescripcion() Returns the current record's "descripcion" value
- * @method string        getUrl()         Returns the current record's "url" value
+ * @method string        getModulo()      Returns the current record's "modulo" value
+ * @method string        getComponente()  Returns the current record's "componente" value
  * @method ClaFormulario setId()          Sets the current record's "id" value
  * @method ClaFormulario setDescripcion() Sets the current record's "descripcion" value
- * @method ClaFormulario setUrl()         Sets the current record's "url" value
+ * @method ClaFormulario setModulo()      Sets the current record's "modulo" value
+ * @method ClaFormulario setComponente()  Sets the current record's "componente" value
  * 
  * @package    universidad
  * @subpackage model
@@ -44,11 +47,19 @@ abstract class BaseClaFormulario extends sfDoctrineRecord
              'primary' => false,
              'length' => '',
              ));
-        $this->hasColumn('url', 'string', null, array(
+        $this->hasColumn('modulo', 'string', null, array(
              'type' => 'string',
              'fixed' => 0,
              'unsigned' => false,
              'notnull' => true,
+             'primary' => false,
+             'length' => '',
+             ));
+        $this->hasColumn('componente', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
              'primary' => false,
              'length' => '',
              ));

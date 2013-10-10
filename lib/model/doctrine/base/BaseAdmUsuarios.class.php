@@ -16,9 +16,9 @@ Doctrine_Manager::getInstance()->bindComponent('AdmUsuarios', 'doctrine');
  * @property string $telefono_movil
  * @property string $ci_id
  * @property integer $adm_roles_id
+ * @property AdmRoles $AdmRoles
  * @property ClaHabilitado $ClaHabilitado
  * @property DatPersonas $DatPersonas
- * @property AdmRoles $AdmRoles
  * @property Doctrine_Collection $AdmUsuarioAdministra
  * 
  * @method integer             getId()                   Returns the current record's "id" value
@@ -30,9 +30,9 @@ Doctrine_Manager::getInstance()->bindComponent('AdmUsuarios', 'doctrine');
  * @method string              getTelefonoMovil()        Returns the current record's "telefono_movil" value
  * @method string              getCiId()                 Returns the current record's "ci_id" value
  * @method integer             getAdmRolesId()           Returns the current record's "adm_roles_id" value
+ * @method AdmRoles            getAdmRoles()             Returns the current record's "AdmRoles" value
  * @method ClaHabilitado       getClaHabilitado()        Returns the current record's "ClaHabilitado" value
  * @method DatPersonas         getDatPersonas()          Returns the current record's "DatPersonas" value
- * @method AdmRoles            getAdmRoles()             Returns the current record's "AdmRoles" value
  * @method Doctrine_Collection getAdmUsuarioAdministra() Returns the current record's "AdmUsuarioAdministra" collection
  * @method AdmUsuarios         setId()                   Sets the current record's "id" value
  * @method AdmUsuarios         setUsername()             Sets the current record's "username" value
@@ -43,9 +43,9 @@ Doctrine_Manager::getInstance()->bindComponent('AdmUsuarios', 'doctrine');
  * @method AdmUsuarios         setTelefonoMovil()        Sets the current record's "telefono_movil" value
  * @method AdmUsuarios         setCiId()                 Sets the current record's "ci_id" value
  * @method AdmUsuarios         setAdmRolesId()           Sets the current record's "adm_roles_id" value
+ * @method AdmUsuarios         setAdmRoles()             Sets the current record's "AdmRoles" value
  * @method AdmUsuarios         setClaHabilitado()        Sets the current record's "ClaHabilitado" value
  * @method AdmUsuarios         setDatPersonas()          Sets the current record's "DatPersonas" value
- * @method AdmUsuarios         setAdmRoles()             Sets the current record's "AdmRoles" value
  * @method AdmUsuarios         setAdmUsuarioAdministra() Sets the current record's "AdmUsuarioAdministra" collection
  * 
  * @package    universidad
@@ -136,6 +136,10 @@ abstract class BaseAdmUsuarios extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('AdmRoles', array(
+             'local' => 'adm_roles_id',
+             'foreign' => 'id'));
+
         $this->hasOne('ClaHabilitado', array(
              'local' => 'habilitado',
              'foreign' => 'id'));
@@ -143,10 +147,6 @@ abstract class BaseAdmUsuarios extends sfDoctrineRecord
         $this->hasOne('DatPersonas', array(
              'local' => 'ci_id',
              'foreign' => 'ci'));
-
-        $this->hasOne('AdmRoles', array(
-             'local' => 'adm_roles_id',
-             'foreign' => 'id'));
 
         $this->hasMany('AdmUsuarioAdministra', array(
              'local' => 'id',

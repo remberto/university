@@ -17,7 +17,7 @@
     </li>
     <?php foreach ($menus as $menu): ?>
         <li class="<?php if($sf_user->getAttribute('MENU')==$menu->getId()) echo 'active'; ?>">
-            <a href="javascript:;">
+            <a href="<?php echo url_for($menu->getLink());?> ">
                 <i class="<?php echo $menu->getIcon(); ?>">
                 </i>
                 <span class="title">

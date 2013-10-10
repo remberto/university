@@ -28,4 +28,10 @@ class registroComponents extends sfComponents
     $this->formInscripcion->setWidget('adm_usuario_id', new sfWidgetFormInputHidden(array('default'=>$this->getUser()->getAttribute('USUARIO_ID'))));
   }
   
+  public function executeRegistroDiploma()
+  {
+      $this->formDiploma = new DatDiplomaForm();
+  }
+  
+  
 }

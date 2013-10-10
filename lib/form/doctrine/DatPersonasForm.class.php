@@ -18,7 +18,7 @@ class DatPersonasForm extends BaseDatPersonasForm
       $this->setWidget('nombre1', new sfWidgetFormInputText(array('label' => 'Primer Nombre'), array('size' => 25, 'class' => 'm-wrap large','placeholder'=>'Primer Nombre')));
       $this->setWidget('nombre2', new sfWidgetFormInputText(array('label' => 'Segundo Nombre'), array('size' => 25, 'class' => 'm-wrap large','placeholder'=>'Segundo Nombre')));
       $this->setWidget('fecha_nacimiento', new sfWidgetFormInputText(array('label' => 'Fecha de Nacimiento'), array('size' => 16, 'class' => 'm-wrap m-ctrl-medium date-picker', 'readonly'=>'true')));
-      $this->setWidget('genero', new sfWidgetFormChoice(array('expanded' => true,'choices'=>array('1'=>'Masculino','0'=>'Femenino'))));
+      $this->setWidget('genero', new sfWidgetFormChoice(array('expanded' => FALSE,'choices'=>array('1'=>'Masculino','0'=>'Femenino'))));
       $this->setWidget('adm_usuario_id', new sfWidgetFormInputHidden());
       $this->setWidget('fecha_registro', new sfWidgetFormInputHidden(array('default'=>date('Y-m-d h:i:s'))));
  

@@ -57,6 +57,12 @@ AdmMenus:
       notnull: true
       default: '1'
       primary: false
+    titulo:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
   relations:
     AdmMenus:
       local: id
@@ -91,11 +97,11 @@ AdmRoles:
       local: id
       foreign: adm_rol_id
       type: many
-    RelRolesTramite:
+    AdmUsuarios:
       local: id
-      foreign: adm_rol_id
+      foreign: adm_roles_id
       type: many
-    AdmRolesUsuarios:
+    RelRolesTramite:
       local: id
       foreign: adm_rol_id
       type: many
@@ -130,29 +136,6 @@ AdmRolesMenus:
       type: one
     ClaHabilitado:
       local: habilitado
-      foreign: id
-      type: one
-AdmRolesUsuarios:
-  connection: doctrine
-  tableName: adm_roles_usuarios
-  columns:
-    adm_usuario_id:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-    adm_rol_id:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-  relations:
-    AdmRoles:
-      local: adm_rol_id
-      foreign: id
-      type: one
-    AdmUsuarios:
-      local: adm_usuario_id
       foreign: id
       type: one
 AdmUsuarioAdministra:
@@ -241,7 +224,17 @@ AdmUsuarios:
       unsigned: false
       notnull: true
       primary: false
+    adm_roles_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
   relations:
+    AdmRoles:
+      local: adm_roles_id
+      foreign: id
+      type: one
     ClaHabilitado:
       local: habilitado
       foreign: id
@@ -250,10 +243,6 @@ AdmUsuarios:
       local: ci_id
       foreign: ci
       type: one
-    AdmRolesUsuarios:
-      local: id
-      foreign: adm_usuario_id
-      type: many
     AdmUsuarioAdministra:
       local: id
       foreign: adm_usuario_id
@@ -274,11 +263,17 @@ ClaFormulario:
       unsigned: false
       notnull: true
       primary: false
-    url:
+    modulo:
       type: string()
       fixed: false
       unsigned: false
       notnull: true
+      primary: false
+    componente:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
       primary: false
 ClaGestionSemestre:
   connection: doctrine
@@ -321,6 +316,7 @@ ClaGradoAcademico:
       fixed: false
       unsigned: false
       primary: true
+      sequence: cla_grado_academico_id
     descripcion:
       type: string()
       fixed: false
@@ -328,6 +324,10 @@ ClaGradoAcademico:
       notnull: true
       primary: false
   relations:
+    DatDiploma:
+      local: id
+      foreign: cla_grado_academico_id
+      type: many
     UniSedeCarreras:
       local: id
       foreign: cla_grado_academico_id
@@ -495,6 +495,55 @@ ClaTramite:
       local: id
       foreign: tramite_id
       type: many
+DatDiploma:
+  connection: doctrine
+  tableName: dat_diploma
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: dat_diploma_id
+    dat_institucion_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    nro:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    serie:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    fecha_emision:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    cla_grado_academico_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    ClaGradoAcademico:
+      local: cla_grado_academico_id
+      foreign: id
+      type: one
+    DatInstitucion:
+      local: dat_institucion_id
+      foreign: id
+      type: one
 DatInstitucion:
   connection: doctrine
   tableName: dat_institucion
@@ -511,6 +560,11 @@ DatInstitucion:
       unsigned: false
       notnull: true
       primary: false
+  relations:
+    DatDiploma:
+      local: id
+      foreign: dat_institucion_id
+      type: many
 DatPersonas:
   connection: doctrine
   tableName: dat_personas
@@ -564,6 +618,12 @@ DatPersonas:
       primary: false
     fecha_registro:
       type: timestamp(25)
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    foto:
+      type: string()
       fixed: false
       unsigned: false
       notnull: false

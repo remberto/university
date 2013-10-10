@@ -12,5 +12,13 @@
  */
 class ClaFormulario extends BaseClaFormulario
 {
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasMany('ClaProcesoFormularios', array(
+             'local' => 'id',
+             'foreign' => 'cla_formulario_id'));
+        
+    }
 
 }

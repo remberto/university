@@ -1,7 +1,3 @@
-<h3 class="page-title">
-    Registro de Habilitacion
-    <small>Inicio de Tramite de Habilitacion </small>
-</h3>
 <div class="row-fluid">
     <div class="span12">
         <div class="portlet box blue">

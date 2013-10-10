@@ -10,6 +10,11 @@
  */
 class registroActions extends sfActions
 {
+  
+  public function preExecute()
+  {
+    $this->getUser()->setAttribute('MENU',5);  
+  }
  /**
   * Executes index action
   *

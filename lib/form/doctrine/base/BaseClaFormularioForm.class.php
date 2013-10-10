@@ -17,13 +17,15 @@ abstract class BaseClaFormularioForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
       'descripcion' => new sfWidgetFormTextarea(),
-      'url'         => new sfWidgetFormTextarea(),
+      'modulo'      => new sfWidgetFormTextarea(),
+      'componente'  => new sfWidgetFormTextarea(),
     ));
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'descripcion' => new sfValidatorString(),
-      'url'         => new sfValidatorString(),
+      'modulo'      => new sfValidatorString(),
+      'componente'  => new sfValidatorString(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('cla_formulario[%s]');
