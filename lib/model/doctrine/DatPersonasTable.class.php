@@ -16,4 +16,6 @@ class DatPersonasTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('DatPersonas');
     }
+    
+    
 }

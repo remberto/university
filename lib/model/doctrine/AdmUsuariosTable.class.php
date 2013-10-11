@@ -16,4 +16,13 @@ class AdmUsuariosTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdmUsuarios');
     }
+    
+    public function getListaUsuarios(){
+        $q = $this->createQuery('c')
+        ->innerJoin('c.AdmRoles g')        
+        ->innerJoin('c.DatPersonas d');
+        
+        return $q;
+    }
+    
 }

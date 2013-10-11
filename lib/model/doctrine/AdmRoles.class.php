@@ -12,5 +12,7 @@
  */
 class AdmRoles extends BaseAdmRoles
 {
-
+    public function __toString() {
+        return $this->getDescripcion();
+    }
 }
