@@ -14,26 +14,37 @@
                <table aria-describedby="sample_1_info" class="table table-striped table-bordered table-hover table-full-width dataTable" id="sample_1">
                <thead>
                   <tr role="row">
-                      <th tabindex="0">Rendering engine</th>
-                      <th tabindex="0">Rendering engine</th>
-                      <th tabindex="0">Rendering engine</th>
-                      <th tabindex="0">Rendering engine</th>
-                      <th tabindex="0">Rendering engine</th>
+                      <th>Usuario</th>
+                      <th>CI</th>
+                      <th>Nombre Completo</th>
+                      <th>Email</th>
+                      <th>Rol</th>
+                      <th>Editar</th>
+                      <th>Eliminar</th>
+                      <th>Ver Mas</th>
+                      <th>Estado</th>
+                  </tr>
                </thead>
                <tbody aria-relevant="all" aria-live="polite" role="alert">
-                  <tr class="odd">
-                     <td class="">Webkit</td>
-                     <td class=" ">Safari 2.0</td>
-                     <td class="hidden-xs  sorting_1">OSX.4+</td>
-                     <td class="hidden-xs ">419.3</td>
-                     <td class="hidden-xs ">A</td>
-                  </tr><tr class="even">
-                     <td class="">Webkit</td>
-                     <td class=" ">Safari 3.0</td>
-                     <td class="hidden-xs  sorting_1">OSX.4+</td>
-                     <td class="hidden-xs ">522.1</td>
-                     <td class="hidden-xs ">A</td>
-                  </tr>
+                  <?php foreach ($pager->getResults() as $i => $dato): $odd = fmod(++$i, 2) ? 'odd' : 'even'; ?>
+                    <tr class="<?php echo $odd; ?>">
+                       <td><?php echo $dato->getUsername(); ?></td>
+                       <td><?php echo $dato->getDatPersonas()->getCi(); ?></td>
+                       <td><?php echo $dato->getDatPersonas()->getNombreCompleto(); ?></td>
+                       <td><?php echo $dato->getCorreoElectronico(); ?></td>
+                       <td><?php echo $dato->getAdmRoles(); ?></td>
+                       <td style="text-align: center;"><img src="/images/pencil.png" alt="EDITAR" title="Editar" /></td>
+                       <td style="text-align: center;"><img src="/images/delete.png" alt="ELIMINAR" title="Elimimar" /></td>
+                       <td style="text-align: center;"><img src="/images/user.png" alt="VER MAS DATOS" title="Ver Datos" /></td>
+                       <td style="text-align: center;">
+                           <?php if($dato->getHabilitado()=='1'): ?>
+                                <img src="/images/habilitado.png" alt="Estado" title="Usuario Habilitado" />
+                           <?php else: ?>
+                                <img src="/images/bloquedo.png" alt="Estado" title="Usuario Bloqueado" />
+                           <?php endif; ?>
+                       </td>
+                    </tr>
+                  <?php endforeach; ?> 
                </tbody>
                </table>
             </div>
