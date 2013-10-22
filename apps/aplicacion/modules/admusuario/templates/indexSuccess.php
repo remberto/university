@@ -1,5 +1,5 @@
 <!-- BEGIN PAGE CONTENT-->
-<div class="row" style="padding: 20px;">
+<div class="row" style="padding: 5px 20px;">
    <div class="col-md-12">
       <!-- BEGIN EXAMPLE TABLE PORTLET-->
       <div class="portlet box green">
@@ -11,6 +11,9 @@
          </div>
          <div class="portlet-body">
             <div id="sample_1_wrapper" class="dataTables_wrapper form-inline" role="grid">
+               <div class="clearfix">
+                    <a href="#" class="btn default"><i class="icon-file"> Nuevo</i></a>
+               </div> 
                <table aria-describedby="sample_1_info" class="table table-striped table-bordered table-hover table-full-width dataTable" id="sample_1">
                <thead>
                   <tr role="row">
