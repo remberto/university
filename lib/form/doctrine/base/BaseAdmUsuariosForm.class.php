@@ -22,7 +22,6 @@ abstract class BaseAdmUsuariosForm extends BaseFormDoctrine
       'habilitado'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'add_empty' => false)),
       'telefono_fijo'      => new sfWidgetFormTextarea(),
       'telefono_movil'     => new sfWidgetFormTextarea(),
-      'ci_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'), 'add_empty' => false)),
       'adm_roles_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('AdmRoles'), 'add_empty' => true)),
     ));
 
@@ -34,7 +33,6 @@ abstract class BaseAdmUsuariosForm extends BaseFormDoctrine
       'habilitado'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'required' => false)),
       'telefono_fijo'      => new sfValidatorString(array('required' => false)),
       'telefono_movil'     => new sfValidatorString(array('required' => false)),
-      'ci_id'              => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'))),
       'adm_roles_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('AdmRoles'), 'required' => false)),
     ));
 

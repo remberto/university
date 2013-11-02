@@ -16,4 +16,12 @@ class ClaGestionSemestreTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('ClaGestionSemestre');
     }
+    
+    public function getGestiones($sede, $carrera){
+        $q = $this->createQuery('c')
+            ->innerJoin('c.UniSedeCarreraGestion d')
+            ->where('d.uni_sede_id = ?', $sede)
+            ->andWhere('d.uni_carrera_id = ?', $carrera);
+            return $q->execute();
+    }
 }

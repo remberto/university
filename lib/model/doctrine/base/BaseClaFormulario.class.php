@@ -11,15 +11,21 @@ Doctrine_Manager::getInstance()->bindComponent('ClaFormulario', 'doctrine');
  * @property string $descripcion
  * @property string $modulo
  * @property string $componente
+ * @property integer $cla_tabla_id
+ * @property ClaTabla $ClaTabla
  * 
- * @method integer       getId()          Returns the current record's "id" value
- * @method string        getDescripcion() Returns the current record's "descripcion" value
- * @method string        getModulo()      Returns the current record's "modulo" value
- * @method string        getComponente()  Returns the current record's "componente" value
- * @method ClaFormulario setId()          Sets the current record's "id" value
- * @method ClaFormulario setDescripcion() Sets the current record's "descripcion" value
- * @method ClaFormulario setModulo()      Sets the current record's "modulo" value
- * @method ClaFormulario setComponente()  Sets the current record's "componente" value
+ * @method integer       getId()           Returns the current record's "id" value
+ * @method string        getDescripcion()  Returns the current record's "descripcion" value
+ * @method string        getModulo()       Returns the current record's "modulo" value
+ * @method string        getComponente()   Returns the current record's "componente" value
+ * @method integer       getClaTablaId()   Returns the current record's "cla_tabla_id" value
+ * @method ClaTabla      getClaTabla()     Returns the current record's "ClaTabla" value
+ * @method ClaFormulario setId()           Sets the current record's "id" value
+ * @method ClaFormulario setDescripcion()  Sets the current record's "descripcion" value
+ * @method ClaFormulario setModulo()       Sets the current record's "modulo" value
+ * @method ClaFormulario setComponente()   Sets the current record's "componente" value
+ * @method ClaFormulario setClaTablaId()   Sets the current record's "cla_tabla_id" value
+ * @method ClaFormulario setClaTabla()     Sets the current record's "ClaTabla" value
  * 
  * @package    universidad
  * @subpackage model
@@ -63,11 +69,21 @@ abstract class BaseClaFormulario extends sfDoctrineRecord
              'primary' => false,
              'length' => '',
              ));
+        $this->hasColumn('cla_tabla_id', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => true,
+             'primary' => false,
+             'length' => 4,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasOne('ClaTabla', array(
+             'local' => 'cla_tabla_id',
+             'foreign' => 'id'));
     }
 }

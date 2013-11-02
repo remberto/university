@@ -15,7 +15,8 @@ abstract class BaseDatPersonasForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'ci'               => new sfWidgetFormInputHidden(),
+      'id'               => new sfWidgetFormInputHidden(),
+      'ci'               => new sfWidgetFormTextarea(),
       'paterno'          => new sfWidgetFormTextarea(),
       'materno'          => new sfWidgetFormTextarea(),
       'nombre1'          => new sfWidgetFormTextarea(),
@@ -23,21 +24,24 @@ abstract class BaseDatPersonasForm extends BaseFormDoctrine
       'fecha_nacimiento' => new sfWidgetFormDateTime(),
       'genero'           => new sfWidgetFormInputText(),
       'adm_usuario_id'   => new sfWidgetFormInputText(),
-      'fecha_registro'   => new sfWidgetFormDateTime(),
+      'fecha_add'        => new sfWidgetFormDateTime(),
       'foto'             => new sfWidgetFormTextarea(),
+      'extendido'        => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'ci'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('ci')), 'empty_value' => $this->getObject()->get('ci'), 'required' => false)),
+      'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'ci'               => new sfValidatorString(),
       'paterno'          => new sfValidatorString(array('required' => false)),
       'materno'          => new sfValidatorString(array('required' => false)),
       'nombre1'          => new sfValidatorString(),
       'nombre2'          => new sfValidatorString(array('required' => false)),
       'fecha_nacimiento' => new sfValidatorDateTime(),
       'genero'           => new sfValidatorInteger(),
-      'adm_usuario_id'   => new sfValidatorInteger(array('required' => false)),
-      'fecha_registro'   => new sfValidatorDateTime(array('required' => false)),
+      'adm_usuario_id'   => new sfValidatorInteger(),
+      'fecha_add'        => new sfValidatorDateTime(),
       'foto'             => new sfValidatorString(array('required' => false)),
+      'extendido'        => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('dat_personas[%s]');

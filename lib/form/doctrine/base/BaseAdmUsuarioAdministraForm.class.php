@@ -18,12 +18,14 @@ abstract class BaseAdmUsuarioAdministraForm extends BaseFormDoctrine
       'adm_usuario_id' => new sfWidgetFormInputHidden(),
       'uni_sede_id'    => new sfWidgetFormInputHidden(),
       'habilitado'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'), 'add_empty' => false)),
+      'cla_cargo_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ClaCargo'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'adm_usuario_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('adm_usuario_id')), 'empty_value' => $this->getObject()->get('adm_usuario_id'), 'required' => false)),
       'uni_sede_id'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('uni_sede_id')), 'empty_value' => $this->getObject()->get('uni_sede_id'), 'required' => false)),
       'habilitado'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaHabilitado'))),
+      'cla_cargo_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaCargo'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('adm_usuario_administra[%s]');

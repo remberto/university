@@ -13,6 +13,7 @@ Doctrine_Manager::getInstance()->bindComponent('ClaProceso', 'doctrine');
  * @property string $descripcion
  * @property integer $tiempo
  * @property integer $cla_tipo_proceso_id
+ * @property string $url
  * @property ClaTipoProceso $ClaTipoProceso
  * @property ClaTramite $ClaTramite
  * 
@@ -22,6 +23,7 @@ Doctrine_Manager::getInstance()->bindComponent('ClaProceso', 'doctrine');
  * @method string         getDescripcion()         Returns the current record's "descripcion" value
  * @method integer        getTiempo()              Returns the current record's "tiempo" value
  * @method integer        getClaTipoProcesoId()    Returns the current record's "cla_tipo_proceso_id" value
+ * @method string         getUrl()                 Returns the current record's "url" value
  * @method ClaTipoProceso getClaTipoProceso()      Returns the current record's "ClaTipoProceso" value
  * @method ClaTramite     getClaTramite()          Returns the current record's "ClaTramite" value
  * @method ClaProceso     setId()                  Sets the current record's "id" value
@@ -30,6 +32,7 @@ Doctrine_Manager::getInstance()->bindComponent('ClaProceso', 'doctrine');
  * @method ClaProceso     setDescripcion()         Sets the current record's "descripcion" value
  * @method ClaProceso     setTiempo()              Sets the current record's "tiempo" value
  * @method ClaProceso     setClaTipoProcesoId()    Sets the current record's "cla_tipo_proceso_id" value
+ * @method ClaProceso     setUrl()                 Sets the current record's "url" value
  * @method ClaProceso     setClaTipoProceso()      Sets the current record's "ClaTipoProceso" value
  * @method ClaProceso     setClaTramite()          Sets the current record's "ClaTramite" value
  * 
@@ -89,6 +92,14 @@ abstract class BaseClaProceso extends sfDoctrineRecord
              'notnull' => false,
              'primary' => false,
              'length' => 4,
+             ));
+        $this->hasColumn('url', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => '',
              ));
     }
 

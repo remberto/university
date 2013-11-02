@@ -12,5 +12,7 @@
  */
 class ClaGestionSemestre extends BaseClaGestionSemestre
 {
-
+    public function __toString() {
+        return $this->getSemestre()." - ".$this->getAnio();
+    }
 }

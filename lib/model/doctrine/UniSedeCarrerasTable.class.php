@@ -16,4 +16,12 @@ class UniSedeCarrerasTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('UniSedeCarreras');
     }
+    
+    public function getCarrera($sede, $carrera, $grado){
+        $q = $this->createQuery('c')
+        ->where('c.uni_sede_id = ?', $sede)
+        ->andWhere('c.uni_carrera_id = ?', $carrera)
+        ->andWhere('c.cla_grado_academico_id = ?', $grado);
+        return $q->fetchOne();
+    }
 }

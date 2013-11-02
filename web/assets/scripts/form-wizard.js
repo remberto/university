@@ -10,7 +10,7 @@ var FormWizard = function () {
 
             function format(state) {
                 if (!state.id) return state.text; // optgroup
-                return "<img class='flag' src='assets/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
+                return "<img class='flag' src='/assets/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
             }
 
             $("#country_list").select2({
@@ -149,6 +149,7 @@ var FormWizard = function () {
                 submitHandler: function (form) {
                     success.show();
                     error.hide();
+                    form.submit();
                     //add here some ajax code to submit your form or just call form.submit() if you want to submit the form without ajax
                 }
 
@@ -180,7 +181,7 @@ var FormWizard = function () {
                 'nextSelector': '.button-next',
                 'previousSelector': '.button-previous',
                 onTabClick: function (tab, navigation, index) {
-                    alert('on tab click disabled');
+                    alert('Se encuentra Deshabilitado');
                     return false;
                 },
                 onNext: function (tab, navigation, index) {
@@ -194,7 +195,7 @@ var FormWizard = function () {
                     var total = navigation.find('li').length;
                     var current = index + 1;
                     // set wizard title
-                    $('.step-title', $('#form_wizard_1')).text('Step ' + (index + 1) + ' of ' + total);
+                    $('.step-title', $('#form_wizard_1')).text('Paso ' + (index + 1) + ' de ' + total);
                     // set done steps
                     jQuery('li', $('#form_wizard_1')).removeClass("done");
                     var li_list = navigation.find('li');
@@ -225,7 +226,7 @@ var FormWizard = function () {
                     var total = navigation.find('li').length;
                     var current = index + 1;
                     // set wizard title
-                    $('.step-title', $('#form_wizard_1')).text('Step ' + (index + 1) + ' of ' + total);
+                    $('.step-title', $('#form_wizard_1')).text('Paso ' + (index + 1) + ' de ' + total);
                     // set done steps
                     jQuery('li', $('#form_wizard_1')).removeClass("done");
                     var li_list = navigation.find('li');
@@ -261,7 +262,8 @@ var FormWizard = function () {
 
             $('#form_wizard_1').find('.button-previous').hide();
             $('#form_wizard_1 .button-submit').click(function () {
-                alert('Finished! Hope you like it :)');
+                alert('Finalizo, el Registro del Tramite');
+                $('#submit_form').submit();
             }).hide();
         }
 

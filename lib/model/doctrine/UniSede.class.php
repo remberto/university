@@ -12,5 +12,7 @@
  */
 class UniSede extends BaseUniSede
 {
-
+    public function __toString() {
+        return $this->getDescripcion();
+    }
 }

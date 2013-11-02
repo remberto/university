@@ -14,11 +14,13 @@ Doctrine_Manager::getInstance()->bindComponent('AdmUsuarios', 'doctrine');
  * @property integer $habilitado
  * @property string $telefono_fijo
  * @property string $telefono_movil
- * @property string $ci_id
  * @property integer $adm_roles_id
  * @property AdmRoles $AdmRoles
  * @property ClaHabilitado $ClaHabilitado
- * @property DatPersonas $DatPersonas
+ * @property Doctrine_Collection $DatPersonas
+ * @property Doctrine_Collection $DatHabilitacion
+ * @property Doctrine_Collection $ProcSeguimiento
+ * @property Doctrine_Collection $ProcSeguimiento_3
  * @property Doctrine_Collection $AdmUsuarioAdministra
  * 
  * @method integer             getId()                   Returns the current record's "id" value
@@ -28,11 +30,13 @@ Doctrine_Manager::getInstance()->bindComponent('AdmUsuarios', 'doctrine');
  * @method integer             getHabilitado()           Returns the current record's "habilitado" value
  * @method string              getTelefonoFijo()         Returns the current record's "telefono_fijo" value
  * @method string              getTelefonoMovil()        Returns the current record's "telefono_movil" value
- * @method string              getCiId()                 Returns the current record's "ci_id" value
  * @method integer             getAdmRolesId()           Returns the current record's "adm_roles_id" value
  * @method AdmRoles            getAdmRoles()             Returns the current record's "AdmRoles" value
  * @method ClaHabilitado       getClaHabilitado()        Returns the current record's "ClaHabilitado" value
- * @method DatPersonas         getDatPersonas()          Returns the current record's "DatPersonas" value
+ * @method Doctrine_Collection getDatPersonas()          Returns the current record's "DatPersonas" collection
+ * @method Doctrine_Collection getDatHabilitacion()      Returns the current record's "DatHabilitacion" collection
+ * @method Doctrine_Collection getProcSeguimiento()      Returns the current record's "ProcSeguimiento" collection
+ * @method Doctrine_Collection getProcSeguimiento3()     Returns the current record's "ProcSeguimiento_3" collection
  * @method Doctrine_Collection getAdmUsuarioAdministra() Returns the current record's "AdmUsuarioAdministra" collection
  * @method AdmUsuarios         setId()                   Sets the current record's "id" value
  * @method AdmUsuarios         setUsername()             Sets the current record's "username" value
@@ -41,11 +45,13 @@ Doctrine_Manager::getInstance()->bindComponent('AdmUsuarios', 'doctrine');
  * @method AdmUsuarios         setHabilitado()           Sets the current record's "habilitado" value
  * @method AdmUsuarios         setTelefonoFijo()         Sets the current record's "telefono_fijo" value
  * @method AdmUsuarios         setTelefonoMovil()        Sets the current record's "telefono_movil" value
- * @method AdmUsuarios         setCiId()                 Sets the current record's "ci_id" value
  * @method AdmUsuarios         setAdmRolesId()           Sets the current record's "adm_roles_id" value
  * @method AdmUsuarios         setAdmRoles()             Sets the current record's "AdmRoles" value
  * @method AdmUsuarios         setClaHabilitado()        Sets the current record's "ClaHabilitado" value
- * @method AdmUsuarios         setDatPersonas()          Sets the current record's "DatPersonas" value
+ * @method AdmUsuarios         setDatPersonas()          Sets the current record's "DatPersonas" collection
+ * @method AdmUsuarios         setDatHabilitacion()      Sets the current record's "DatHabilitacion" collection
+ * @method AdmUsuarios         setProcSeguimiento()      Sets the current record's "ProcSeguimiento" collection
+ * @method AdmUsuarios         setProcSeguimiento3()     Sets the current record's "ProcSeguimiento_3" collection
  * @method AdmUsuarios         setAdmUsuarioAdministra() Sets the current record's "AdmUsuarioAdministra" collection
  * 
  * @package    universidad
@@ -115,14 +121,6 @@ abstract class BaseAdmUsuarios extends sfDoctrineRecord
              'primary' => false,
              'length' => '',
              ));
-        $this->hasColumn('ci_id', 'string', null, array(
-             'type' => 'string',
-             'fixed' => 0,
-             'unsigned' => false,
-             'notnull' => true,
-             'primary' => false,
-             'length' => '',
-             ));
         $this->hasColumn('adm_roles_id', 'integer', 4, array(
              'type' => 'integer',
              'fixed' => 0,
@@ -144,9 +142,21 @@ abstract class BaseAdmUsuarios extends sfDoctrineRecord
              'local' => 'habilitado',
              'foreign' => 'id'));
 
-        $this->hasOne('DatPersonas', array(
-             'local' => 'ci_id',
-             'foreign' => 'ci'));
+        $this->hasMany('DatPersonas', array(
+             'local' => 'id',
+             'foreign' => 'adm_usuario_id'));
+
+        $this->hasMany('DatHabilitacion', array(
+             'local' => 'id',
+             'foreign' => 'adm_usuario_id'));
+
+        $this->hasMany('ProcSeguimiento', array(
+             'local' => 'id',
+             'foreign' => 'adm_usuario_entrada_id'));
+
+        $this->hasMany('ProcSeguimiento as ProcSeguimiento_3', array(
+             'local' => 'id',
+             'foreign' => 'adm_usuario_salida_id'));
 
         $this->hasMany('AdmUsuarioAdministra', array(
              'local' => 'id',

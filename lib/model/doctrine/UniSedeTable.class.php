@@ -16,4 +16,13 @@ class UniSedeTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('UniSede');
     }
+    
+    public function getSede($user_id)
+    {
+        $q = $this->createQuery('c')
+        ->innerJoin('c.AdmUsuarioAdministra d')
+        ->innerJoin('c.UniUniversidad e')
+        ->where('d.adm_usuario_id = ?',$user_id);
+        return $q->execute();
+    }
 }

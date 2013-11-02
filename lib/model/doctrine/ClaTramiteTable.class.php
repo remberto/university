@@ -22,7 +22,7 @@ class ClaTramiteTable extends Doctrine_Table
         $q = $this->createQuery('c')
         ->InnerJoin('c.RelRolesTramite d')
         ->where('d.adm_rol_id = ?',$rol_id)
-        ->andWhere('d.habilitado = ?','t');
+        ->andWhere('d.habilitado = ?',TRUE);
         return $q->execute();
     }
 }

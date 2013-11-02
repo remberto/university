@@ -25,4 +25,33 @@ class AdmUsuariosTable extends Doctrine_Table
         return $q;
     }
     
+    public function getProcesoUniversidad($tramite_id, $proceso_id){
+        $q = $this->createQuery('c')
+        ->innerJoin('c.Administra d')
+        ->innerJoin('c.AdmRoles e')
+        ->innerJoin('e.RelRolesTramite f on e.id = f.adm_rol_id')
+        ->innerJoin('f.RelRolesProceso g on f.adm_rol_id = g.adm_rol_id and f.tramite_id = g.tramite_id')
+        ->innerJoin('c.AdmUsuarioAdministra h on c.id = h.adm_usuario_id')
+        ->innerJoin('h.ClaCargo i')
+        ->where('c.habilitado = ?', '1')
+        ->andWhere('g.habilitado = ?', TRUE)
+        ->andWhere('g.tramite_id = ?', $tramite_id)
+        ->andWhere('g.proceso_id = ?', $proceso_id)
+        ->andWhere('h.habilitado = ?', '1');
+        return $q->execute();
+    }
+    
+    public function getProcesoMinisterio($tramite_id, $proceso_id){
+        $q = $this->createQuery('c')
+        ->innerJoin('c.Administra d')
+        ->innerJoin('c.AdmRoles e')
+        ->innerJoin('e.RelRolesTramite f on e.id = f.adm_rol_id')
+        ->innerJoin('f.RelRolesProceso g on f.adm_rol_id = g.adm_rol_id and f.tramite_id = g.tramite_id')
+        ->where('c.habilitado = ?', '1')
+        ->andWhere('g.habilitado = ?', TRUE)
+        ->andWhere('g.tramite_id = ?', $tramite_id)
+        ->andWhere('g.proceso_id = ?', $proceso_id);
+        return $q->execute();
+    }
+    
 }

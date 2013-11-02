@@ -12,5 +12,7 @@
  */
 class UniCarreras extends BaseUniCarreras
 {
-
+    public function __toString() {
+        return $this->getDescripcion();
+    }
 }

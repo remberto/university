@@ -12,5 +12,13 @@
  */
 class RelRolesTramite extends BaseRelRolesTramite
 {
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasOne('RelRolesProceso', array(
+             'local' => 'tramite_id',
+             'foreign' => 'tramite_id'));
 
+
+    }
 }

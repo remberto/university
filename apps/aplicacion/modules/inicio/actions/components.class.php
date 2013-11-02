@@ -42,9 +42,9 @@ class inicioComponents extends sfComponents
        $menu = Doctrine::getTable('AdmMenus')->find($this->getUser()->getAttribute('MENU'));
        $submenu = Doctrine::getTable('AdmMenus')->find($this->getUser()->getAttribute('SUBMENU'));
        $this->nivel1=$menu->getDescripcion();
-       $this->nivel2=$submenu->getDescripcion();
+       $this->nivel2= 'Revision';
        $this->titulo1=$this->nivel1;
-       $this->titulo2=$submenu->getTitulo();
+       $this->titulo2= 'Revision';
        $this->icono=$menu->getIcon();
     }
     //$this->menus =  Doctrine::getTable('AdmMenus')->getMenus($this->getUser()->getAttribute('ROL'),1);

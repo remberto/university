@@ -15,10 +15,13 @@ class RelRolesProceso extends BaseRelRolesProceso
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('ClaProceso', array(
+        $this->hasMany('ClaProceso', array(
              'local' => array('tramite_id','proceso_id'),
              'foreign' => array('cla_tramite_id','id')));
         
+        $this->hasOne('RelRolesTramite', array(
+             'local' => array('adm_rol_id','tramite_id'),
+             'foreign' => array('adm_rol_id','tramite_id')));
     }
 
 }

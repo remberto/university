@@ -14,7 +14,13 @@ class registroComponents extends sfComponents
   * Componente para generaci�n del men�
   *
   * @param none
-  */  
+  */
+  public function executeRegistroHabilitacion() {
+      $this->formHabilitacion = new DatHabilitacionForm();
+      // Recucuperar la Universidad
+      $this->universidad = Doctrine::getTable('UniSede')->getSede($this->getUser()->getAttribute('USUARIO_ID'));
+  }
+  
   public function executeRegistroPersona()
   {
     $this->formPersona = new DatPersonasForm();
@@ -28,10 +34,24 @@ class registroComponents extends sfComponents
     $this->formInscripcion->setWidget('adm_usuario_id', new sfWidgetFormInputHidden(array('default'=>$this->getUser()->getAttribute('USUARIO_ID'))));
   }
   
+  public function executeRegistroConclusion()
+  {
+    $this->formInscripcion = new RegInscripcionForm();
+    $this->formInscripcion->setWidget('uni_sede_id', new sfWidgetFormChoice(array('choices' => array('Asunto A', 'Asunto B', 'Asunto C'))));
+    $this->formInscripcion->setWidget('adm_usuario_id', new sfWidgetFormInputHidden(array('default'=>$this->getUser()->getAttribute('USUARIO_ID'))));
+  }
+  
+  public function executeRegistroCertificado()
+  {
+      $this->formCertificado = new DatCertificadoNacimientoForm();
+  }
+  
   public function executeRegistroDiploma()
   {
       $this->formDiploma = new DatDiplomaForm();
   }
+  
+ 
   
   
 }

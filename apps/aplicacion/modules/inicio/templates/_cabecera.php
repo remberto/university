@@ -17,7 +17,7 @@
              <div style="display: block;" id="dashboard-report-range" class="dashboard-date-range tooltips">
                 <span>
                     <?php
-                        date_default_timezone_set('Europe/Madrid');
+                        date_default_timezone_set('America/La_Paz');
                         setlocale(LC_TIME, 'spanish');
                         echo strftime("%A, %d de %B de %Y");
                         ?>

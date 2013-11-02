@@ -45,4 +45,4 @@
     </div>
 </div>
 <?php echo $formPersona['adm_usuario_id']->render() ; ?>
-<?php echo $formPersona['fecha_registro']->render() ; ?>
+<?php echo $formPersona['fecha_add']->render() ; ?>

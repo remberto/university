@@ -16,4 +16,11 @@ class UniCarrerasTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('UniCarreras');
     }
+    
+    public function getCarreras($sede){
+        $q = $this->createQuery('c')
+        ->innerJoin('c.UniSedeCarreras d')
+        ->where('d.uni_sede_id = ?', $sede);
+        return $q->execute();
+    }
 }

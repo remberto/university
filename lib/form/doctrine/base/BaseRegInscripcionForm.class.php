@@ -15,7 +15,7 @@ abstract class BaseRegInscripcionForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'ci'             => new sfWidgetFormInputHidden(),
+      'id'             => new sfWidgetFormInputHidden(),
       'uni_sede_id'    => new sfWidgetFormInputHidden(),
       'uni_carrera_id' => new sfWidgetFormInputHidden(),
       'gestion_id'     => new sfWidgetFormInputHidden(),
@@ -24,7 +24,7 @@ abstract class BaseRegInscripcionForm extends BaseFormDoctrine
     ));
 
     $this->setValidators(array(
-      'ci'             => new sfValidatorChoice(array('choices' => array($this->getObject()->get('ci')), 'empty_value' => $this->getObject()->get('ci'), 'required' => false)),
+      'id'             => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'uni_sede_id'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('uni_sede_id')), 'empty_value' => $this->getObject()->get('uni_sede_id'), 'required' => false)),
       'uni_carrera_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('uni_carrera_id')), 'empty_value' => $this->getObject()->get('uni_carrera_id'), 'required' => false)),
       'gestion_id'     => new sfValidatorChoice(array('choices' => array($this->getObject()->get('gestion_id')), 'empty_value' => $this->getObject()->get('gestion_id'), 'required' => false)),

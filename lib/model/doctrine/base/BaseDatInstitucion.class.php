@@ -9,13 +9,16 @@ Doctrine_Manager::getInstance()->bindComponent('DatInstitucion', 'doctrine');
  * 
  * @property integer $id
  * @property string $descripcion
+ * @property Doctrine_Collection $AdmRoles
  * @property Doctrine_Collection $DatDiploma
  * 
  * @method integer             getId()          Returns the current record's "id" value
  * @method string              getDescripcion() Returns the current record's "descripcion" value
+ * @method Doctrine_Collection getAdmRoles()    Returns the current record's "AdmRoles" collection
  * @method Doctrine_Collection getDatDiploma()  Returns the current record's "DatDiploma" collection
  * @method DatInstitucion      setId()          Sets the current record's "id" value
  * @method DatInstitucion      setDescripcion() Sets the current record's "descripcion" value
+ * @method DatInstitucion      setAdmRoles()    Sets the current record's "AdmRoles" collection
  * @method DatInstitucion      setDatDiploma()  Sets the current record's "DatDiploma" collection
  * 
  * @package    universidad
@@ -49,6 +52,10 @@ abstract class BaseDatInstitucion extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('AdmRoles', array(
+             'local' => 'id',
+             'foreign' => 'dat_institucion_id'));
+
         $this->hasMany('DatDiploma', array(
              'local' => 'id',
              'foreign' => 'dat_institucion_id'));

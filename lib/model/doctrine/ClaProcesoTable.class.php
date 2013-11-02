@@ -28,4 +28,20 @@ class ClaProcesoTable extends Doctrine_Table
         ->andWhere('d.habilitado = ?','t');
         return $q->fetchOne();
     }
+    
+    public function isProcesoInit($tramite_id, $proceso_id)
+    {
+        $q = $this->createQuery('c')
+        ->innerJoin('c.ClaTipoProceso d')
+        ->where('c.cla_tramite_id = ?',$tramite_id)
+        ->andWhere('c.id = ?',$proceso_id)
+        ->andWhere('d.descripcion = ?','Init');
+        $value = $q->fetchOne();
+        if(empty($value)):
+            return FALSE;
+        else:
+            return TRUE;
+        endif;
+        
+    }
 }

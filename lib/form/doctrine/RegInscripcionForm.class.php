@@ -13,20 +13,20 @@ class RegInscripcionForm extends BaseRegInscripcionForm
   public function configure()
   {
     $this->setWidgets(array(
-      'ci'             => new sfWidgetFormInputHidden(),
+      'id'             => new sfWidgetFormInputHidden(),
       'uni_sede_id'    => new sfWidgetFormInputHidden(),
       'uni_carrera_id' => new sfWidgetFormInputHidden(),
       'gestion_id'     => new sfWidgetFormInputHidden(),
-      'adm_usuario_id' => new sfWidgetFormInputHidden(),
-      'fecha_registro' => new sfWidgetFormInputHidden(array('default'=>date('Y-m-d h:i:s'))),
+      'adm_usuario_id' => new sfWidgetFormInputText(),
+      'fecha_registro' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'ci'             => new sfValidatorChoice(array('choices' => array($this->getObject()->get('ci')), 'empty_value' => $this->getObject()->get('ci'), 'required' => false)),
+      'id'             => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'uni_sede_id'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('uni_sede_id')), 'empty_value' => $this->getObject()->get('uni_sede_id'), 'required' => false)),
       'uni_carrera_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('uni_carrera_id')), 'empty_value' => $this->getObject()->get('uni_carrera_id'), 'required' => false)),
       'gestion_id'     => new sfValidatorChoice(array('choices' => array($this->getObject()->get('gestion_id')), 'empty_value' => $this->getObject()->get('gestion_id'), 'required' => false)),
-      'adm_usuario_id' => new sfValidatorInteger(array('required' => true)),
+      'adm_usuario_id' => new sfValidatorInteger(array('required' => false)),
       'fecha_registro' => new sfValidatorDateTime(),
     ));
     $this->widgetSchema->setNameFormat('reg_inscripcion[%s]');

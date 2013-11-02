@@ -15,13 +15,15 @@ abstract class BaseAdmRolesForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'          => new sfWidgetFormInputHidden(),
-      'descripcion' => new sfWidgetFormTextarea(),
+      'id'                 => new sfWidgetFormInputHidden(),
+      'descripcion'        => new sfWidgetFormTextarea(),
+      'dat_institucion_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('DatInstitucion'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'descripcion' => new sfValidatorString(),
+      'id'                 => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'descripcion'        => new sfValidatorString(),
+      'dat_institucion_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('DatInstitucion'))),
     ));
 
     $this->widgetSchema->setNameFormat('adm_roles[%s]');

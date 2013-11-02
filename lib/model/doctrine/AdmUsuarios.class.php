@@ -12,5 +12,12 @@
  */
 class AdmUsuarios extends BaseAdmUsuarios
 {
-
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasOne('DatPersonas as Administra', array(
+             'local' => 'id',
+             'foreign' => 'id'));
+        
+    }
 }

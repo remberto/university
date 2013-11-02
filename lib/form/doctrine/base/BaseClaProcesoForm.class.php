@@ -21,6 +21,7 @@ abstract class BaseClaProcesoForm extends BaseFormDoctrine
       'descripcion'         => new sfWidgetFormTextarea(),
       'tiempo'              => new sfWidgetFormInputText(),
       'cla_tipo_proceso_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ClaTipoProceso'), 'add_empty' => true)),
+      'url'                 => new sfWidgetFormTextarea(),
     ));
 
     $this->setValidators(array(
@@ -30,6 +31,7 @@ abstract class BaseClaProcesoForm extends BaseFormDoctrine
       'descripcion'         => new sfValidatorString(array('required' => false)),
       'tiempo'              => new sfValidatorInteger(array('required' => false)),
       'cla_tipo_proceso_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaTipoProceso'), 'required' => false)),
+      'url'                 => new sfValidatorString(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('cla_proceso[%s]');

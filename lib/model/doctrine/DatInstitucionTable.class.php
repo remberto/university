@@ -16,4 +16,12 @@ class DatInstitucionTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('DatInstitucion');
     }
+    
+    public function getInstitucion($rol)
+    {
+        $q = $this->createQuery('c')
+        ->innerJoin('c.AdmRoles d on c.id = d.dat_institucion_id')
+        ->where('d.id = ?', $rol);
+        return $q->fetchOne();
+    }
 }

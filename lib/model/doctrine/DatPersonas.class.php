@@ -15,4 +15,8 @@ class DatPersonas extends BaseDatPersonas
     public function getNombreCompleto(){
         return $this->getNombre1().' '.$this->getNombre2().' '.$this->getPaterno().' '.$this->getMaterno();
     }
+    
+    public function getFormulario(){
+        return new DatPersonasForm;
+    }
 }

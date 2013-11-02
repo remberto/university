@@ -23,7 +23,8 @@ class ClaFormularioTable extends Doctrine_Table
         ->InnerJoin('c.ClaProcesoFormularios d')
         ->where('d.cla_proceso_id = ?',$proceso_id)
         ->andWhere('d.cla_tramite_id = ?', $tramite_id)
-        ->orderBy('d.orden DESC');
+        ->orderBy('d.orden ASC');
         return $q->execute();
     }
+    
 }

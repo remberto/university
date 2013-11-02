@@ -34,4 +34,29 @@ class registroActions extends sfActions
      }
               
   }
+  
+  public function executeCarreras(sfWebRequest $request)
+  {
+      $this->carreras = Doctrine::getTable('UniCarreras')->getCarreras($request->getParameter('sede_id'));
+  }
+  
+  public function executeGrados(sfWebRequest $request)
+  {
+      $this->grados = Doctrine::getTable('ClaGradoAcademico')->getGrados($request->getParameter('sede_id'));
+  }
+  
+  public function executeResolucion(sfWebRequest $request)
+  {
+      $this->resolucion = Doctrine::getTable('UniSedeCarreras')->getCarrera($request->getParameter('sede_id'),
+                                                                        $request->getParameter('carrera_id'),
+                                                                        $request->getParameter('grado_id')
+                                                                        );
+  }
+  
+  public function executeGestiones(sfWebRequest $request)
+  {
+      $this->gestiones = Doctrine::getTable('ClaGestionSemestre')->getGestiones($request->getParameter('sede_id'),
+                                                                                $request->getParameter('carrera_id')
+                                                                                );
+  }
 }
