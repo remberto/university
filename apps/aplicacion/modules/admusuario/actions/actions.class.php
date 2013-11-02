@@ -22,7 +22,7 @@ class admusuarioActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->pager = new sfDoctrinePager('AdmUsuarios',10);
+    $this->pager = new sfDoctrinePager('AdmUsuarios',5);
     $this->pager->setQuery(Doctrine::getTable('AdmUsuarios')->getListaUsuarios());
     $this->pager->setPage($request->getParameter('page', 1));
     $this->pager->init();
