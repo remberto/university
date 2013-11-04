@@ -13,8 +13,10 @@ Doctrine_Manager::getInstance()->bindComponent('DatDiploma', 'doctrine');
  * @property string $serie
  * @property timestamp $fecha_emision
  * @property integer $cla_grado_academico_id
+ * @property integer $dat_persona_id
  * @property ClaGradoAcademico $ClaGradoAcademico
  * @property DatInstitucion $DatInstitucion
+ * @property DatPersonas $DatPersonas
  * 
  * @method integer           getId()                     Returns the current record's "id" value
  * @method integer           getDatInstitucionId()       Returns the current record's "dat_institucion_id" value
@@ -22,16 +24,20 @@ Doctrine_Manager::getInstance()->bindComponent('DatDiploma', 'doctrine');
  * @method string            getSerie()                  Returns the current record's "serie" value
  * @method timestamp         getFechaEmision()           Returns the current record's "fecha_emision" value
  * @method integer           getClaGradoAcademicoId()    Returns the current record's "cla_grado_academico_id" value
+ * @method integer           getDatPersonaId()           Returns the current record's "dat_persona_id" value
  * @method ClaGradoAcademico getClaGradoAcademico()      Returns the current record's "ClaGradoAcademico" value
  * @method DatInstitucion    getDatInstitucion()         Returns the current record's "DatInstitucion" value
+ * @method DatPersonas       getDatPersonas()            Returns the current record's "DatPersonas" value
  * @method DatDiploma        setId()                     Sets the current record's "id" value
  * @method DatDiploma        setDatInstitucionId()       Sets the current record's "dat_institucion_id" value
  * @method DatDiploma        setNro()                    Sets the current record's "nro" value
  * @method DatDiploma        setSerie()                  Sets the current record's "serie" value
  * @method DatDiploma        setFechaEmision()           Sets the current record's "fecha_emision" value
  * @method DatDiploma        setClaGradoAcademicoId()    Sets the current record's "cla_grado_academico_id" value
+ * @method DatDiploma        setDatPersonaId()           Sets the current record's "dat_persona_id" value
  * @method DatDiploma        setClaGradoAcademico()      Sets the current record's "ClaGradoAcademico" value
  * @method DatDiploma        setDatInstitucion()         Sets the current record's "DatInstitucion" value
+ * @method DatDiploma        setDatPersonas()            Sets the current record's "DatPersonas" value
  * 
  * @package    universidad
  * @subpackage model
@@ -48,7 +54,6 @@ abstract class BaseDatDiploma extends sfDoctrineRecord
              'fixed' => 0,
              'unsigned' => false,
              'primary' => true,
-             'sequence' => 'dat_diploma_id',
              'length' => 4,
              ));
         $this->hasColumn('dat_institucion_id', 'integer', 4, array(
@@ -91,6 +96,14 @@ abstract class BaseDatDiploma extends sfDoctrineRecord
              'primary' => false,
              'length' => 4,
              ));
+        $this->hasColumn('dat_persona_id', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => true,
+             'primary' => false,
+             'length' => 4,
+             ));
     }
 
     public function setUp()
@@ -102,6 +115,10 @@ abstract class BaseDatDiploma extends sfDoctrineRecord
 
         $this->hasOne('DatInstitucion', array(
              'local' => 'dat_institucion_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('DatPersonas', array(
+             'local' => 'dat_persona_id',
              'foreign' => 'id'));
     }
 }

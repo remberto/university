@@ -21,38 +21,44 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @property integer $extendido
  * @property Doctrine_Collection $AdmUsuarios
  * @property Doctrine_Collection $DatHabilitacion
+ * @property Doctrine_Collection $DatDiploma
  * @property Doctrine_Collection $ProcSeguimiento
+ * @property Doctrine_Collection $DatCertificadoNacimiento
  * 
- * @method integer             getId()               Returns the current record's "id" value
- * @method string              getCi()               Returns the current record's "ci" value
- * @method string              getPaterno()          Returns the current record's "paterno" value
- * @method string              getMaterno()          Returns the current record's "materno" value
- * @method string              getNombre1()          Returns the current record's "nombre1" value
- * @method string              getNombre2()          Returns the current record's "nombre2" value
- * @method timestamp           getFechaNacimiento()  Returns the current record's "fecha_nacimiento" value
- * @method integer             getGenero()           Returns the current record's "genero" value
- * @method integer             getAdmUsuarioId()     Returns the current record's "adm_usuario_id" value
- * @method timestamp           getFechaAdd()         Returns the current record's "fecha_add" value
- * @method string              getFoto()             Returns the current record's "foto" value
- * @method integer             getExtendido()        Returns the current record's "extendido" value
- * @method Doctrine_Collection getAdmUsuarios()      Returns the current record's "AdmUsuarios" collection
- * @method Doctrine_Collection getDatHabilitacion()  Returns the current record's "DatHabilitacion" collection
- * @method Doctrine_Collection getProcSeguimiento()  Returns the current record's "ProcSeguimiento" collection
- * @method DatPersonas         setId()               Sets the current record's "id" value
- * @method DatPersonas         setCi()               Sets the current record's "ci" value
- * @method DatPersonas         setPaterno()          Sets the current record's "paterno" value
- * @method DatPersonas         setMaterno()          Sets the current record's "materno" value
- * @method DatPersonas         setNombre1()          Sets the current record's "nombre1" value
- * @method DatPersonas         setNombre2()          Sets the current record's "nombre2" value
- * @method DatPersonas         setFechaNacimiento()  Sets the current record's "fecha_nacimiento" value
- * @method DatPersonas         setGenero()           Sets the current record's "genero" value
- * @method DatPersonas         setAdmUsuarioId()     Sets the current record's "adm_usuario_id" value
- * @method DatPersonas         setFechaAdd()         Sets the current record's "fecha_add" value
- * @method DatPersonas         setFoto()             Sets the current record's "foto" value
- * @method DatPersonas         setExtendido()        Sets the current record's "extendido" value
- * @method DatPersonas         setAdmUsuarios()      Sets the current record's "AdmUsuarios" collection
- * @method DatPersonas         setDatHabilitacion()  Sets the current record's "DatHabilitacion" collection
- * @method DatPersonas         setProcSeguimiento()  Sets the current record's "ProcSeguimiento" collection
+ * @method integer             getId()                       Returns the current record's "id" value
+ * @method string              getCi()                       Returns the current record's "ci" value
+ * @method string              getPaterno()                  Returns the current record's "paterno" value
+ * @method string              getMaterno()                  Returns the current record's "materno" value
+ * @method string              getNombre1()                  Returns the current record's "nombre1" value
+ * @method string              getNombre2()                  Returns the current record's "nombre2" value
+ * @method timestamp           getFechaNacimiento()          Returns the current record's "fecha_nacimiento" value
+ * @method integer             getGenero()                   Returns the current record's "genero" value
+ * @method integer             getAdmUsuarioId()             Returns the current record's "adm_usuario_id" value
+ * @method timestamp           getFechaAdd()                 Returns the current record's "fecha_add" value
+ * @method string              getFoto()                     Returns the current record's "foto" value
+ * @method integer             getExtendido()                Returns the current record's "extendido" value
+ * @method Doctrine_Collection getAdmUsuarios()              Returns the current record's "AdmUsuarios" collection
+ * @method Doctrine_Collection getDatHabilitacion()          Returns the current record's "DatHabilitacion" collection
+ * @method Doctrine_Collection getDatDiploma()               Returns the current record's "DatDiploma" collection
+ * @method Doctrine_Collection getProcSeguimiento()          Returns the current record's "ProcSeguimiento" collection
+ * @method Doctrine_Collection getDatCertificadoNacimiento() Returns the current record's "DatCertificadoNacimiento" collection
+ * @method DatPersonas         setId()                       Sets the current record's "id" value
+ * @method DatPersonas         setCi()                       Sets the current record's "ci" value
+ * @method DatPersonas         setPaterno()                  Sets the current record's "paterno" value
+ * @method DatPersonas         setMaterno()                  Sets the current record's "materno" value
+ * @method DatPersonas         setNombre1()                  Sets the current record's "nombre1" value
+ * @method DatPersonas         setNombre2()                  Sets the current record's "nombre2" value
+ * @method DatPersonas         setFechaNacimiento()          Sets the current record's "fecha_nacimiento" value
+ * @method DatPersonas         setGenero()                   Sets the current record's "genero" value
+ * @method DatPersonas         setAdmUsuarioId()             Sets the current record's "adm_usuario_id" value
+ * @method DatPersonas         setFechaAdd()                 Sets the current record's "fecha_add" value
+ * @method DatPersonas         setFoto()                     Sets the current record's "foto" value
+ * @method DatPersonas         setExtendido()                Sets the current record's "extendido" value
+ * @method DatPersonas         setAdmUsuarios()              Sets the current record's "AdmUsuarios" collection
+ * @method DatPersonas         setDatHabilitacion()          Sets the current record's "DatHabilitacion" collection
+ * @method DatPersonas         setDatDiploma()               Sets the current record's "DatDiploma" collection
+ * @method DatPersonas         setProcSeguimiento()          Sets the current record's "ProcSeguimiento" collection
+ * @method DatPersonas         setDatCertificadoNacimiento() Sets the current record's "DatCertificadoNacimiento" collection
  * 
  * @package    universidad
  * @subpackage model
@@ -173,8 +179,16 @@ abstract class BaseDatPersonas extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'dat_persona_id'));
 
+        $this->hasMany('DatDiploma', array(
+             'local' => 'id',
+             'foreign' => 'dat_persona_id'));
+
         $this->hasMany('ProcSeguimiento', array(
              'local' => 'id',
              'foreign' => 'dat_personas_id'));
+
+        $this->hasMany('DatCertificadoNacimiento', array(
+             'local' => 'id',
+             'foreign' => 'dat_persona_id'));
     }
 }

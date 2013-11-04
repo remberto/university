@@ -15,19 +15,25 @@ abstract class BaseDatCertificadoNacimientoForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'nro_certificado' => new sfWidgetFormInputHidden(),
+      'id'              => new sfWidgetFormInputHidden(),
+      'nro_certificado' => new sfWidgetFormInputText(),
       'oficialia'       => new sfWidgetFormTextarea(),
       'libro'           => new sfWidgetFormTextarea(),
       'partida'         => new sfWidgetFormTextarea(),
       'folio'           => new sfWidgetFormTextarea(),
+      'localidad'       => new sfWidgetFormTextarea(),
+      'dat_persona_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'nro_certificado' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('nro_certificado')), 'empty_value' => $this->getObject()->get('nro_certificado'), 'required' => false)),
+      'id'              => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'nro_certificado' => new sfValidatorInteger(),
       'oficialia'       => new sfValidatorString(),
       'libro'           => new sfValidatorString(),
       'partida'         => new sfValidatorString(),
       'folio'           => new sfValidatorString(array('required' => false)),
+      'localidad'       => new sfValidatorString(array('required' => false)),
+      'dat_persona_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'))),
     ));
 
     $this->widgetSchema->setNameFormat('dat_certificado_nacimiento[%s]');

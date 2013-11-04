@@ -21,6 +21,7 @@ abstract class BaseDatDiplomaForm extends BaseFormDoctrine
       'serie'                  => new sfWidgetFormTextarea(),
       'fecha_emision'          => new sfWidgetFormDateTime(),
       'cla_grado_academico_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ClaGradoAcademico'), 'add_empty' => false)),
+      'dat_persona_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
@@ -30,6 +31,7 @@ abstract class BaseDatDiplomaForm extends BaseFormDoctrine
       'serie'                  => new sfValidatorString(array('required' => false)),
       'fecha_emision'          => new sfValidatorDateTime(),
       'cla_grado_academico_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaGradoAcademico'))),
+      'dat_persona_id'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'))),
     ));
 
     $this->widgetSchema->setNameFormat('dat_diploma[%s]');

@@ -659,11 +659,18 @@ DatCertificadoNacimiento:
   connection: doctrine
   tableName: dat_certificado_nacimiento
   columns:
-    nro_certificado:
+    id:
       type: integer(4)
       fixed: false
       unsigned: false
       primary: true
+      sequence: dat_certificado_nacimiento_id
+    nro_certificado:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
     oficialia:
       type: string()
       fixed: false
@@ -688,6 +695,23 @@ DatCertificadoNacimiento:
       unsigned: false
       notnull: false
       primary: false
+    localidad:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: false
+      primary: false
+    dat_persona_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    DatPersonas:
+      local: dat_persona_id
+      foreign: id
+      type: one
 DatDiploma:
   connection: doctrine
   tableName: dat_diploma
@@ -697,7 +721,6 @@ DatDiploma:
       fixed: false
       unsigned: false
       primary: true
-      sequence: dat_diploma_id
     dat_institucion_id:
       type: integer(4)
       fixed: false
@@ -728,6 +751,12 @@ DatDiploma:
       unsigned: false
       notnull: true
       primary: false
+    dat_persona_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
   relations:
     ClaGradoAcademico:
       local: cla_grado_academico_id
@@ -735,6 +764,10 @@ DatDiploma:
       type: one
     DatInstitucion:
       local: dat_institucion_id
+      foreign: id
+      type: one
+    DatPersonas:
+      local: dat_persona_id
       foreign: id
       type: one
 DatHabilitacion:
@@ -916,9 +949,17 @@ DatPersonas:
       local: id
       foreign: dat_persona_id
       type: many
+    DatDiploma:
+      local: id
+      foreign: dat_persona_id
+      type: many
     ProcSeguimiento:
       local: id
       foreign: dat_personas_id
+      type: many
+    DatCertificadoNacimiento:
+      local: id
+      foreign: dat_persona_id
       type: many
 ProcFormularios:
   connection: doctrine
