@@ -20,10 +20,10 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @property string $foto
  * @property integer $extendido
  * @property Doctrine_Collection $AdmUsuarios
- * @property Doctrine_Collection $DatHabilitacion
  * @property Doctrine_Collection $DatDiploma
  * @property Doctrine_Collection $ProcSeguimiento
  * @property Doctrine_Collection $DatCertificadoNacimiento
+ * @property Doctrine_Collection $DatHabilitacion
  * 
  * @method integer             getId()                       Returns the current record's "id" value
  * @method string              getCi()                       Returns the current record's "ci" value
@@ -38,10 +38,10 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @method string              getFoto()                     Returns the current record's "foto" value
  * @method integer             getExtendido()                Returns the current record's "extendido" value
  * @method Doctrine_Collection getAdmUsuarios()              Returns the current record's "AdmUsuarios" collection
- * @method Doctrine_Collection getDatHabilitacion()          Returns the current record's "DatHabilitacion" collection
  * @method Doctrine_Collection getDatDiploma()               Returns the current record's "DatDiploma" collection
  * @method Doctrine_Collection getProcSeguimiento()          Returns the current record's "ProcSeguimiento" collection
  * @method Doctrine_Collection getDatCertificadoNacimiento() Returns the current record's "DatCertificadoNacimiento" collection
+ * @method Doctrine_Collection getDatHabilitacion()          Returns the current record's "DatHabilitacion" collection
  * @method DatPersonas         setId()                       Sets the current record's "id" value
  * @method DatPersonas         setCi()                       Sets the current record's "ci" value
  * @method DatPersonas         setPaterno()                  Sets the current record's "paterno" value
@@ -55,10 +55,10 @@ Doctrine_Manager::getInstance()->bindComponent('DatPersonas', 'doctrine');
  * @method DatPersonas         setFoto()                     Sets the current record's "foto" value
  * @method DatPersonas         setExtendido()                Sets the current record's "extendido" value
  * @method DatPersonas         setAdmUsuarios()              Sets the current record's "AdmUsuarios" collection
- * @method DatPersonas         setDatHabilitacion()          Sets the current record's "DatHabilitacion" collection
  * @method DatPersonas         setDatDiploma()               Sets the current record's "DatDiploma" collection
  * @method DatPersonas         setProcSeguimiento()          Sets the current record's "ProcSeguimiento" collection
  * @method DatPersonas         setDatCertificadoNacimiento() Sets the current record's "DatCertificadoNacimiento" collection
+ * @method DatPersonas         setDatHabilitacion()          Sets the current record's "DatHabilitacion" collection
  * 
  * @package    universidad
  * @subpackage model
@@ -175,10 +175,6 @@ abstract class BaseDatPersonas extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'id'));
 
-        $this->hasMany('DatHabilitacion', array(
-             'local' => 'id',
-             'foreign' => 'dat_persona_id'));
-
         $this->hasMany('DatDiploma', array(
              'local' => 'id',
              'foreign' => 'dat_persona_id'));
@@ -188,6 +184,10 @@ abstract class BaseDatPersonas extends sfDoctrineRecord
              'foreign' => 'dat_personas_id'));
 
         $this->hasMany('DatCertificadoNacimiento', array(
+             'local' => 'id',
+             'foreign' => 'dat_persona_id'));
+
+        $this->hasMany('DatHabilitacion', array(
              'local' => 'id',
              'foreign' => 'dat_persona_id'));
     }

@@ -257,10 +257,6 @@ AdmUsuarios:
       local: id
       foreign: adm_usuario_id
       type: many
-    DatHabilitacion:
-      local: id
-      foreign: adm_usuario_id
-      type: many
     ProcSeguimiento:
       local: id
       foreign: adm_usuario_entrada_id
@@ -271,6 +267,10 @@ AdmUsuarios:
       foreign: adm_usuario_salida_id
       type: many
     AdmUsuarioAdministra:
+      local: id
+      foreign: adm_usuario_id
+      type: many
+    DatHabilitacion:
       local: id
       foreign: adm_usuario_id
       type: many
@@ -360,6 +360,55 @@ ClaFormulario:
       local: cla_tabla_id
       foreign: id
       type: one
+ClaGeografico:
+  connection: doctrine
+  tableName: cla_geografico
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: cla_geografico_id
+    codigo_ine:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    tipo_id:
+      type: integer(2)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    cla_geografico_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+      sequence: cla_geografico_cla_geografico_id
+  relations:
+    ClaGeografico:
+      local: id
+      foreign: cla_geografico_id
+      type: many
+    DatCertificadoNacimiento:
+      local: id
+      foreign: departamento_id
+      type: many
+    DatCertificadoNacimiento_2:
+      class: DatCertificadoNacimiento
+      local: id
+      foreign: provincia_id
+      type: many
 ClaGestion:
   connection: doctrine
   tableName: cla_gestion
@@ -429,15 +478,15 @@ ClaGradoAcademico:
       notnull: true
       primary: false
   relations:
-    DatHabilitacion:
-      local: id
-      foreign: cla_grado_academico_id
-      type: many
     DatDiploma:
       local: id
       foreign: cla_grado_academico_id
       type: many
     UniSedeCarreras:
+      local: id
+      foreign: cla_grado_academico_id
+      type: many
+    DatHabilitacion:
       local: id
       foreign: cla_grado_academico_id
       type: many
@@ -472,6 +521,27 @@ ClaHabilitado:
     AdmRolesMenus:
       local: id
       foreign: habilitado
+      type: many
+ClaModalidadEgreso:
+  connection: doctrine
+  tableName: cla_modalidad_egreso
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      sequence: cla_modalidad_egreso_id
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+  relations:
+    DatHabilitacion:
+      local: id
+      foreign: cla_modalidad_egreso_id
       type: many
 ClaProceso:
   connection: doctrine
@@ -695,6 +765,18 @@ DatCertificadoNacimiento:
       unsigned: false
       notnull: false
       primary: false
+    departamento_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
+    provincia_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
     localidad:
       type: string()
       fixed: false
@@ -708,6 +790,15 @@ DatCertificadoNacimiento:
       notnull: true
       primary: false
   relations:
+    ClaGeografico:
+      local: departamento_id
+      foreign: id
+      type: one
+    ClaGeografico_2:
+      class: ClaGeografico
+      local: provincia_id
+      foreign: id
+      type: one
     DatPersonas:
       local: dat_persona_id
       foreign: id
@@ -810,6 +901,12 @@ DatHabilitacion:
       unsigned: false
       notnull: false
       primary: false
+    cla_modalidad_egreso_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      notnull: true
+      primary: false
     adm_usuario_id:
       type: integer(4)
       fixed: false
@@ -829,6 +926,10 @@ DatHabilitacion:
       type: one
     ClaGradoAcademico:
       local: cla_grado_academico_id
+      foreign: id
+      type: one
+    ClaModalidadEgreso:
+      local: cla_modalidad_egreso_id
       foreign: id
       type: one
     DatPersonas:
@@ -945,10 +1046,6 @@ DatPersonas:
       local: id
       foreign: id
       type: many
-    DatHabilitacion:
-      local: id
-      foreign: dat_persona_id
-      type: many
     DatDiploma:
       local: id
       foreign: dat_persona_id
@@ -958,6 +1055,10 @@ DatPersonas:
       foreign: dat_personas_id
       type: many
     DatCertificadoNacimiento:
+      local: id
+      foreign: dat_persona_id
+      type: many
+    DatHabilitacion:
       local: id
       foreign: dat_persona_id
       type: many
@@ -1226,17 +1327,17 @@ UniSede:
   relations:
     UniUniversidad:
       local: uni_universidad_id
-      foreign: codigo
+      foreign: id
       type: one
-    DatHabilitacion:
-      local: id
-      foreign: uni_sede_id
-      type: many
     UniSedeCarreras:
       local: id
       foreign: uni_sede_id
       type: many
     AdmUsuarioAdministra:
+      local: id
+      foreign: uni_sede_id
+      type: many
+    DatHabilitacion:
       local: id
       foreign: uni_sede_id
       type: many
@@ -1319,7 +1420,7 @@ UniUniversidad:
   connection: doctrine
   tableName: uni_universidad
   columns:
-    codigo:
+    id:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -1332,6 +1433,6 @@ UniUniversidad:
       primary: false
   relations:
     UniSede:
-      local: codigo
+      local: id
       foreign: uni_universidad_id
       type: many

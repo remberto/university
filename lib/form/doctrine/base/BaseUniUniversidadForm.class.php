@@ -15,12 +15,12 @@ abstract class BaseUniUniversidadForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'codigo'      => new sfWidgetFormInputHidden(),
+      'id'          => new sfWidgetFormInputHidden(),
       'descripcion' => new sfWidgetFormTextarea(),
     ));
 
     $this->setValidators(array(
-      'codigo'      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('codigo')), 'empty_value' => $this->getObject()->get('codigo'), 'required' => false)),
+      'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'descripcion' => new sfValidatorString(),
     ));
 

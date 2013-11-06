@@ -13,8 +13,12 @@ Doctrine_Manager::getInstance()->bindComponent('DatCertificadoNacimiento', 'doct
  * @property string $libro
  * @property string $partida
  * @property string $folio
+ * @property integer $departamento_id
+ * @property integer $provincia_id
  * @property string $localidad
  * @property integer $dat_persona_id
+ * @property ClaGeografico $ClaGeografico
+ * @property ClaGeografico $ClaGeografico_2
  * @property DatPersonas $DatPersonas
  * 
  * @method integer                  getId()              Returns the current record's "id" value
@@ -23,8 +27,12 @@ Doctrine_Manager::getInstance()->bindComponent('DatCertificadoNacimiento', 'doct
  * @method string                   getLibro()           Returns the current record's "libro" value
  * @method string                   getPartida()         Returns the current record's "partida" value
  * @method string                   getFolio()           Returns the current record's "folio" value
+ * @method integer                  getDepartamentoId()  Returns the current record's "departamento_id" value
+ * @method integer                  getProvinciaId()     Returns the current record's "provincia_id" value
  * @method string                   getLocalidad()       Returns the current record's "localidad" value
  * @method integer                  getDatPersonaId()    Returns the current record's "dat_persona_id" value
+ * @method ClaGeografico            getClaGeografico()   Returns the current record's "ClaGeografico" value
+ * @method ClaGeografico            getClaGeografico2()  Returns the current record's "ClaGeografico_2" value
  * @method DatPersonas              getDatPersonas()     Returns the current record's "DatPersonas" value
  * @method DatCertificadoNacimiento setId()              Sets the current record's "id" value
  * @method DatCertificadoNacimiento setNroCertificado()  Sets the current record's "nro_certificado" value
@@ -32,8 +40,12 @@ Doctrine_Manager::getInstance()->bindComponent('DatCertificadoNacimiento', 'doct
  * @method DatCertificadoNacimiento setLibro()           Sets the current record's "libro" value
  * @method DatCertificadoNacimiento setPartida()         Sets the current record's "partida" value
  * @method DatCertificadoNacimiento setFolio()           Sets the current record's "folio" value
+ * @method DatCertificadoNacimiento setDepartamentoId()  Sets the current record's "departamento_id" value
+ * @method DatCertificadoNacimiento setProvinciaId()     Sets the current record's "provincia_id" value
  * @method DatCertificadoNacimiento setLocalidad()       Sets the current record's "localidad" value
  * @method DatCertificadoNacimiento setDatPersonaId()    Sets the current record's "dat_persona_id" value
+ * @method DatCertificadoNacimiento setClaGeografico()   Sets the current record's "ClaGeografico" value
+ * @method DatCertificadoNacimiento setClaGeografico2()  Sets the current record's "ClaGeografico_2" value
  * @method DatCertificadoNacimiento setDatPersonas()     Sets the current record's "DatPersonas" value
  * 
  * @package    universidad
@@ -94,6 +106,22 @@ abstract class BaseDatCertificadoNacimiento extends sfDoctrineRecord
              'primary' => false,
              'length' => '',
              ));
+        $this->hasColumn('departamento_id', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => true,
+             'primary' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('provincia_id', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => true,
+             'primary' => false,
+             'length' => 4,
+             ));
         $this->hasColumn('localidad', 'string', null, array(
              'type' => 'string',
              'fixed' => 0,
@@ -115,6 +143,14 @@ abstract class BaseDatCertificadoNacimiento extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('ClaGeografico', array(
+             'local' => 'departamento_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('ClaGeografico as ClaGeografico_2', array(
+             'local' => 'provincia_id',
+             'foreign' => 'id'));
+
         $this->hasOne('DatPersonas', array(
              'local' => 'dat_persona_id',
              'foreign' => 'id'));

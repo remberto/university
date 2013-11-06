@@ -19,6 +19,7 @@ class registroComponents extends sfComponents
       $this->formHabilitacion = new DatHabilitacionForm();
       // Recucuperar la Universidad
       $this->universidad = Doctrine::getTable('UniSede')->getSede($this->getUser()->getAttribute('USUARIO_ID'));
+      $this->modalidad_egreso = Doctrine::getTable('ClaModalidadEgreso')->findAll();
   }
   
   public function executeRegistroPersona()
@@ -30,20 +31,22 @@ class registroComponents extends sfComponents
   public function executeRegistroInscripcion()
   {
     $this->formInscripcion = new RegInscripcionForm();
-    $this->formInscripcion->setWidget('uni_sede_id', new sfWidgetFormChoice(array('choices' => array('Asunto A', 'Asunto B', 'Asunto C'))));
     $this->formInscripcion->setWidget('adm_usuario_id', new sfWidgetFormInputHidden(array('default'=>$this->getUser()->getAttribute('USUARIO_ID'))));
+    $this->universidades = Doctrine::getTable('UniUniversidad')->findAll();
   }
   
   public function executeRegistroConclusion()
   {
-    $this->formInscripcion = new RegInscripcionForm();
-    $this->formInscripcion->setWidget('uni_sede_id', new sfWidgetFormChoice(array('choices' => array('Asunto A', 'Asunto B', 'Asunto C'))));
-    $this->formInscripcion->setWidget('adm_usuario_id', new sfWidgetFormInputHidden(array('default'=>$this->getUser()->getAttribute('USUARIO_ID'))));
+    $this->formConclusion = new RegInscripcionForm();
+
+    $this->formConclusion->setWidget('adm_usuario_id', new sfWidgetFormInputHidden(array('default'=>$this->getUser()->getAttribute('USUARIO_ID'))));
+    $this->universidades = Doctrine::getTable('UniUniversidad')->findAll();
   }
   
   public function executeRegistroCertificado()
   {
       $this->formCertificado = new DatCertificadoNacimientoForm();
+      $this->departamentos = Doctrine::getTable('ClaGeografico')->findByTipoId('1');
   }
   
   public function executeRegistroDiploma()

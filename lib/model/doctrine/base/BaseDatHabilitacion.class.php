@@ -13,37 +13,43 @@ Doctrine_Manager::getInstance()->bindComponent('DatHabilitacion', 'doctrine');
  * @property integer $uni_carrera_id
  * @property integer $uni_gestion_id
  * @property integer $cla_grado_academico_id
+ * @property integer $cla_modalidad_egreso_id
  * @property integer $adm_usuario_id
  * @property timestamp $fecha_registro
  * @property AdmUsuarios $AdmUsuarios
  * @property ClaGradoAcademico $ClaGradoAcademico
+ * @property ClaModalidadEgreso $ClaModalidadEgreso
  * @property DatPersonas $DatPersonas
  * @property UniSede $UniSede
  * 
- * @method integer           getId()                     Returns the current record's "id" value
- * @method integer           getDatPersonaId()           Returns the current record's "dat_persona_id" value
- * @method integer           getUniSedeId()              Returns the current record's "uni_sede_id" value
- * @method integer           getUniCarreraId()           Returns the current record's "uni_carrera_id" value
- * @method integer           getUniGestionId()           Returns the current record's "uni_gestion_id" value
- * @method integer           getClaGradoAcademicoId()    Returns the current record's "cla_grado_academico_id" value
- * @method integer           getAdmUsuarioId()           Returns the current record's "adm_usuario_id" value
- * @method timestamp         getFechaRegistro()          Returns the current record's "fecha_registro" value
- * @method AdmUsuarios       getAdmUsuarios()            Returns the current record's "AdmUsuarios" value
- * @method ClaGradoAcademico getClaGradoAcademico()      Returns the current record's "ClaGradoAcademico" value
- * @method DatPersonas       getDatPersonas()            Returns the current record's "DatPersonas" value
- * @method UniSede           getUniSede()                Returns the current record's "UniSede" value
- * @method DatHabilitacion   setId()                     Sets the current record's "id" value
- * @method DatHabilitacion   setDatPersonaId()           Sets the current record's "dat_persona_id" value
- * @method DatHabilitacion   setUniSedeId()              Sets the current record's "uni_sede_id" value
- * @method DatHabilitacion   setUniCarreraId()           Sets the current record's "uni_carrera_id" value
- * @method DatHabilitacion   setUniGestionId()           Sets the current record's "uni_gestion_id" value
- * @method DatHabilitacion   setClaGradoAcademicoId()    Sets the current record's "cla_grado_academico_id" value
- * @method DatHabilitacion   setAdmUsuarioId()           Sets the current record's "adm_usuario_id" value
- * @method DatHabilitacion   setFechaRegistro()          Sets the current record's "fecha_registro" value
- * @method DatHabilitacion   setAdmUsuarios()            Sets the current record's "AdmUsuarios" value
- * @method DatHabilitacion   setClaGradoAcademico()      Sets the current record's "ClaGradoAcademico" value
- * @method DatHabilitacion   setDatPersonas()            Sets the current record's "DatPersonas" value
- * @method DatHabilitacion   setUniSede()                Sets the current record's "UniSede" value
+ * @method integer            getId()                      Returns the current record's "id" value
+ * @method integer            getDatPersonaId()            Returns the current record's "dat_persona_id" value
+ * @method integer            getUniSedeId()               Returns the current record's "uni_sede_id" value
+ * @method integer            getUniCarreraId()            Returns the current record's "uni_carrera_id" value
+ * @method integer            getUniGestionId()            Returns the current record's "uni_gestion_id" value
+ * @method integer            getClaGradoAcademicoId()     Returns the current record's "cla_grado_academico_id" value
+ * @method integer            getClaModalidadEgresoId()    Returns the current record's "cla_modalidad_egreso_id" value
+ * @method integer            getAdmUsuarioId()            Returns the current record's "adm_usuario_id" value
+ * @method timestamp          getFechaRegistro()           Returns the current record's "fecha_registro" value
+ * @method AdmUsuarios        getAdmUsuarios()             Returns the current record's "AdmUsuarios" value
+ * @method ClaGradoAcademico  getClaGradoAcademico()       Returns the current record's "ClaGradoAcademico" value
+ * @method ClaModalidadEgreso getClaModalidadEgreso()      Returns the current record's "ClaModalidadEgreso" value
+ * @method DatPersonas        getDatPersonas()             Returns the current record's "DatPersonas" value
+ * @method UniSede            getUniSede()                 Returns the current record's "UniSede" value
+ * @method DatHabilitacion    setId()                      Sets the current record's "id" value
+ * @method DatHabilitacion    setDatPersonaId()            Sets the current record's "dat_persona_id" value
+ * @method DatHabilitacion    setUniSedeId()               Sets the current record's "uni_sede_id" value
+ * @method DatHabilitacion    setUniCarreraId()            Sets the current record's "uni_carrera_id" value
+ * @method DatHabilitacion    setUniGestionId()            Sets the current record's "uni_gestion_id" value
+ * @method DatHabilitacion    setClaGradoAcademicoId()     Sets the current record's "cla_grado_academico_id" value
+ * @method DatHabilitacion    setClaModalidadEgresoId()    Sets the current record's "cla_modalidad_egreso_id" value
+ * @method DatHabilitacion    setAdmUsuarioId()            Sets the current record's "adm_usuario_id" value
+ * @method DatHabilitacion    setFechaRegistro()           Sets the current record's "fecha_registro" value
+ * @method DatHabilitacion    setAdmUsuarios()             Sets the current record's "AdmUsuarios" value
+ * @method DatHabilitacion    setClaGradoAcademico()       Sets the current record's "ClaGradoAcademico" value
+ * @method DatHabilitacion    setClaModalidadEgreso()      Sets the current record's "ClaModalidadEgreso" value
+ * @method DatHabilitacion    setDatPersonas()             Sets the current record's "DatPersonas" value
+ * @method DatHabilitacion    setUniSede()                 Sets the current record's "UniSede" value
  * 
  * @package    universidad
  * @subpackage model
@@ -103,6 +109,14 @@ abstract class BaseDatHabilitacion extends sfDoctrineRecord
              'primary' => false,
              'length' => 4,
              ));
+        $this->hasColumn('cla_modalidad_egreso_id', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => true,
+             'primary' => false,
+             'length' => 4,
+             ));
         $this->hasColumn('adm_usuario_id', 'integer', 4, array(
              'type' => 'integer',
              'fixed' => 0,
@@ -130,6 +144,10 @@ abstract class BaseDatHabilitacion extends sfDoctrineRecord
 
         $this->hasOne('ClaGradoAcademico', array(
              'local' => 'cla_grado_academico_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('ClaModalidadEgreso', array(
+             'local' => 'cla_modalidad_egreso_id',
              'foreign' => 'id'));
 
         $this->hasOne('DatPersonas', array(

@@ -21,6 +21,8 @@ abstract class BaseDatCertificadoNacimientoForm extends BaseFormDoctrine
       'libro'           => new sfWidgetFormTextarea(),
       'partida'         => new sfWidgetFormTextarea(),
       'folio'           => new sfWidgetFormTextarea(),
+      'departamento_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ClaGeografico'), 'add_empty' => false)),
+      'provincia_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ClaGeografico_2'), 'add_empty' => false)),
       'localidad'       => new sfWidgetFormTextarea(),
       'dat_persona_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'), 'add_empty' => false)),
     ));
@@ -32,6 +34,8 @@ abstract class BaseDatCertificadoNacimientoForm extends BaseFormDoctrine
       'libro'           => new sfValidatorString(),
       'partida'         => new sfValidatorString(),
       'folio'           => new sfValidatorString(array('required' => false)),
+      'departamento_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaGeografico'))),
+      'provincia_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ClaGeografico_2'))),
       'localidad'       => new sfValidatorString(array('required' => false)),
       'dat_persona_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('DatPersonas'))),
     ));

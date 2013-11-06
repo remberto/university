@@ -50,6 +50,18 @@
         <input type="text" class="span6 m-wrap" name="resolucion_ministerial" value="" readonly="true"/>
     </div>
 </div>
+<div class="control-group">
+    <label class="control-label">Modalidad de Egreso<span class="required">*</span></label>
+    <div class="controls">
+        <select id="dat_habilitacion_cla_modalidad_egreso_id" class="span6 m-wrap required" data-placeholder="Seleccione la Modalidad de Egreso" tabindex="1">
+            <option value="">Seleccione...</option>
+            <?php foreach ($modalidad_egreso as $key => $modalidad): ?>
+            <option value="<?php echo $modalidad->getId(); ?>"><?php echo $modalidad->getDescripcion();?></option>
+            <?php endforeach;?>
+        </select>
+        <span class="help-inline">Selecciona la Modalidad de Egreso</span>
+    </div>
+</div>
 
 <script languaje="text/javascript">
 var a = jQuery.noConflict();
@@ -109,6 +121,10 @@ a(document).ready(function(){
                 }
             }
         });
+   });
+   a('#dat_habilitacion_cla_carrera_id').change(function(){
+        a('#reg_inscripcion_uni_carrera_id').val(a("#dat_habilitacion_cla_carrera_id option:selected").val());
+        a('#inscripcion_carrera').val(a("#dat_habilitacion_cla_carrera_id option:selected").text());
    });
 }); 
 </script>

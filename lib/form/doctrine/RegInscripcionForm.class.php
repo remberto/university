@@ -17,8 +17,8 @@ class RegInscripcionForm extends BaseRegInscripcionForm
       'uni_sede_id'    => new sfWidgetFormInputHidden(),
       'uni_carrera_id' => new sfWidgetFormInputHidden(),
       'gestion_id'     => new sfWidgetFormInputHidden(),
-      'adm_usuario_id' => new sfWidgetFormInputText(),
-      'fecha_registro' => new sfWidgetFormDateTime(),
+      'adm_usuario_id' => new sfWidgetFormInputHidden(),
+      'fecha_registro' => new sfWidgetFormInputHidden(),
     ));
 
     $this->setValidators(array(

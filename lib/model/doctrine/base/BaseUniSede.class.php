@@ -11,24 +11,24 @@ Doctrine_Manager::getInstance()->bindComponent('UniSede', 'doctrine');
  * @property string $descripcion
  * @property integer $uni_universidad_id
  * @property UniUniversidad $UniUniversidad
- * @property Doctrine_Collection $DatHabilitacion
  * @property Doctrine_Collection $UniSedeCarreras
  * @property Doctrine_Collection $AdmUsuarioAdministra
+ * @property Doctrine_Collection $DatHabilitacion
  * 
  * @method integer             getId()                   Returns the current record's "id" value
  * @method string              getDescripcion()          Returns the current record's "descripcion" value
  * @method integer             getUniUniversidadId()     Returns the current record's "uni_universidad_id" value
  * @method UniUniversidad      getUniUniversidad()       Returns the current record's "UniUniversidad" value
- * @method Doctrine_Collection getDatHabilitacion()      Returns the current record's "DatHabilitacion" collection
  * @method Doctrine_Collection getUniSedeCarreras()      Returns the current record's "UniSedeCarreras" collection
  * @method Doctrine_Collection getAdmUsuarioAdministra() Returns the current record's "AdmUsuarioAdministra" collection
+ * @method Doctrine_Collection getDatHabilitacion()      Returns the current record's "DatHabilitacion" collection
  * @method UniSede             setId()                   Sets the current record's "id" value
  * @method UniSede             setDescripcion()          Sets the current record's "descripcion" value
  * @method UniSede             setUniUniversidadId()     Sets the current record's "uni_universidad_id" value
  * @method UniSede             setUniUniversidad()       Sets the current record's "UniUniversidad" value
- * @method UniSede             setDatHabilitacion()      Sets the current record's "DatHabilitacion" collection
  * @method UniSede             setUniSedeCarreras()      Sets the current record's "UniSedeCarreras" collection
  * @method UniSede             setAdmUsuarioAdministra() Sets the current record's "AdmUsuarioAdministra" collection
+ * @method UniSede             setDatHabilitacion()      Sets the current record's "DatHabilitacion" collection
  * 
  * @package    universidad
  * @subpackage model
@@ -71,17 +71,17 @@ abstract class BaseUniSede extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('UniUniversidad', array(
              'local' => 'uni_universidad_id',
-             'foreign' => 'codigo'));
-
-        $this->hasMany('DatHabilitacion', array(
-             'local' => 'id',
-             'foreign' => 'uni_sede_id'));
+             'foreign' => 'id'));
 
         $this->hasMany('UniSedeCarreras', array(
              'local' => 'id',
              'foreign' => 'uni_sede_id'));
 
         $this->hasMany('AdmUsuarioAdministra', array(
+             'local' => 'id',
+             'foreign' => 'uni_sede_id'));
+
+        $this->hasMany('DatHabilitacion', array(
              'local' => 'id',
              'foreign' => 'uni_sede_id'));
     }

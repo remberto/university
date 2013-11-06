@@ -9,20 +9,20 @@ Doctrine_Manager::getInstance()->bindComponent('ClaGradoAcademico', 'doctrine');
  * 
  * @property integer $id
  * @property string $descripcion
- * @property Doctrine_Collection $DatHabilitacion
  * @property Doctrine_Collection $DatDiploma
  * @property Doctrine_Collection $UniSedeCarreras
+ * @property Doctrine_Collection $DatHabilitacion
  * 
  * @method integer             getId()              Returns the current record's "id" value
  * @method string              getDescripcion()     Returns the current record's "descripcion" value
- * @method Doctrine_Collection getDatHabilitacion() Returns the current record's "DatHabilitacion" collection
  * @method Doctrine_Collection getDatDiploma()      Returns the current record's "DatDiploma" collection
  * @method Doctrine_Collection getUniSedeCarreras() Returns the current record's "UniSedeCarreras" collection
+ * @method Doctrine_Collection getDatHabilitacion() Returns the current record's "DatHabilitacion" collection
  * @method ClaGradoAcademico   setId()              Sets the current record's "id" value
  * @method ClaGradoAcademico   setDescripcion()     Sets the current record's "descripcion" value
- * @method ClaGradoAcademico   setDatHabilitacion() Sets the current record's "DatHabilitacion" collection
  * @method ClaGradoAcademico   setDatDiploma()      Sets the current record's "DatDiploma" collection
  * @method ClaGradoAcademico   setUniSedeCarreras() Sets the current record's "UniSedeCarreras" collection
+ * @method ClaGradoAcademico   setDatHabilitacion() Sets the current record's "DatHabilitacion" collection
  * 
  * @package    universidad
  * @subpackage model
@@ -55,15 +55,15 @@ abstract class BaseClaGradoAcademico extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('DatHabilitacion', array(
-             'local' => 'id',
-             'foreign' => 'cla_grado_academico_id'));
-
         $this->hasMany('DatDiploma', array(
              'local' => 'id',
              'foreign' => 'cla_grado_academico_id'));
 
         $this->hasMany('UniSedeCarreras', array(
+             'local' => 'id',
+             'foreign' => 'cla_grado_academico_id'));
+
+        $this->hasMany('DatHabilitacion', array(
              'local' => 'id',
              'foreign' => 'cla_grado_academico_id'));
     }

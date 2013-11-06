@@ -35,6 +35,11 @@ class registroActions extends sfActions
               
   }
   
+  public function executeSedes(sfWebRequest $request)
+  {
+      $this->sedes = Doctrine::getTable('UniSede')->findByUniUniversidadId($request->getParameter('universidad_id'));
+  }
+  
   public function executeCarreras(sfWebRequest $request)
   {
       $this->carreras = Doctrine::getTable('UniCarreras')->getCarreras($request->getParameter('sede_id'));
@@ -58,5 +63,19 @@ class registroActions extends sfActions
       $this->gestiones = Doctrine::getTable('ClaGestionSemestre')->getGestiones($request->getParameter('sede_id'),
                                                                                 $request->getParameter('carrera_id')
                                                                                 );
+  }
+  
+  public function executeGestionesinscripcion(sfWebRequest $request)
+  {
+      $this->gestiones = Doctrine::getTable('ClaGestionSemestre')->getGestiones($request->getParameter('sede_id'),
+                                                                                $request->getParameter('carrera_id')
+                                                                                );
+  }
+  
+  public function executeProvincias(sfWebRequest $request)
+  {
+      $this->provincias = Doctrine::getTable('ClaGeografico')->findByTipoIdAndClaGeograficoId('2',
+                                                                                             $request->getParameter('departamento_id')
+                                                                                             );
   }
 }
